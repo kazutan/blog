@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>独想 on 日々是独想</title>
-    <link>/tags/%E7%8B%AC%E6%83%B3/index.xml</link>
+    <link>https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/index.xml</link>
     <description>Recent content in 独想 on 日々是独想</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <atom:link href="/tags/%E7%8B%AC%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ブログ移転(仮)</title>
-      <link>/2017/03/firstpost/</link>
+      <link>https://kazutan.github.io/blog/2017/03/firstpost/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/03/firstpost/</guid>
+      <guid>https://kazutan.github.io/blog/2017/03/firstpost/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

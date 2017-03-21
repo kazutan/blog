@@ -2,7 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kazutan.github.io/blog/2017/03/firstpost/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/post/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kazutan.github.io/blog/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/categories/%E7%8B%AC%E6%83%B3/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

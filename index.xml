@@ -6,7 +6,26 @@
     <description>Recent content on 日々是独想</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kazutan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ブログ移転(仮)</title>
+      <link>https://kazutan.github.io/blog/2017/03/firstpost/</link>
+      <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/03/firstpost/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;いろいろ思うことがあり,ブログをこちらに移転することにしました。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;以前まで続けていた&lt;a href=&#34;http://blog.kz-md.net/&#34;&gt;こっちのブログ&lt;/a&gt;についてはしばらく残しておく予定です。移転する理由などについてはそのうち書きます。&lt;/p&gt;
+&lt;p&gt;あとまだ(仮)なので,急な変更などがあると思いますが,どうかご容赦ください。&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
