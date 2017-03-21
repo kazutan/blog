@@ -10,7 +10,7 @@
   
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
@@ -82,7 +82,7 @@
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg" alt="著者の絵" />
+      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">kazutan</h4>
     
@@ -110,11 +110,11 @@
       <i class="search-icon fa fa-search"></i>
       <form id="algolia-search-form">
         <input type="text" id="algolia-search-input" name="search"
-          class="form-control input--large search-input" placeholder="検索" />
+          class="form-control input--large search-input" placeholder="Search" />
       </form>
     </div>
     <div class="modal-body">
-      <div class="no-result text-color-light text-center"></div>
+      <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
         
@@ -122,9 +122,9 @@
     </div>
     <div class="modal-footer">
       <p class="results-count text-medium"
-         data-message-zero=""
-         data-message-one=""
-         data-message-other="">
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
          0 posts found
       </p>
     </div>
