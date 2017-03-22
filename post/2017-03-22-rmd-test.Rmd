@@ -1,0 +1,109 @@
+---
+title: R Markdownでの諸々のテスト
+author: kazutan
+date: '2017-03-22'
+slug: rmd-test
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+archives:
+  - "2017"
+  - "2017/03"
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+ちょっとRの出力を色々試してみたいと思います。
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#> ")
+```
+
+## コードと出力について
+
+collapseで表(data.frame)をそのまま出力。
+
+```{r}
+x <- iris %>% 
+  select(starts_with("S")) %>% 
+  group_by(Species) %>% 
+  head()
+x
+```
+
+knitr::kable()を利用して表を出力。
+
+```{r}
+knitr::kable(x)
+```
+
+## plotについて
+
+簡単なものでテスト。
+
+```{r}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point()
+```
+
+## htmlwidgets系のテスト
+
+やってみる。
+
+### leaflet
+
+```{r}
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(lng = 135.0000, lat = 35.0000)
+```
+
+### DiagrammeR
+
+[公式ドキュメント](http://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html#examples)にあるサンプルから。
+
+```{r}
+library(DiagrammeR)
+grViz("
+digraph a_nice_graph {
+
+# node definitions with substituted label text
+node [fontname = Helvetica]
+a [label = '@@1']
+b [label = '@@2-1']
+c [label = '@@2-2']
+d [label = '@@2-3']
+e [label = '@@2-4']
+f [label = '@@2-5']
+g [label = '@@2-6']
+h [label = '@@2-7']
+i [label = '@@2-8']
+j [label = '@@2-9']
+
+# edge definitions with the node IDs
+a -> {b c d e f g h i j}
+}
+
+[1]: 'top'
+[2]: 10:20
+")
+```
+
+### Plotly
+
+[公式サイトにある例](https://plot.ly/r/box-plots/)から。
+
+```{r}
+library(plotly)
+p <- plot_ly(ggplot2::diamonds, y = ~price, color = ~cut, type = "box")
+p
+```
+
+ひとますはこの辺で。だいたいいけそうです。
