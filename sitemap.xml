@@ -7,6 +7,23 @@
   </url>
   
   <url>
+    <loc>https://kazutan.github.io/blog/archives/2017/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/archives/2017/03/</loc>
+    <lastmod>2017-03-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kazutan.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
