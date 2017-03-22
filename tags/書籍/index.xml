@@ -5,7 +5,7 @@
     <link>https://kazutan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/index.xml</link>
     <description>Recent content in 書籍 on 日々是独想</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ja</language>
     <atom:link href="https://kazutan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -47,26 +47,32 @@
 &lt;div class=&#34;section level3&#34;&gt;
 &lt;h3&gt;構成&lt;/h3&gt;
 &lt;p&gt;この書籍は6章編成となっています。&lt;/p&gt;
-&lt;dl&gt;
-&lt;dt&gt;CHAPTER 01 ウェブスクレイピングの準備&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;R, RStudioの導入とデータハンドリングの基礎。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt&gt;CHAPTER 02 ウェブ技術の基礎&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;HTMLの基礎からXPATH, XML, JSONからHTTPプロトコルから認証といった，&lt;strong&gt;Web技術に関する基礎をRを使って説明するという画期的な内容&lt;/strong&gt;。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt&gt;CHAPTER 03 ウェブスクレイピング・API入門&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;比較的簡単な課題を用いて，実際にスクレイピングを実施したりAPIを叩いたり。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt&gt;CHAPTER 04 ウェブスクレイピング実践&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;ブログから情報抽出，抜き出したJSONから変換，そして&lt;strong&gt;ログイン認証が必要なサイトへの対応&lt;/strong&gt;などかなり実践的な内容。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt&gt;CHAPTER 05 API実践&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;e-StatやGitHubといったより実践的なAPIの利用と，そのデータの活用が解説。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt&gt;CHAPTER 06 オープンデータの活用&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;実際に公開されているオープンデータについて，紹介も含めデータ取得と整形および活用を紹介。&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;ul&gt;
+&lt;li&gt;CHAPTER 01 ウェブスクレイピングの準備
+&lt;ul&gt;
+&lt;li&gt;R, RStudioの導入とデータハンドリングの基礎。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CHAPTER 02 ウェブ技術の基礎
+&lt;ul&gt;
+&lt;li&gt;HTMLの基礎からXPATH, XML, JSONからHTTPプロトコルから認証といった，&lt;strong&gt;Web技術に関する基礎をRを使って説明するという画期的な内容&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CHAPTER 03 ウェブスクレイピング・API入門
+&lt;ul&gt;
+&lt;li&gt;比較的簡単な課題を用いて，実際にスクレイピングを実施したりAPIを叩いたり。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CHAPTER 04 ウェブスクレイピング実践
+&lt;ul&gt;
+&lt;li&gt;ブログから情報抽出，抜き出したJSONから変換，そして&lt;strong&gt;ログイン認証が必要なサイトへの対応&lt;/strong&gt;などかなり実践的な内容。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CHAPTER 05 API実践
+&lt;ul&gt;
+&lt;li&gt;e-StatやGitHubといったより実践的なAPIの利用と，そのデータの活用が解説。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CHAPTER 06 オープンデータの活用
+&lt;ul&gt;
+&lt;li&gt;実際に公開されているオープンデータについて，紹介も含めデータ取得と整形および活用を紹介。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;思ったよりもコンパクトな書籍で全体的なページ量もそこまで多くありません。そして&lt;strong&gt;コードと実行結果がたくさんあります&lt;/strong&gt;。また第2章が最も分厚く，その次に第5章が多めです。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level3&#34;&gt;
