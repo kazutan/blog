@@ -98,11 +98,12 @@ a -> {b c d e f g h i j}
 
 ### Plotly
 
-[公式サイトにある例](https://plot.ly/r/box-plots/)から。
+[公式サイトにある例](https://plot.ly/r/box-plots/)から一部修正して。
 
 ```{r}
 library(plotly)
-p <- plot_ly(ggplot2::diamonds, y = ~price, color = ~cut, type = "box")
+p <- ggplot2::diamonds[sample(nrow(diamonds), 5000),] %>% 
+  plot_ly(y = ~price, color = ~cut, type = "box")
 p
 ```
 
