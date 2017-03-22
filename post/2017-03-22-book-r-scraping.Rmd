@@ -15,7 +15,7 @@ archives:
 output:
   blogdown::html_page:
     toc: true
-draft: yes
+draft: false
 ---
 
 ```{r setup, include=FALSE}
