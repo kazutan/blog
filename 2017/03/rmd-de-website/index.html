@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>ブックレビュー「Rによるスクレイピング入門」</title>
+    <title>R MarkdownでWebサイト作成</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
-    <meta property="og:description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
+    <meta name="description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
+    <meta property="og:description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ブックレビュー「Rによるスクレイピング入門」">
-    <meta property="og:url" content="/2017/03/book-r-scraping/">
+    <meta property="og:title" content="R MarkdownでWebサイト作成">
+    <meta property="og:url" content="/2017/03/rmd-de-website/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
+    <meta name="twitter:description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -189,18 +189,18 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      ブックレビュー「Rによるスクレイピング入門」
+      R MarkdownでWebサイト作成
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-03-22T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-03-27T00:00:00Z">
       
   
   
   
   
-    22 三月 2017
+    27 三月 2017
   
 
     </time>
@@ -210,7 +210,9 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
     
   
 
@@ -225,100 +227,57 @@
 <!-- /BLOGDOWN-HEAD -->
 
 <!-- BLOGDOWN-BODY-BEFORE -->
-<div id="TOC">
-<ul>
-<li><a>本書の構成と全体的な印象</a><ul>
-<li><a>構成</a></li>
-<li><a>全体的な印象</a></li>
-</ul></li>
-<li><a>早く手にしたかった理由</a><ul>
-<li><a>スクレイピングから位置情報を取得・可視化</a></li>
-<li><a href="#api">APIを叩いてデータを取得</a></li>
-</ul></li>
-<li><a>さいごに</a></li>
-</ul>
-</div>
 <!-- /BLOGDOWN-BODY-BEFORE -->
-<p>著者の方より，標記の書籍をご恵贈いただきました:</p>
-<blockquote class="twitter-tweet" data-lang="ja">
-<p lang="ja" dir="ltr">
-著者の方より「Rによるスクレイピング入門」 <a href="https://t.co/XrLvK1QrjJ">https://t.co/XrLvK1QrjJ</a> をご恵贈いただきました。私が苦手なWeb技術の基礎や，APIの実践など，本当に貴重な情報と豊富なコード実例が盛り沢山で素晴らしいの一言です。ありがとうございます! <a href="https://t.co/kLTsm33MkD">pic.twitter.com/kLTsm33MkD</a>
-</p>
-— kazutan v3.3.3 (<span class="citation">@kazutan</span>) <a href="https://twitter.com/kazutan/status/844041232326254592">2017年3月21日</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>上記ツイート内に記述したのですが，非常に素晴らしい本です。著者の4名には日頃からRに関してお世話になっていて，よく公開されている資料を読んでは自分でスクレイピングやAPIを叩いたりしていました。</p>
-<p>ただ，本音を言うと，<strong>もっと早くこの書籍を手にしたかった</strong>です。</p>
+<p>2017/03/25に<a href="https://fukuoka-r.connpass.com/event/50986/">fukuoka.R #7</a>にて発表してきました。</p>
 <div class="section level2">
-<h2>本書の構成と全体的な印象</h2>
-<div class="section level3">
-<h3>構成</h3>
-<p>この書籍は6章編成となっています。</p>
-<ul>
-<li>CHAPTER 01 ウェブスクレイピングの準備
-<ul>
-<li>R, RStudioの導入とデータハンドリングの基礎。</li>
-</ul></li>
-<li>CHAPTER 02 ウェブ技術の基礎
-<ul>
-<li>HTMLの基礎からXPATH, XML, JSONからHTTPプロトコルから認証といった，<strong>Web技術に関する基礎をRを使って説明するという画期的な内容</strong>。</li>
-</ul></li>
-<li>CHAPTER 03 ウェブスクレイピング・API入門
-<ul>
-<li>比較的簡単な課題を用いて，実際にスクレイピングを実施したりAPIを叩いたり。</li>
-</ul></li>
-<li>CHAPTER 04 ウェブスクレイピング実践
-<ul>
-<li>ブログから情報抽出，抜き出したJSONから変換，そして<strong>ログイン認証が必要なサイトへの対応</strong>などかなり実践的な内容。</li>
-</ul></li>
-<li>CHAPTER 05 API実践
-<ul>
-<li>e-StatやGitHubといったより実践的なAPIの利用と，そのデータの活用が解説。</li>
-</ul></li>
-<li>CHAPTER 06 オープンデータの活用
-<ul>
-<li>実際に公開されているオープンデータについて，紹介も含めデータ取得と整形および活用を紹介。</li>
-</ul></li>
-</ul>
-<p>思ったよりもコンパクトな書籍で全体的なページ量もそこまで多くありません。そして<strong>コードと実行結果がたくさんあります</strong>。また第2章が最も分厚く，その次に第5章が多めです。</p>
+<h2>資料置き場</h2>
+<p>GitHubに当日使った資料などを置いています:</p>
+<p><a href="https://github.com/kazutan/RmdSite_tuto" class="uri">https://github.com/kazutan/RmdSite_tuto</a></p>
+</div>
+<div class="section level2">
+<h2>コメント</h2>
+<div id="r-markdownweb" class="section level3">
+<h3>R MarkdownでWebサイトを構築する理由</h3>
+<p>まあ色々ありますが，当日口頭でしか伝えてなかったので補足しますと…</p>
+<ol style="list-style-type: decimal">
+<li>Rを含むコードと実行結果をそのまま組み込んで公開できる</li>
+<li>静的なサイトなので公開がスムーズ</li>
+<li>CMSばりのことができる</li>
+<li>htmlをRで生成できる(プログラマブル)</li>
+</ol>
+<p>などです。すべてオープンソースでかなりのことができる，というのは大きいでしょう。</p>
 </div>
 <div class="section level3">
-<h3>全体的な印象</h3>
-<p>まえがきにもあるのですが，この本は1章と2章の基礎編と，3章以降の応用編と明確に分かれています。そして<strong>この本を決定的に特徴づけるのは2章</strong>だと私は考えます。</p>
-<p>スクレイピングと聞くと「豊富な実例やテクが大事!!」と思われますが，Webに関する基礎的なお話が理解できないと，いざ自分がやろうとした時にあっという間に止まります。書籍に何度も出てきますが，<strong>Webサイトの構成やAPIの仕様はもうバラバラ</strong>で，それぞれで対応しないといけないことがたくさんあります。そのためにはドキュメントを読まなきゃいけないのですが，Web技術の基礎がなければお手上げです。私もこれまでこんな感じで，その度に解説資料などを読んでいきましたが，Web関連技術なんて雰囲気でやってきた私にはハードルが高くて何度も泣いてました。</p>
-<p>ところがこの書籍は「<strong>Rのコードを実行しながら学ぼうじゃないか</strong>」と提案してくれるのです。感動です。またこの2章で説明したり使っているパッケージや関数がそのまま3章以降の実践でも活躍します。非常に綺麗な流れでスムーズに学べるなと思いました。<strong>もっと早くこの書籍を手にしたかった</strong>です。</p>
+<h3>必要な技術・知識について</h3>
+<p>実のところ，R Markdownの知識や技術が一通り必要です。私が考えるR Markdownのスキルマップでは最後の方に位置づけています。こう言うと「やべぇめっちゃむずかしいんじゃねぇの手を出すのやめようか…」と思われそうですが，「Bootstrap組み込んでjQuery使えるようにしてページを部品化してプロジェクトとして管理して運用する」というのを実現しようとするなら，HTML, CSS, JavaScriptなどの相当な知識と技能が求められます。これらを習得しようとするよりも，はるかに簡単に到達することができるでしょう。</p>
+<p>必須になる技術・知識は以下のような感じです:</p>
+<ul>
+<li>R Markdownの記述方法
+<ul>
+<li>yamlフロントマターの基礎</li>
+<li>chunkオプションの基礎</li>
+</ul></li>
+<li>navbarの記述方法</li>
+<li>公開するWebサーバーへの設置方法</li>
+</ul>
+<p>さらに以下の技術・知識があると便利になるでしょう:</p>
+<ul>
+<li>cssの記述方法</li>
+<li>pandocの仕様</li>
+<li>JavaScript(jQuery)の知識</li>
+<li>htmltoolsパッケージ</li>
+</ul>
+<p>だいたいこんな感じです。</p>
 </div>
 </div>
 <div class="section level2">
-<h2>早く手にしたかった理由</h2>
-<p>さっきからしつこく言っている理由ですが…ようするに毎度苦労しながらやってきたからです。</p>
-<div class="section level3">
-<h3>スクレイピングから位置情報を取得・可視化</h3>
-<p>3章や4章あたりにあるこの流れですが，以前こんなことやってました:</p>
+<h2>参考資料など</h2>
+<p>基本的には，公式ドキュメントを参照してください:</p>
 <ul>
-<li><a href="https://rpubs.com/kazutan/typhoon">RPubs - 台風15号の予想進路</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon2">RPubs - 台風17号と18号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon3">RPubs - 台風20号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon4">RPubs - 台風21号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon5">RPubs - 台風22号と23号</a></li>
+<li><a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html" class="uri">http://rmarkdown.rstudio.com/rmarkdown_websites.html</a></li>
 </ul>
-<p>これらは気象庁HPの台風情報からスクレイピングして整形し，それを可視化したものです。<strong>こいつは一体何がしてくてこんなことしてたんだ</strong>と今では自分でも思います。とはいえはじめてのスクレイピングで，<strong>この書籍の1章と2章を当時読めてたらどれだけ楽になったことか</strong>と今なら思います。</p>
-<p>これが2015年後半で，以降趣味だけではなく調べものなどでも活用していくようになりました。</p>
-</div>
-<div id="api" class="section level3">
-<h3>APIを叩いてデータを取得</h3>
-<p>個人的な必要だったり，業務上必要になったりで，この1年半くらい頻繁にAPIを叩くようになりました。たとえばこんなことなど:</p>
-<ul>
-<li><a href="http://kazutan.github.io/HijiyamaR4/e-stat_test.html">e-statをRでたたいてみる</a></li>
-<li><a href="http://qiita.com/kazutan/items/08c3ad07f81caadd990e">RでGitHubAPIを利用してリポジトリ情報などを取得する - Qiita</a></li>
-</ul>
-<p>はい，そうです。<strong>この2つとも5章で詳細に解説されています</strong>。もちろん著者の方々がすでに公開されていた資料を元に進めていたのですが，<strong>基礎がないので四苦八苦してなんとかやってたけどこの書籍読めば一発だよね</strong>と思いました。</p>
-<p>他にも最近では<a href="https://habitica.com/static/front?lang=ja">Habitica</a>の<a href="https://habitica.com/apidoc/">API</a>を叩いて自分の生活を可視化(して反省)しようと，Rからデータ取得したりした(内容は未公開)のですが，基礎的なことがわからず相当な時間を消費しました。<strong>2章と5章に書いてある内容を知っていれば</strong>と今では思います。</p>
-</div>
-</div>
-<div class="section level2">
-<h2>さいごに</h2>
-<p>スクレイピングという言葉に反応したRユーザーの皆さん，<strong>買いましょう</strong>。</p>
+<p>あとは私の上記GitHubのREADMEなどで紹介している記事を適宜参照してください。もしわからないところがありましたら，<span class="citation">[@kazutan]</span>(<a href="https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください" class="uri">https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください</a>。</p>
+<p><strong>Enjoy!</strong></p>
 </div>
 
               
@@ -334,9 +293,7 @@
                     
   <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
 
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0/">スクレイピング</a>
-
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/">書籍</a>
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r-markdown/">R Markdown</a>
 
                   </div>
                 
@@ -348,7 +305,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -356,7 +313,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/firstpost/" data-tooltip="ブログ移転(仮)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -373,17 +330,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -429,7 +386,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -437,7 +394,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/firstpost/" data-tooltip="ブログ移転(仮)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -454,17 +411,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -491,17 +448,17 @@
       <div id="share-options-bar" class="share-options-bar" data-behavior="5">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -688,9 +645,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/03\/book-r-scraping\/';
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/03\/rmd-de-website\/';
           
-            this.page.identifier = '\/2017\/03\/book-r-scraping\/'
+            this.page.identifier = '\/2017\/03\/rmd-de-website\/'
           
         };
         (function() {

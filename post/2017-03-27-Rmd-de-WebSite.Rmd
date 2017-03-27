@@ -1,0 +1,65 @@
+---
+title: R MarkdownでWebサイト作成
+author: Kazutan
+date: '2017-03-27'
+slug: Rmd-de-WebSite
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+draft: false
+---
+
+2017/03/25に[fukuoka.R #7](https://fukuoka-r.connpass.com/event/50986/)にて発表してきました。
+
+## 資料置き場
+
+GitHubに当日使った資料などを置いています:
+
+https://github.com/kazutan/RmdSite_tuto
+
+## コメント
+
+### R MarkdownでWebサイトを構築する理由
+
+まあ色々ありますが，当日口頭でしか伝えてなかったので補足しますと…
+
+1. Rを含むコードと実行結果をそのまま組み込んで公開できる
+2. 静的なサイトなので公開がスムーズ
+3. CMSばりのことができる
+4. htmlをRで生成できる(プログラマブル)
+
+などです。すべてオープンソースでかなりのことができる，というのは大きいでしょう。
+
+### 必要な技術・知識について
+
+実のところ，R Markdownの知識や技術が一通り必要です。私が考えるR Markdownのスキルマップでは最後の方に位置づけています。こう言うと「やべぇめっちゃむずかしいんじゃねぇの手を出すのやめようか...」と思われそうですが，「Bootstrap組み込んでjQuery使えるようにしてページを部品化してプロジェクトとして管理して運用する」というのを実現しようとするなら，HTML, CSS, JavaScriptなどの相当な知識と技能が求められます。これらを習得しようとするよりも，はるかに簡単に到達することができるでしょう。
+
+必須になる技術・知識は以下のような感じです:
+
+- R Markdownの記述方法
+    - yamlフロントマターの基礎
+    - chunkオプションの基礎
+- navbarの記述方法
+- 公開するWebサーバーへの設置方法
+
+さらに以下の技術・知識があると便利になるでしょう:
+
+- cssの記述方法
+- pandocの仕様
+- JavaScript(jQuery)の知識
+- htmltoolsパッケージ
+
+だいたいこんな感じです。
+
+## 参考資料など
+
+基本的には，公式ドキュメントを参照してください:
+
+- http://rmarkdown.rstudio.com/rmarkdown_websites.html
+
+あとは私の上記GitHubのREADMEなどで紹介している記事を適宜参照してください。もしわからないところがありましたら，[@kazutan](https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください。
+
+**Enjoy!**
