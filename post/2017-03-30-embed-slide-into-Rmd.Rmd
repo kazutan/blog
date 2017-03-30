@@ -43,7 +43,7 @@ githubinstall::githubinstall("zousan")
 library(zousan)
 embed_slide("http://www.slideshare.net/makotohirakawa3/osakastan2-chap51")
 embed_slide("https://speakerdeck.com/yamano357/tokyor49-stringr-stringi")
-embed_slide("http://kz-md.net/stat/tmp_box/intro_tubeplayR.html#/")
+embed_slide("https://kazutan.github.io/methoken201702/Rmd_workshop.html#/")
 ```
 
 ## 解説
