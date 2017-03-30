@@ -9,6 +9,9 @@ categories:
 tags:
   - R
   - R Markdown
+output:
+  blogdown::html_page:
+    toc: true
 draft: false
 ---
 
