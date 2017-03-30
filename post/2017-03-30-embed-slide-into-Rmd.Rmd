@@ -1,0 +1,100 @@
+---
+title: R Markdownのhtml出力にスライドを埋め込む方法
+author: kazutan
+date: '2017-03-30'
+slug: embed-slide-into-Rmd
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+draft: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+タイトルのまんまです。
+
+## やりたかったこと
+
+R Markdownで解説ページをしていると，slideshareやspeakerdeck，あるいはrevealjsなどで作成したhtmlスライドを埋め込みたいと思うことが頻出しました。大抵のslide公開サービスだと埋め込み用のタグを生成してくれたりするのですが，どうも面倒に感じたため，色々調べたり実装したりしてみました。
+
+## 成果
+
+自分専用にコツコツ作ってきた[zousan](https://github.com/kazutan/zousan)パッケージに，`embed_slide()`関数を準備しました。cranにはないので以下のようにインストールします:
+
+```{r, eval=FALSE}
+# devtoolsの場合
+devtools::install_github("kazutan/zousan")
+# githubinstallでもOK
+githubinstall::githubinstall("zousan")
+```
+
+以下のように**閲覧用のurl**を渡すと，html出力した際に自動で埋め込まれます:
+
+```{r}
+library(zousan)
+embed_slide("http://www.slideshare.net/makotohirakawa3/osakastan2-chap51")
+embed_slide("https://speakerdeck.com/yamano357/tokyor49-stringr-stringi")
+embed_slide("http://kz-md.net/stat/tmp_box/intro_tubeplayR.html#/")
+```
+
+## 解説
+
+`knitr::include_url()`という関数があり，この関数にurlを渡すとそのアドレスをiframeでいい感じで埋め込むように加工してtagオブジェクトを返してくるようになってます。これを応用しました。
+
+### slideshareについて
+
+slideshareの埋め込み用コードはわりと簡単な構造をしていて，上記のひとつ目の分なら以下のようにできます:
+
+```{r}
+knitr::include_url("https://www.slideshare.net/slideshow/embed_code/key/aCQxCPihKjMxYk")
+```
+
+ただ，実際にこれをやろうと思うと,
+
+1. 公開スライドのページヘアクセス
+2. 埋め込み用のアドレスを表示
+3. それをコピー
+4. `knitr::include_url()`内に入れる
+
+...となりちょっと面倒です。特に埋め込み用のurlがkeyになっててスライドタイトルが推測できなくなる，というのが苦痛でした。そこで**oEmbed**のAPIを利用することにしました。これの内容については以下の記事を参照してください:
+
+- [oEmbed APIの使い方まとめ！URLから埋め込みHTMLタグを作ろう！](https://syncer.jp/oembed-api-matome)
+
+slideshareはこのoEmbedに対応しています。詳しくは以下のドキュメントを参照してください:
+
+- [OEmbed Documentation - SlideShare](https://www.slideshare.net/developers/oembed)
+
+これを利用して実装しました。
+
+### SpeakerDeckについて
+
+SpeakerDeckの埋め込み用URLは中々に面倒で，はじめからoEmbedのAPIを利用しました:
+
+- https://speakerdeck.com/faq#oembed
+
+ただ，これで取得したとしても中々うまく出力してくれず，試行錯誤してなんとか実装しました。
+
+### その他のHTMLスライドについて
+
+revealjsなどのスライドはhtmlファイルなので，普通に`knitr::include_url()`でそのまま引き渡しました
+
+### 実際の関数のコードについて
+
+具体的なコードはGitHubの該当ファイルを参照してしてください:
+
+- https://github.com/kazutan/zousan/blob/master/R/embed_iframe.R#L24
+
+urlを見て，slideshareのサイトならそれ用に，SpeakerDeckのサイトならそれ用にoEmbedを利用して整形してtagオブジェクトとなるようにしています。パイプ演算子つかってたりその他かなり雑ですが，今のところうまくいっているのでいいかなと。
+
+## ToDo
+
+- 埋め込みのサイズ調整
+- 他のプラットフォームへの対応(リクエストと技術的にいけるなら)
+
+**Enjoy!**
