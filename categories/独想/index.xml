@@ -9,6 +9,138 @@
     <atom:link href="https://kazutan.github.io/blog/categories/%E7%8B%AC%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>この10年。</title>
+      <link>https://kazutan.github.io/blog/2017/03/ten-years/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/03/ten-years/</guid>
+      <description>&lt;p&gt;本日の業務をもって,現所属10年を終えました。なんとか生き延びました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;まあこんなタイミングはなかなかないので,せっかくだから振り返りでもしようかなと思った次第です。ただ仕事的なものを含むと面倒なことが多いので,自分がやってきたスキル的なものに絞ってみようかなと。&lt;/p&gt;
+
+&lt;h3 id=&#34;一年目&#34;&gt;一年目&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTMLとCSSの基礎をやりなおす&lt;/li&gt;
+&lt;li&gt;Word, Excel, PowerPointで困らなくなった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;情報系の教員として赴任したので,今まで雰囲気でやっていたこのあたりをきっちりとやってました。以降Office製品まわりで自分が作る分にはほぼ困ることはなくなりました。またHTMLやCSSはちょうど移行期だったので,いい感じで勉強できました。&lt;/p&gt;
+
+&lt;h2 id=&#34;二年目-三年目&#34;&gt;二年目,三年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MovableTypeを運用&lt;/li&gt;
+&lt;li&gt;レンタルサーバーと独自ドメイン開始&lt;/li&gt;
+&lt;li&gt;Bootstrapを使いはじめる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;業務上必要になったため,MTに手を出すことに。書籍を数冊買って試していくうちにCMSのイメージがなんとなくつかめてきた。ただ自分が(まだ)完全に構築することはなかったけど,デザイン周りでいじらないと行けないことが増えたため,Webデザイン関連の勉強をひたすらやってた。この頃のはてブはWebデザイン周りばっかりだった気がする。その関連でBootstrapを使い始めて,今のサイトを作ったような気がします。&lt;/p&gt;
+
+&lt;p&gt;あと,業務の都合により要件定義だのERPだのワークフローだのマネジメントだの,そういった今まで知らなかったことを勉強せざるを得なくなった。このあたりからなんか色が変わってきた気がする。&lt;/p&gt;
+
+&lt;h2 id=&#34;四年目-五年目&#34;&gt;四年目,五年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WordPressを運用&lt;/li&gt;
+&lt;li&gt;情報系資格取得&lt;/li&gt;
+&lt;li&gt;データベースの勉強開始&lt;/li&gt;
+&lt;li&gt;R関連の情報収集開始&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HiRoshima.R #1に参加&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この時期はまあ,停滞してました。多分この頃から年間20コマ超えが当たり前になって,もうボロボロで記憶がないです。でもいろんなことに手を伸ばし始めてた時期でした。学生や周りに促されたこともあって,情報系の資格を取得してたのはこの時期な気がします。ITパスポートとか,Office系の資格とか…。あと今まで逃げていたDBまわりにも手を出してきました。&lt;/p&gt;
+
+&lt;p&gt;あと,R関連に関することもこの頃からみたいです。よく誤解されますが,&lt;strong&gt;HiRoshima.R出身&lt;/strong&gt;です。まだこの頃はまともに使えずに手詰まりになることが多かったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;六年目&#34;&gt;六年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubuntuに出会う&lt;/li&gt;
+&lt;li&gt;Rをメインの分析環境へ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この頃「このままじゃだめだ,なんとか打破したい」と漠然と思うことが多く,絞り込んで自分の資源を配分していた気がします。今ではメインのUbuntuを使い始めたのもこの頃ですね。そのちょっと前からMacも使うようになっていたので,Win, Mac, Ubuntuの3つを並行して使っていくスタイルがこの頃に出来上がったと言えます。&lt;/p&gt;
+
+&lt;p&gt;あとこの時期から腰を据えてRに移行しようとしてました。データハンドリングでものすごく苦労してたのですが,ただSピーSSにはもう戻らないぞと決意した時期でもありました。「Rによるやさしい統計学」を写経してなんとか自分の手に馴染むようにしてたのを覚えてます。&lt;/p&gt;
+
+&lt;h1 id=&#34;七年目&#34;&gt;七年目&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ほぼUbuntuに移行&lt;/li&gt;
+&lt;li&gt;ベイズに出会う&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rが楽しくなる&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;テキストマイニングをやり始める&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ほぼ今の方針がこの頃に決まってきた印象です。まず春に&lt;a href=&#34;http://psychonomic.jp/forum/2013_1.html&#34;&gt;こちらのフォーラム&lt;/a&gt;に参加し,酸素濃度が低い中okd先生の講演で興奮して終わったあと会場のKO大のベンチで独りブツブツなんか言ってたのを思い出します。これに参加できたのは大きな転機でした。&lt;/p&gt;
+
+&lt;p&gt;あと研究的に必要になりテキストマイニングを勉強し始めました。この分析を実施するためにRへの比重を上げていったのですが,ものすごく楽しかったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;八年目&#34;&gt;八年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ベイズ関連で発表など&lt;/li&gt;
+&lt;li&gt;テキストマイニングで学会発表など&lt;/li&gt;
+&lt;li&gt;全国のR勉強会巡業スタート&lt;/li&gt;
+&lt;li&gt;R Markdownに惚れる&lt;/li&gt;
+&lt;li&gt;Hijiyama.Rスタート&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ぞうさん通信スタート&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ここに来て一気にRに染まるようになります。なので私の中ではこの頃から使い始めた,としてます。ioslidesで学会発表したりとR Markdownにハマったのはこの頃ですね。またHijiyama.Rを主催したりぞうさん通信をはじめたりと,明らかに積極的になりました。&lt;/p&gt;
+
+&lt;p&gt;この頃から「楽しいことをしよう。それが結局全てだよな」と考えるようになりました。この辺の話はまたどこかで話すかもしれないです。あとひたすらインプットに徹してた気もします。この時期に大量にインプットしたのが後でかなり効いたと思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;九年目&#34;&gt;九年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;データベース再履修&lt;/li&gt;
+&lt;li&gt;MCMC再履修&lt;/li&gt;
+&lt;li&gt;全国R勉強会行脚&lt;/li&gt;
+&lt;li&gt;Pandocの勉強&lt;/li&gt;
+&lt;li&gt;htmlwidgets系に触れる&lt;/li&gt;
+&lt;li&gt;dplyr, tidyrへ移行&lt;/li&gt;
+&lt;li&gt;スクレイピング&amp;amp;台風プロット&lt;/li&gt;
+&lt;li&gt;仮想環境に手を伸ばす&lt;/li&gt;
+&lt;li&gt;Git/GitHubを使いはじめる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この頃からスケジュールがあえば全国のR関連イベントに行くようになりました。またhtmlwidgets系の可視化パッケージに触れることで,&lt;strong&gt;完全に自分のためにRをするようになりました&lt;/strong&gt;。データ処理もdplyrやtidyrなどを使うようになり,業務でも使えるところは使うようになりました。&lt;/p&gt;
+
+&lt;p&gt;またPandoc Markdownの仕様を調べたり,昔修めたHTML&amp;amp;CSSを活用しつつ,昔覚えたBootstrapを利用したりと,Web系の知識とが組み合わさって急速に利活用が個人的に進みました。一年目から三年目の頃の知識がここに来て発揮されてくるようになりました。&lt;/p&gt;
+
+&lt;p&gt;さらに,色々と困ることが多くなりRによる分析環境を仮想化してインスタンス化したいと強く思うようになりました。そこでVagrantで環境構築できるようにしたり,いろいろやるようになりました。それに付随し,Git/GitHubも使い始めていくようになりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;十年目&#34;&gt;十年目&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ベイズ推定勉強&lt;/li&gt;
+&lt;li&gt;全国R勉強会発表行脚&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今年なのですが,発表件数自体は昨年度と同一ぐらいでいろいろやりました。また細かく書くときりがないので諦めました。全体的には九年目の内容をそれぞれ深化させた感じで進みました。でもこれまでやってきたことが面白い感じでからみ合ってきたなぁという印象です。&lt;/p&gt;
+
+&lt;p&gt;たとえば,blogdownパッケージを実践するに当たり,ベースとなるHugoの知識が必要となるのですが,こういったパターンはすでにR MarkdownのPandoc Markdownの時と同じ流れでしたし,さらにHugoの内容を理解しようとするときにMovableTypeでやってきた内容がかなり効きました。多分他の人からは「全然違うじゃねぇか」と言われるかもしれませんが,本質的というか,私のなかで変換されてうまい具合に理解が促進されたんで…。&lt;/p&gt;
+
+&lt;p&gt;また全てにおいて,バージョン管理およびGitHubでやるようになったのも大きいです。だいぶそのコンセプトとコマンドに慣れてきたので,うまいこと運用できるようになりました。さらに仮想環境に対して勉強してきたおかげで,Dockerでオレオレ環境構築できるようになりました。この根底にはサーバの知識とかも生きてます。&lt;/p&gt;
+
+&lt;h2 id=&#34;振り返ってみて&#34;&gt;振り返ってみて&lt;/h2&gt;
+
+&lt;p&gt;なんだかんだで,Web系の技術・知識がスタートになっている以上はこういう流れになるのかなと思いました。書くほどじゃないかなというスキルを含めても,活かせるような感じで回せてきたんだなぁと。業務上やむなく勉強してきた内容もありますが,それを活かせるようにやってこれた自分とその環境に感謝しています。&lt;/p&gt;
+
+&lt;p&gt;あと,単純な選択と集中じゃダメなんだなと思いました。インプットに徹する時期と,それを元に構築してアウトプットする時期とを周期的に繰り返すのがスムーズなのかも,と。個人的にはアウトプットモードに移行しているので楽しさが多少減衰してますが,小刻みなものでインプットで楽しさを補充していきたいです。&lt;/p&gt;
+
+&lt;h2 id=&#34;これからの10年に向けて&#34;&gt;これからの10年に向けて&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;生き延びる&lt;/strong&gt;。あと,&lt;strong&gt;楽しいことをやっていく&lt;/strong&gt;。それだけです。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ブログ移転(仮)</title>
       <link>https://kazutan.github.io/blog/2017/03/firstpost/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
