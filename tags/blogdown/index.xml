@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogdown on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/tags/blogdown/index.xml</link>
+    <description>Recent content in Blogdown on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blogdownのTips</title>
+      <link>https://kazutan.github.io/blog/2017/04/blogdown-tips/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/04/blogdown-tips/</guid>
+      <description>&lt;p&gt;最近まわりで何かと&lt;strong&gt;blogdown&lt;/strong&gt;パッケージが話題です。このブログも&lt;strong&gt;blogdown&lt;/strong&gt;で作成していますし,紹介する記事も増えてきました。&lt;/p&gt;
+
+&lt;p&gt;そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;blogdown入門&#34;&gt;blogdown入門&lt;/h2&gt;
+
+&lt;h3 id=&#34;blogdownとは&#34;&gt;blogdownとは&lt;/h3&gt;
+
+&lt;p&gt;blogdownはRを使ってblogのような静的Webサイトを生成するためのパッケージです。サイト生成には&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;というサイト生成アプリケーションを利用しており,これはGo言語で書かれています。&lt;/p&gt;
+
+&lt;h3 id=&#34;hugoについて&#34;&gt;Hugoについて&lt;/h3&gt;
+
+&lt;p&gt;このHugoの特徴としては生成処理が早く,またモダンなデザインのテンプレートがいろいろあって,すぐに実用的なものが作成可能というのがあります。&lt;/p&gt;
+
+&lt;p&gt;またHugoの重要なポイントとして,公式ドキュメントが非常に充実していることが挙げられます。blogdownでやりたいことや行き詰まることが出たら,Hugoの公式サイトを参照するのをおすすめします:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo - Introduction to Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;blogdownのスタートアップ&#34;&gt;blogdownのスタートアップ&lt;/h3&gt;
+
+&lt;p&gt;blogdownがどういうものか,そして導入の方法については,すでにいい記事がありますので,以下を参照してください:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ytake2.github.io/blog2/post/blogdown/&#34;&gt;RStudioではグラブれないけど、ブログれる&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.hoxo-m.com/2017/03/29/hello-world/&#34;&gt;ホクソエムブログの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+
+&lt;p&gt;上記の記事に記載されていなくて,自分の中でメモしときたい内容をいくつか。&lt;/p&gt;
+
+&lt;h3 id=&#34;blogdownの仕組みについて&#34;&gt;blogdownの仕組みについて&lt;/h3&gt;
+
+&lt;p&gt;ちょっと込み入った内容です。&lt;/p&gt;
+
+&lt;h4 id=&#34;blogdownの実体&#34;&gt;blogdownの実体&lt;/h4&gt;
+
+&lt;p&gt;blogdownは,正直&lt;strong&gt;ほとんどHugoのR向けWrapper&lt;/strong&gt;です。&lt;/p&gt;
+
+&lt;p&gt;例えばサイトを作成する&lt;code&gt;new_site()&lt;/code&gt;は,初期値を確認・設定した上で,それらを&lt;code&gt;hugo_cmd()&lt;/code&gt;に送っています。また,&lt;code&gt;new_content()&lt;/code&gt;もhugoへ新しいコンテツを作成するためのコマンドを送っています。そしてサイトを生成する&lt;code&gt;build_site()&lt;/code&gt;は設定などを整理・確認して&lt;code&gt;build_rmds()&lt;/code&gt;へ送り,Rmdを処理したうえで&lt;code&gt;hugo_build()&lt;/code&gt;でbuildしています。この&lt;code&gt;build_site()&lt;/code&gt;のコードおよびそこからの流れはblogdownの中身を把握する上でポイントとなるので,余力があるならぜひ覗いてみてください。&lt;/p&gt;
+
+&lt;h4 id=&#34;rmd-or-md&#34;&gt;Rmd or md?&lt;/h4&gt;
+
+&lt;p&gt;blogdownでbuildすると,content内にあるRmdやmdがレンダリングされて,自動的に最適な形で出力先へ出てくるようになります。つまりはblog記事はmdでもRmdでもどちらでも可能でhtmlが生成されます。ただし,&lt;strong&gt;この時用いられるレンダリングエンジンがRmdとmdで異なります&lt;/strong&gt;。詳しくは&lt;a href=&#34;https://bookdown.org/yihui/blogdown/output-format.html&#34;&gt;blogdownのドキュメントのここ&lt;/a&gt;を参照してください。&lt;/p&gt;
+
+&lt;p&gt;Rmdの場合,通常のR Markdownと同様でknit - Pandocという処理を行います。この時ベースになるoutputは&lt;code&gt;blogdown::html_page()&lt;/code&gt;で,これは&lt;code&gt;bookdown::html_document2()&lt;/code&gt;でいくつかの設定をblog(hugo)向けに絞ったものとなっています。なのでいつものR Markdownのoutputオプションを指定したい場合,以下のように指定すればOKです:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+title: R Markdownでの諸々のテスト
+author: kazutan
+date: &#39;2017-03-22&#39;
+slug: rmd-test
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+archives:
+  - &amp;quot;2017&amp;quot;
+  - &amp;quot;2017/03&amp;quot;
+output:
+  blogdown::html_page:
+    toc: true
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これはこのブログの&lt;a href=&#34;https://kazutan.github.io/blog/2017/03/rmd-test/&#34;&gt;この記事&lt;/a&gt;のyamlフロントマターで当てている内容です。このような設定は,Rmdで記事を作成した場合に有効です。&lt;/p&gt;
+
+&lt;p&gt;なお,&lt;strong&gt;Rmdで作成するとHugoがmdレンダリングで使用する&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;Blackfliday&lt;/a&gt;の機能などが使えない&lt;/strong&gt;という制約がつきます。なのでよくHugo関連のドキュメントで書いてあるような拡張機能が使えない場合があるので注意してください。&lt;/p&gt;
+
+&lt;p&gt;一方mdの場合,Hugoがmdをレンダリングします。Hugoは&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;Blackfliday&lt;/a&gt;を利用してレンダリングしています。またHugoが提供している拡張機能もそのままドキュメントに盛り込めます。例えば,&lt;code&gt;HUGOMORE42&lt;/code&gt;は手動で「続きを読む」みたいな区切りを設定するものですが,mdファイルであればこれを差し込むことで実装できます。ただし,Rmdファイルで記事を書いた場合には機能しません。&lt;/p&gt;
+
+&lt;p&gt;では「Rmdとmdのどっちがいいの?」と聞かれそうですが,ケースバイケースと言わざるを得ません。Rチャンクなどを埋め込みたいのであればRmd一択になるでしょうし,Blackfridayなどを利用したいのであれば,mdも選択肢になる,と言った感じでしょうか。まだ私がそこまでBlackfridayなどに明るくないのでRmdにより多くのメリットを感じていますが,そのうち機会があれば調べてみたいとは思ってます。&lt;/p&gt;
+
+&lt;h3 id=&#34;コメント機能の実装&#34;&gt;コメント機能の実装&lt;/h3&gt;
+
+&lt;p&gt;Hugoは静的なサイトなので,CMSで標準で実装されているコメント機能などは難しくなります。ここはシンプルに外部サービスを利用するのが楽だと思います。&lt;/p&gt;
+
+&lt;p&gt;このブログでは&lt;a href=&#34;https://disqus.com/&#34;&gt;disqus&lt;/a&gt;という外部サービスを利用しています。詳しくは&lt;code&gt;disque 使い方&lt;/code&gt;とかでググってもらえれば,アカウント登録のやり方など解説している記事がヒットするでしょう。有償版もありますが,無償版でも使えます。&lt;/p&gt;
+
+&lt;p&gt;blogdown(というかhugo)では割と簡単に組み込むことができます。&lt;a href=&#34;https://gohugo.io/extras/comments/&#34;&gt;Hugo公式ドキュメントのこちら&lt;/a&gt;を参照してください。多分大抵のテーマでさくっといけるはずです。&lt;/p&gt;
+
+&lt;h3 id=&#34;出力先ディレクトリの設定など&#34;&gt;出力先ディレクトリの設定など&lt;/h3&gt;
+
+&lt;p&gt;blogdown(というかHugo)のデフォルトは&lt;code&gt;public/&lt;/code&gt;となっています。通常のWebサーバに設置したいのであれば,単にこの中身をまるっと設置すればOKなのですが,github.ioを利用するとなると面倒です。&lt;/p&gt;
+
+&lt;p&gt;最初の方に紹介した2つの記事では「&lt;code&gt;public/&lt;/code&gt;の中身を&lt;code&gt;docs&lt;/code&gt;にコピーして&lt;code&gt;push&lt;/code&gt;」とありますが,これも手間です。もうちょっと簡単にやる方法が&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hugo公式ドキュメントのこちら&lt;/a&gt;に記載してありますので参照してください。&lt;/p&gt;
+
+&lt;p&gt;なお,単に出力先を&lt;code&gt;docs/&lt;/code&gt;に変更したいだけなら,&lt;code&gt;config.toml&lt;/code&gt;に以下の一行を追加してください:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;publishDir = &amp;quot;docs&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;またgh-pagesブランチで運用したいなら,先ほど紹介したリンク先に詳細手順が紹介してあります。多少gitの知識が入りますが,丁寧な解説なのでそれほど苦しくはないと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;hugoでcjk対応&#34;&gt;Hugoでcjk対応&lt;/h3&gt;
+
+&lt;p&gt;英語オンリーなブログであれば不要なのですが,日本語ベースでblogdown(Hugo)を利用するならcjk対応をさせておくほうがいいでしょう(cjkは中国語&amp;copy;,日本語(j),韓国語(k)のこと)。これを設定しておかないと,トップページなどで記事一覧を出した時,記事の要約が自動でうまく処理してくれずに面倒なこととなります。&lt;/p&gt;
+
+&lt;p&gt;設定方法は,&lt;code&gt;config.toml&lt;/code&gt;に以下の一文を記述してください:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;hasCJKLanguage = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;その他の全体設定について&#34;&gt;その他の全体設定について&lt;/h3&gt;
+
+&lt;p&gt;Hugoではいわゆるブログ全体設定というものがかなりたくさんありますし,拡張機能もたくさん準備してあります。詳しくは公式ドキュメントをざっと見てみてください。&lt;/p&gt;
+
+&lt;p&gt;ただし,&lt;strong&gt;Hugoはテーマテンプレートによって設定項目がかなり変わってくる&lt;/strong&gt;のを注意してください。正直これがかなり面倒で,&lt;strong&gt;必ず設定したテーマのドキュメントをよく読んでください&lt;/strong&gt;。このブログで設定しているテーマは&lt;a href=&#34;http://themes.gohugo.io/hugo-tranquilpeak-theme/&#34;&gt;Tranquilpeak&lt;/a&gt;で,多機能でいろいろカスタマイズ可能ということで選びました。&lt;/p&gt;
+
+&lt;h3 id=&#34;新規postはrstudio-addinで&#34;&gt;新規PostはRStudio Addinで&lt;/h3&gt;
+
+&lt;p&gt;最近のblogdownなら,&lt;strong&gt;新規Postを準備するためのRStudio Addinが準備されています&lt;/strong&gt;。RStudioの&lt;strong&gt;Addin&amp;hellip;&lt;/strong&gt;ボタンから,&lt;strong&gt;New Post&lt;/strong&gt;を選択してください:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/new_post.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;このようなダイアログボックスが出てきます。基本的に必要な事項はここで設定できます。設定したら右下の&lt;strong&gt;OK&lt;/strong&gt;をクリックすれば,新規Post用のファイルが自動的に適切な場所に生成されます。&lt;/p&gt;
+
+&lt;p&gt;なおCategoriesやtagsもここで設定できますし,これらですでに使ったことがあるものであればクリックで選択して入力していくことが可能ですし,新規で作ることも可能です。いちいち他のところで設定しなくても後でBuildした時にHugoが自動的に対応してくれます。便利です。&lt;/p&gt;
+
+&lt;h3 id=&#34;下書き-draft&#34;&gt;下書き(draft)&lt;/h3&gt;
+
+&lt;p&gt;上記のようにRStudioのAddinで作成した場合,yamlフロントマターに&lt;code&gt;draft: yes&lt;/code&gt;というのが自動で組み込まれているかと思います。これはまさにdraft機能で,yesなので下書きモードとなっています。&lt;/p&gt;
+
+&lt;p&gt;下書きモードがONになっていると,&lt;code&gt;build_site()&lt;/code&gt;を実行してもその記事はサイトには組み込まれない(publicには入ってこない)ようになります。私の場合,記事を書きながらknitを実行して表示を確認し,書き終えたら&lt;code&gt;draft: false&lt;/code&gt;に書き換えて&lt;code&gt;serve_site()&lt;/code&gt;で確認するようにしています。&lt;/p&gt;
+
+&lt;p&gt;また,記事を書いていく時に「ちょっと今さくっとどんな感じになるか確認したいな」と思ったら,&lt;code&gt;knit&lt;/code&gt;を実行してください。テーマなどは当たりませんが,チャンクが実行されてhtmlが生成され,確認することができます。毎度毎度buildしたりしなくていいので楽ちんですよ。&lt;/p&gt;
+
+&lt;h3 id=&#34;build-site-と-serve-site-について&#34;&gt;&lt;code&gt;build_site()&lt;/code&gt;と&lt;code&gt;serve_site()&lt;/code&gt;について&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;serve_site()&lt;/code&gt;を実行するとbuildされ,RStudioのViewerペインに表示されます。実際何をしているかといういと,まず&lt;code&gt;build_site(TRUE)&lt;/code&gt;を実行し,&lt;code&gt;servr::httw()&lt;/code&gt;にてローカルサーバーを立てて表示させています。つまり,&lt;strong&gt;&lt;code&gt;serve_site()&lt;/code&gt;を実行するとLocal用にbuildして,それをローカルで表示させている&lt;/strong&gt;を実行しています。&lt;/p&gt;
+
+&lt;p&gt;blog設定や内容にもよりますが,&lt;code&gt;serve_site()&lt;/code&gt;はあくまでローカルでの表示用にbuildしていますので,そのまま公開するとうまく表示されない場合があります。このようなことがあるので,公開用に設置する前に一度&lt;code&gt;build_site()&lt;/code&gt;を実行する手順を加えておくことをおすすめします。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考資料&#34;&gt;参考資料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;blogdown: Creating Websites with R Markdown&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;blogdown公式ドキュメント&lt;/li&gt;
+&lt;li&gt;でも全然整備されていない…つらい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo - Introduction to Hugo&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugoの公式ドキュメント&lt;/li&gt;
+&lt;li&gt;非常に充実&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Getting Started&lt;/strong&gt;, &lt;strong&gt;Content&lt;/strong&gt;, &lt;strong&gt;Themes&lt;/strong&gt;のところはぜひ読んでください&lt;/li&gt;
+&lt;li&gt;いろいろやりたくなったら,&lt;strong&gt;Template&lt;/strong&gt;, &lt;strong&gt;Taxonomies&lt;/strong&gt;, &lt;strong&gt;Extras&lt;/strong&gt;に手を出してください&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その他わからないところや詰まったところがあったらr-wakalangの#rmarkdownチャンネルなどで質問するといいかも。&lt;/p&gt;
+
+&lt;p&gt;またいろいろTipsみつけたら続編を書くかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

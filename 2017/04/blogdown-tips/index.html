@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>ブックレビュー「Rによるスクレイピング入門」</title>
+    <title>blogdownのTips</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
@@ -28,15 +28,27 @@
     
 
     
-    <meta name="description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
-    <meta property="og:description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
+    <meta name="description" content="最近まわりで何かとblogdownパッケージが話題です。このブログもblogdownで作成していますし,紹介する記事も増えてきました。
+
+そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。
+
+">
+    <meta property="og:description" content="最近まわりで何かとblogdownパッケージが話題です。このブログもblogdownで作成していますし,紹介する記事も増えてきました。
+
+そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。
+
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ブックレビュー「Rによるスクレイピング入門」">
-    <meta property="og:url" content="/2017/03/book-r-scraping/">
+    <meta property="og:title" content="blogdownのTips">
+    <meta property="og:url" content="/2017/04/blogdown-tips/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="本書の構成と全体的な印象 構成 全体的な印象 早く手にしたかった理由 スクレイピングから位置情報を取得・可視化 APIを叩いてデータを取得 さいごに 著者">
+    <meta name="twitter:description" content="最近まわりで何かとblogdownパッケージが話題です。このブログもblogdownで作成していますし,紹介する記事も増えてきました。
+
+そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。
+
+">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -189,18 +201,18 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      ブックレビュー「Rによるスクレイピング入門」
+      blogdownのTips
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-03-22T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-04-02T00:00:00Z">
       
   
   
   
   
-    22 三月 2017
+    2 四月 2017
   
 
     </time>
@@ -210,7 +222,9 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
     
   
 
@@ -221,106 +235,169 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <!-- BLOGDOWN-HEAD -->
-<!-- /BLOGDOWN-HEAD -->
+              <p>最近まわりで何かと<strong>blogdown</strong>パッケージが話題です。このブログも<strong>blogdown</strong>で作成していますし,紹介する記事も増えてきました。</p>
 
-<!-- BLOGDOWN-BODY-BEFORE -->
-<div id="TOC">
-<ul>
-<li><a>本書の構成と全体的な印象</a><ul>
-<li><a>構成</a></li>
-<li><a>全体的な印象</a></li>
-</ul></li>
-<li><a>早く手にしたかった理由</a><ul>
-<li><a>スクレイピングから位置情報を取得・可視化</a></li>
-<li><a href="#api">APIを叩いてデータを取得</a></li>
-</ul></li>
-<li><a>さいごに</a></li>
-</ul>
-</div>
-<!-- /BLOGDOWN-BODY-BEFORE -->
-<p>著者の方より，標記の書籍をご恵贈いただきました:</p>
-<blockquote class="twitter-tweet" data-lang="ja">
-<p lang="ja" dir="ltr">
-著者の方より「Rによるスクレイピング入門」 <a href="https://t.co/XrLvK1QrjJ">https://t.co/XrLvK1QrjJ</a> をご恵贈いただきました。私が苦手なWeb技術の基礎や，APIの実践など，本当に貴重な情報と豊富なコード実例が盛り沢山で素晴らしいの一言です。ありがとうございます! <a href="https://t.co/kLTsm33MkD">pic.twitter.com/kLTsm33MkD</a>
-</p>
-— kazutan v3.3.3 (<span class="citation">@kazutan</span>) <a href="https://twitter.com/kazutan/status/844041232326254592">2017年3月21日</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>上記ツイート内に記述したのですが，非常に素晴らしい本です。著者の4名には日頃からRに関してお世話になっていて，よく公開されている資料を読んでは自分でスクレイピングやAPIを叩いたりしていました。</p>
-<p>ただ，本音を言うと，<strong>もっと早くこの書籍を手にしたかった</strong>です。</p>
-<div class="section level2">
-<h2>本書の構成と全体的な印象</h2>
-<div class="section level3">
-<h3>構成</h3>
-<p>この書籍は6章編成となっています。</p>
-<ul>
-<li>CHAPTER 01 ウェブスクレイピングの準備
-<ul>
-<li>R, RStudioの導入とデータハンドリングの基礎。</li>
-</ul></li>
-<li>CHAPTER 02 ウェブ技術の基礎
-<ul>
-<li>HTMLの基礎からXPATH, XML, JSONからHTTPプロトコルから認証といった，<strong>Web技術に関する基礎をRを使って説明するという画期的な内容</strong>。</li>
-</ul></li>
-<li>CHAPTER 03 ウェブスクレイピング・API入門
-<ul>
-<li>比較的簡単な課題を用いて，実際にスクレイピングを実施したりAPIを叩いたり。</li>
-</ul></li>
-<li>CHAPTER 04 ウェブスクレイピング実践
-<ul>
-<li>ブログから情報抽出，抜き出したJSONから変換，そして<strong>ログイン認証が必要なサイトへの対応</strong>などかなり実践的な内容。</li>
-</ul></li>
-<li>CHAPTER 05 API実践
-<ul>
-<li>e-StatやGitHubといったより実践的なAPIの利用と，そのデータの活用が解説。</li>
-</ul></li>
-<li>CHAPTER 06 オープンデータの活用
-<ul>
-<li>実際に公開されているオープンデータについて，紹介も含めデータ取得と整形および活用を紹介。</li>
-</ul></li>
-</ul>
-<p>思ったよりもコンパクトな書籍で全体的なページ量もそこまで多くありません。そして<strong>コードと実行結果がたくさんあります</strong>。また第2章が最も分厚く，その次に第5章が多めです。</p>
-</div>
-<div class="section level3">
-<h3>全体的な印象</h3>
-<p>まえがきにもあるのですが，この本は1章と2章の基礎編と，3章以降の応用編と明確に分かれています。そして<strong>この本を決定的に特徴づけるのは2章</strong>だと私は考えます。</p>
-<p>スクレイピングと聞くと「豊富な実例やテクが大事!!」と思われますが，Webに関する基礎的なお話が理解できないと，いざ自分がやろうとした時にあっという間に止まります。書籍に何度も出てきますが，<strong>Webサイトの構成やAPIの仕様はもうバラバラ</strong>で，それぞれで対応しないといけないことがたくさんあります。そのためにはドキュメントを読まなきゃいけないのですが，Web技術の基礎がなければお手上げです。私もこれまでこんな感じで，その度に解説資料などを読んでいきましたが，Web関連技術なんて雰囲気でやってきた私にはハードルが高くて何度も泣いてました。</p>
-<p>ところがこの書籍は「<strong>Rのコードを実行しながら学ぼうじゃないか</strong>」と提案してくれるのです。感動です。またこの2章で説明したり使っているパッケージや関数がそのまま3章以降の実践でも活躍します。非常に綺麗な流れでスムーズに学べるなと思いました。<strong>もっと早くこの書籍を手にしたかった</strong>です。</p>
-</div>
-</div>
-<div class="section level2">
-<h2>早く手にしたかった理由</h2>
-<p>さっきからしつこく言っている理由ですが…ようするに毎度苦労しながらやってきたからです。</p>
-<div class="section level3">
-<h3>スクレイピングから位置情報を取得・可視化</h3>
-<p>3章や4章あたりにあるこの流れですが，以前こんなことやってました:</p>
-<ul>
-<li><a href="https://rpubs.com/kazutan/typhoon">RPubs - 台風15号の予想進路</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon2">RPubs - 台風17号と18号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon3">RPubs - 台風20号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon4">RPubs - 台風21号</a></li>
-<li><a href="https://rpubs.com/kazutan/typhoon5">RPubs - 台風22号と23号</a></li>
-</ul>
-<p>これらは気象庁HPの台風情報からスクレイピングして整形し，それを可視化したものです。<strong>こいつは一体何がしてくてこんなことしてたんだ</strong>と今では自分でも思います。とはいえはじめてのスクレイピングで，<strong>この書籍の1章と2章を当時読めてたらどれだけ楽になったことか</strong>と今なら思います。</p>
-<p>これが2015年後半で，以降趣味だけではなく調べものなどでも活用していくようになりました。</p>
-</div>
-<div id="api" class="section level3">
-<h3>APIを叩いてデータを取得</h3>
-<p>個人的な必要だったり，業務上必要になったりで，この1年半くらい頻繁にAPIを叩くようになりました。たとえばこんなことなど:</p>
-<ul>
-<li><a href="http://kazutan.github.io/HijiyamaR4/e-stat_test.html">e-statをRでたたいてみる</a></li>
-<li><a href="http://qiita.com/kazutan/items/08c3ad07f81caadd990e">RでGitHubAPIを利用してリポジトリ情報などを取得する - Qiita</a></li>
-</ul>
-<p>はい，そうです。<strong>この2つとも5章で詳細に解説されています</strong>。もちろん著者の方々がすでに公開されていた資料を元に進めていたのですが，<strong>基礎がないので四苦八苦してなんとかやってたけどこの書籍読めば一発だよね</strong>と思いました。</p>
-<p>他にも最近では<a href="https://habitica.com/static/front?lang=ja">Habitica</a>の<a href="https://habitica.com/apidoc/">API</a>を叩いて自分の生活を可視化(して反省)しようと，Rからデータ取得したりした(内容は未公開)のですが，基礎的なことがわからず相当な時間を消費しました。<strong>2章と5章に書いてある内容を知っていれば</strong>と今では思います。</p>
-</div>
-</div>
-<div class="section level2">
-<h2>さいごに</h2>
-<p>スクレイピングという言葉に反応したRユーザーの皆さん，<strong>買いましょう</strong>。</p>
-</div>
+<p>そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。</p>
 
+<p></p>
+
+<h2 id="blogdown入門">blogdown入門</h2>
+
+<h3 id="blogdownとは">blogdownとは</h3>
+
+<p>blogdownはRを使ってblogのような静的Webサイトを生成するためのパッケージです。サイト生成には<a href="https://gohugo.io/">Hugo</a>というサイト生成アプリケーションを利用しており,これはGo言語で書かれています。</p>
+
+<h3 id="hugoについて">Hugoについて</h3>
+
+<p>このHugoの特徴としては生成処理が早く,またモダンなデザインのテンプレートがいろいろあって,すぐに実用的なものが作成可能というのがあります。</p>
+
+<p>またHugoの重要なポイントとして,公式ドキュメントが非常に充実していることが挙げられます。blogdownでやりたいことや行き詰まることが出たら,Hugoの公式サイトを参照するのをおすすめします:</p>
+
+<ul>
+<li><a href="https://gohugo.io/overview/introduction/">Hugo - Introduction to Hugo</a></li>
+</ul>
+
+<h3 id="blogdownのスタートアップ">blogdownのスタートアップ</h3>
+
+<p>blogdownがどういうものか,そして導入の方法については,すでにいい記事がありますので,以下を参照してください:</p>
+
+<ul>
+<li><a href="https://ytake2.github.io/blog2/post/blogdown/">RStudioではグラブれないけど、ブログれる</a></li>
+<li><a href="http://blog.hoxo-m.com/2017/03/29/hello-world/">ホクソエムブログの作り方</a></li>
+</ul>
+
+<h2 id="tips">Tips</h2>
+
+<p>上記の記事に記載されていなくて,自分の中でメモしときたい内容をいくつか。</p>
+
+<h3 id="blogdownの仕組みについて">blogdownの仕組みについて</h3>
+
+<p>ちょっと込み入った内容です。</p>
+
+<h4 id="blogdownの実体">blogdownの実体</h4>
+
+<p>blogdownは,正直<strong>ほとんどHugoのR向けWrapper</strong>です。</p>
+
+<p>例えばサイトを作成する<code>new_site()</code>は,初期値を確認・設定した上で,それらを<code>hugo_cmd()</code>に送っています。また,<code>new_content()</code>もhugoへ新しいコンテツを作成するためのコマンドを送っています。そしてサイトを生成する<code>build_site()</code>は設定などを整理・確認して<code>build_rmds()</code>へ送り,Rmdを処理したうえで<code>hugo_build()</code>でbuildしています。この<code>build_site()</code>のコードおよびそこからの流れはblogdownの中身を把握する上でポイントとなるので,余力があるならぜひ覗いてみてください。</p>
+
+<h4 id="rmd-or-md">Rmd or md?</h4>
+
+<p>blogdownでbuildすると,content内にあるRmdやmdがレンダリングされて,自動的に最適な形で出力先へ出てくるようになります。つまりはblog記事はmdでもRmdでもどちらでも可能でhtmlが生成されます。ただし,<strong>この時用いられるレンダリングエンジンがRmdとmdで異なります</strong>。詳しくは<a href="https://bookdown.org/yihui/blogdown/output-format.html">blogdownのドキュメントのここ</a>を参照してください。</p>
+
+<p>Rmdの場合,通常のR Markdownと同様でknit - Pandocという処理を行います。この時ベースになるoutputは<code>blogdown::html_page()</code>で,これは<code>bookdown::html_document2()</code>でいくつかの設定をblog(hugo)向けに絞ったものとなっています。なのでいつものR Markdownのoutputオプションを指定したい場合,以下のように指定すればOKです:</p>
+
+<pre><code>---
+title: R Markdownでの諸々のテスト
+author: kazutan
+date: '2017-03-22'
+slug: rmd-test
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+archives:
+  - &quot;2017&quot;
+  - &quot;2017/03&quot;
+output:
+  blogdown::html_page:
+    toc: true
+---
+</code></pre>
+
+<p>これはこのブログの<a href="https://kazutan.github.io/blog/2017/03/rmd-test/">この記事</a>のyamlフロントマターで当てている内容です。このような設定は,Rmdで記事を作成した場合に有効です。</p>
+
+<p>なお,<strong>Rmdで作成するとHugoがmdレンダリングで使用する<a href="https://github.com/russross/blackfriday">Blackfliday</a>の機能などが使えない</strong>という制約がつきます。なのでよくHugo関連のドキュメントで書いてあるような拡張機能が使えない場合があるので注意してください。</p>
+
+<p>一方mdの場合,Hugoがmdをレンダリングします。Hugoは<a href="https://github.com/russross/blackfriday">Blackfliday</a>を利用してレンダリングしています。またHugoが提供している拡張機能もそのままドキュメントに盛り込めます。例えば,<code>HUGOMORE42</code>は手動で「続きを読む」みたいな区切りを設定するものですが,mdファイルであればこれを差し込むことで実装できます。ただし,Rmdファイルで記事を書いた場合には機能しません。</p>
+
+<p>では「Rmdとmdのどっちがいいの?」と聞かれそうですが,ケースバイケースと言わざるを得ません。Rチャンクなどを埋め込みたいのであればRmd一択になるでしょうし,Blackfridayなどを利用したいのであれば,mdも選択肢になる,と言った感じでしょうか。まだ私がそこまでBlackfridayなどに明るくないのでRmdにより多くのメリットを感じていますが,そのうち機会があれば調べてみたいとは思ってます。</p>
+
+<h3 id="コメント機能の実装">コメント機能の実装</h3>
+
+<p>Hugoは静的なサイトなので,CMSで標準で実装されているコメント機能などは難しくなります。ここはシンプルに外部サービスを利用するのが楽だと思います。</p>
+
+<p>このブログでは<a href="https://disqus.com/">disqus</a>という外部サービスを利用しています。詳しくは<code>disque 使い方</code>とかでググってもらえれば,アカウント登録のやり方など解説している記事がヒットするでしょう。有償版もありますが,無償版でも使えます。</p>
+
+<p>blogdown(というかhugo)では割と簡単に組み込むことができます。<a href="https://gohugo.io/extras/comments/">Hugo公式ドキュメントのこちら</a>を参照してください。多分大抵のテーマでさくっといけるはずです。</p>
+
+<h3 id="出力先ディレクトリの設定など">出力先ディレクトリの設定など</h3>
+
+<p>blogdown(というかHugo)のデフォルトは<code>public/</code>となっています。通常のWebサーバに設置したいのであれば,単にこの中身をまるっと設置すればOKなのですが,github.ioを利用するとなると面倒です。</p>
+
+<p>最初の方に紹介した2つの記事では「<code>public/</code>の中身を<code>docs</code>にコピーして<code>push</code>」とありますが,これも手間です。もうちょっと簡単にやる方法が<a href="https://gohugo.io/tutorials/github-pages-blog/">Hugo公式ドキュメントのこちら</a>に記載してありますので参照してください。</p>
+
+<p>なお,単に出力先を<code>docs/</code>に変更したいだけなら,<code>config.toml</code>に以下の一行を追加してください:</p>
+
+<pre><code class="language-toml">publishDir = &quot;docs&quot;
+</code></pre>
+
+<p>またgh-pagesブランチで運用したいなら,先ほど紹介したリンク先に詳細手順が紹介してあります。多少gitの知識が入りますが,丁寧な解説なのでそれほど苦しくはないと思います。</p>
+
+<h3 id="hugoでcjk対応">Hugoでcjk対応</h3>
+
+<p>英語オンリーなブログであれば不要なのですが,日本語ベースでblogdown(Hugo)を利用するならcjk対応をさせておくほうがいいでしょう(cjkは中国語&copy;,日本語(j),韓国語(k)のこと)。これを設定しておかないと,トップページなどで記事一覧を出した時,記事の要約が自動でうまく処理してくれずに面倒なこととなります。</p>
+
+<p>設定方法は,<code>config.toml</code>に以下の一文を記述してください:</p>
+
+<pre><code class="language-toml">hasCJKLanguage = true
+</code></pre>
+
+<h3 id="その他の全体設定について">その他の全体設定について</h3>
+
+<p>Hugoではいわゆるブログ全体設定というものがかなりたくさんありますし,拡張機能もたくさん準備してあります。詳しくは公式ドキュメントをざっと見てみてください。</p>
+
+<p>ただし,<strong>Hugoはテーマテンプレートによって設定項目がかなり変わってくる</strong>のを注意してください。正直これがかなり面倒で,<strong>必ず設定したテーマのドキュメントをよく読んでください</strong>。このブログで設定しているテーマは<a href="http://themes.gohugo.io/hugo-tranquilpeak-theme/">Tranquilpeak</a>で,多機能でいろいろカスタマイズ可能ということで選びました。</p>
+
+<h3 id="新規postはrstudio-addinで">新規PostはRStudio Addinで</h3>
+
+<p>最近のblogdownなら,<strong>新規Postを準備するためのRStudio Addinが準備されています</strong>。RStudioの<strong>Addin&hellip;</strong>ボタンから,<strong>New Post</strong>を選択してください:</p>
+
+<p><img src="https://kazutan.github.io/blog/img/new_post.png" alt="" /></p>
+
+<p>このようなダイアログボックスが出てきます。基本的に必要な事項はここで設定できます。設定したら右下の<strong>OK</strong>をクリックすれば,新規Post用のファイルが自動的に適切な場所に生成されます。</p>
+
+<p>なおCategoriesやtagsもここで設定できますし,これらですでに使ったことがあるものであればクリックで選択して入力していくことが可能ですし,新規で作ることも可能です。いちいち他のところで設定しなくても後でBuildした時にHugoが自動的に対応してくれます。便利です。</p>
+
+<h3 id="下書き-draft">下書き(draft)</h3>
+
+<p>上記のようにRStudioのAddinで作成した場合,yamlフロントマターに<code>draft: yes</code>というのが自動で組み込まれているかと思います。これはまさにdraft機能で,yesなので下書きモードとなっています。</p>
+
+<p>下書きモードがONになっていると,<code>build_site()</code>を実行してもその記事はサイトには組み込まれない(publicには入ってこない)ようになります。私の場合,記事を書きながらknitを実行して表示を確認し,書き終えたら<code>draft: false</code>に書き換えて<code>serve_site()</code>で確認するようにしています。</p>
+
+<p>また,記事を書いていく時に「ちょっと今さくっとどんな感じになるか確認したいな」と思ったら,<code>knit</code>を実行してください。テーマなどは当たりませんが,チャンクが実行されてhtmlが生成され,確認することができます。毎度毎度buildしたりしなくていいので楽ちんですよ。</p>
+
+<h3 id="build-site-と-serve-site-について"><code>build_site()</code>と<code>serve_site()</code>について</h3>
+
+<p><code>serve_site()</code>を実行するとbuildされ,RStudioのViewerペインに表示されます。実際何をしているかといういと,まず<code>build_site(TRUE)</code>を実行し,<code>servr::httw()</code>にてローカルサーバーを立てて表示させています。つまり,<strong><code>serve_site()</code>を実行するとLocal用にbuildして,それをローカルで表示させている</strong>を実行しています。</p>
+
+<p>blog設定や内容にもよりますが,<code>serve_site()</code>はあくまでローカルでの表示用にbuildしていますので,そのまま公開するとうまく表示されない場合があります。このようなことがあるので,公開用に設置する前に一度<code>build_site()</code>を実行する手順を加えておくことをおすすめします。</p>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+<li><a href="https://bookdown.org/yihui/blogdown/">blogdown: Creating Websites with R Markdown</a>
+
+<ul>
+<li>blogdown公式ドキュメント</li>
+<li>でも全然整備されていない…つらい</li>
+</ul></li>
+<li><a href="https://gohugo.io/overview/introduction/">Hugo - Introduction to Hugo</a>
+
+<ul>
+<li>Hugoの公式ドキュメント</li>
+<li>非常に充実</li>
+<li><strong>Getting Started</strong>, <strong>Content</strong>, <strong>Themes</strong>のところはぜひ読んでください</li>
+<li>いろいろやりたくなったら,<strong>Template</strong>, <strong>Taxonomies</strong>, <strong>Extras</strong>に手を出してください</li>
+</ul></li>
+</ul>
+
+<p>その他わからないところや詰まったところがあったらr-wakalangの#rmarkdownチャンネルなどで質問するといいかも。</p>
+
+<p>またいろいろTipsみつけたら続編を書くかもしれません。</p>
+
+<p><strong>Enjoy!</strong></p>
               
             </div>
           </div>
@@ -334,9 +411,9 @@
                     
   <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
 
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0/">スクレイピング</a>
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r-markdown/">R Markdown</a>
 
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/">書籍</a>
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/blogdown/">blogdown</a>
 
                   </div>
                 
@@ -348,7 +425,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -356,7 +433,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/firstpost/" data-tooltip="ブログ移転(仮)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/ten-years/" data-tooltip="この10年。">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -373,17 +450,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -429,7 +506,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -437,7 +514,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/firstpost/" data-tooltip="ブログ移転(仮)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/ten-years/" data-tooltip="この10年。">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -454,17 +531,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -491,17 +568,17 @@
       <div id="share-options-bar" class="share-options-bar" data-behavior="5">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2fbook-r-scraping%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fblogdown-tips%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -762,9 +839,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/03\/book-r-scraping\/';
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/04\/blogdown-tips\/';
           
-            this.page.identifier = '\/2017\/03\/book-r-scraping\/'
+            this.page.identifier = '\/2017\/04\/blogdown-tips\/'
           
         };
         (function() {
