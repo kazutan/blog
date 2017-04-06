@@ -1,0 +1,65 @@
+---
+title: DiagrammeRのrankdirのテスト
+author: kazutan
+date: '2017-04-06'
+slug: dgr-rankdir-test
+categories:
+  - R
+tags:
+  - R
+  - DiagrammeR
+draft: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+書捨て用のメモ記事。
+
+## rankdirのテスト
+
+データフレームからgraph attrを当てていくの，便利なようで面倒だった。
+
+```{r}
+library(DiagrammeR)
+grViz("
+      digraph dot {
+      graph [rankdir = TB]
+      a -> {b,c}
+      }
+      ")
+
+```
+
+```{r}
+ndf <- create_node_df(
+  n = 3,
+  type = c("cat", "takayanagi3", "takayanagi3"),
+  label = TRUE
+)
+
+edf <- create_edge_df(
+  from = c(1, 1),
+  to = c(2, 3)
+)
+
+graph1 <- create_graph(
+  nodes_df = ndf,
+  edges_df = edf
+)
+
+render_graph(graph1)
+
+graph2 <- graph1 %>% 
+  add_global_graph_attrs(
+    "rankdir", "TB", "graph"
+  ) %>% 
+  add_global_graph_attrs(
+    "layout", "dot", "graph"
+  )
+
+render_graph(graph2)
+```
+
+公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。

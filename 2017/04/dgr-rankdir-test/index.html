@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -16,25 +20,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>R Markdown</title>
+    <title>DiagrammeRのrankdirのテスト</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://kazutan.github.io/blog/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kazutan.github.io/blog/tags/r-markdown/index.xml">
-    
 
     
-    <meta name="description" content="kazutanのブログです。">
-    <meta property="og:description" content="kazutanのブログです。">
+    <meta name="description" content="書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) grViz(&quot; digraph dot { graph [rankdir = TB] a -&gt;">
+    <meta property="og:description" content="書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) grViz(&quot; digraph dot { graph [rankdir = TB] a -&gt;">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="R Markdown">
-    <meta property="og:url" content="/tags/r-markdown/">
+    <meta property="og:title" content="DiagrammeRのrankdirのテスト">
+    <meta property="og:url" content="/2017/04/dgr-rankdir-test/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="kazutanのブログです。">
+    <meta name="twitter:description" content="書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) grViz(&quot; digraph dot { graph [rankdir = TB] a -&gt;">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -70,7 +72,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="2">
+      <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://kazutan.github.io/blog/">日々是独想</a>
@@ -90,7 +92,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="2">
+      <nav id="sidebar" data-behavior="5">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -176,47 +178,29 @@
 </nav>
 
       
-        
 
-      
-      <div id="main" data-behavior="2"
+      <div id="main" data-behavior="5"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
+    <h1 class="post-title" itemprop="headline">
+      DiagrammeRのrankdirのテスト
+    </h1>
   
-
-
+  <div class="postShorten-meta post-meta">
   
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/blogdown-tips/">
-          blogdownのTips
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-04-02T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-04-06T00:00:00Z">
       
   
   
   
   
-    2 四月 2017
+    6 四月 2017
   
 
     </time>
@@ -226,223 +210,161 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>
     
   
 
 
 </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        最近まわりで何かと<strong>blogdown</strong>パッケージが話題です。このブログも<strong>blogdown</strong>で作成していますし,紹介する記事も増えてきました。</p>
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <script src="https://kazutan.github.io/blog/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://kazutan.github.io/blog/rmarkdown-libs/viz/viz.js"></script>
+<link href="https://kazutan.github.io/blog/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="https://kazutan.github.io/blog/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
-<p>そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。</p>
+<p>書捨て用のメモ記事。</p>
+<div id="rankdir" class="section level2">
+<h2>rankdirのテスト</h2>
+<p>データフレームからgraph attrを当てていくの，便利なようで面倒だった。</p>
+<pre class="r"><code>library(DiagrammeR)
+grViz(&quot;
+      digraph dot {
+      graph [rankdir = TB]
+      a -&gt; {b,c}
+      }
+      &quot;)</code></pre>
+<div id="htmlwidget-0849e30e53f2d61585cf" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0849e30e53f2d61585cf">{"x":{"diagram":"\n      digraph dot {\n      graph [rankdir = TB]\n      a -> {b,c}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>ndf &lt;- create_node_df(
+  n = 3,
+  type = c(&quot;cat&quot;, &quot;takayanagi3&quot;, &quot;takayanagi3&quot;),
+  label = TRUE
+)
 
-<p>
-        <br>
-        <a href="https://kazutan.github.io/blog/2017/04/blogdown-tips/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
+edf &lt;- create_edge_df(
+  from = c(1, 1),
+  to = c(2, 3)
+)
+
+graph1 &lt;- create_graph(
+  nodes_df = ndf,
+  edges_df = edf
+)</code></pre>
+<pre><code>## Warning in sample.int(length(x), size, replace, prob): &#39;.Random.seed&#39; が整
+## 数ベクトルではなくタイプ &#39;NULL&#39; になっているため、無視されました</code></pre>
+<pre class="r"><code>render_graph(graph1)</code></pre>
+<div id="htmlwidget-460ea1c083676d8e1aac" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-460ea1c083676d8e1aac">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>graph2 &lt;- graph1 %&gt;% 
+  add_global_graph_attrs(
+    &quot;rankdir&quot;, &quot;TB&quot;, &quot;graph&quot;
+  ) %&gt;% 
+  add_global_graph_attrs(
+    &quot;layout&quot;, &quot;dot&quot;, &quot;graph&quot;
+  )
+
+render_graph(graph2)</code></pre>
+<div id="htmlwidget-33bf117850c6d960ef34" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-33bf117850c6d960ef34">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<p>公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。</p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">タグ</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
+
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/diagrammer/">DiagrammeR</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/blogdown-tips/" data-tooltip="blogdownのTips">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
 
             
               
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/embed-slide-into-rmd/">
-          R Markdownのhtml出力にスライドを埋め込む方法
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-30T00:00:00Z">
-      
-  
-  
-  
-  
-    30 三月 2017
-  
-
-    </time>
-  
-  
-  
-  
-    <span>カテゴリー</span>
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
-    
-  
-
-
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        やりたかったこと 成果 解説 slideshareについて SpeakerDeckについて その他のHTMLスライドについて 実際の関数のコードについて
-        <br>
-        <a href="https://kazutan.github.io/blog/2017/03/embed-slide-into-rmd/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
               
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/rmd-de-website/">
-          R MarkdownでWebサイト作成
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-27T00:00:00Z">
-      
-  
-  
-  
-  
-    27 三月 2017
-  
-
-    </time>
-  
-  
-  
-  
-    <span>カテゴリー</span>
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: <a href="https://github.com/kazutan/RmdSite_tuto">https://github.com/kazutan/RmdSite_tuto</a> コメント R Ma
-        <br>
-        <a href="https://kazutan.github.io/blog/2017/03/rmd-de-website/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/rmd-test/">
-          R Markdownでの諸々のテスト
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-22T00:00:00Z">
-      
-  
-  
-  
-  
-    22 三月 2017
-  
-
-    </time>
-  
-  
-  
-  
-    <span>カテゴリー</span>
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        コードと出力について plotについて htmlwidgets系のテスト leaflet DiagrammeR Plotly ちょっとRの出力を色々試してみたいと思います。 コードと出力について
-        <br>
-        <a href="https://kazutan.github.io/blog/2017/03/rmd-test/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-            
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2017 <a href="https://github.com/kazutan">kazutan</a>. All Rights Reserved
@@ -450,6 +372,92 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/blogdown-tips/" data-tooltip="blogdownのTips">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+        <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+        <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fdgr-rankdir-test%2f">
+        <i class="fa fa-twitter"></i><span>Twitterで共有</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -699,6 +707,32 @@ $(document).ready(function() {
   });
 });
 </script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/04\/dgr-rankdir-test\/';
+          
+            this.page.identifier = '\/2017\/04\/dgr-rankdir-test\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'dokuso';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
     

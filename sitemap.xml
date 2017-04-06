@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kazutan.github.io/blog/2017/04/dgr-rankdir-test/</loc>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kazutan.github.io/blog/2017/04/blogdown-tips/</loc>
     <lastmod>2017-04-02T00:00:00+00:00</lastmod>
   </url>
@@ -65,20 +70,26 @@
   </url>
   
   <url>
+    <loc>https://kazutan.github.io/blog/tags/diagrammer/</loc>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kazutan.github.io/blog/post/</loc>
-    <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kazutan.github.io/blog/tags/r/</loc>
-    <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kazutan.github.io/blog/categories/r/</loc>
-    <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +118,7 @@
   
   <url>
     <loc>https://kazutan.github.io/blog/</loc>
-    <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

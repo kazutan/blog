@@ -1,0 +1,63 @@
+---
+title: render()をのぞいてみる(1)
+author: kazutan
+date: '2017-04-05'
+slug: render-code-1
+categories:
+  - R
+  - R Markdown
+tags:
+  - R
+  - R Markdown
+draft: yes
+---
+
+```{css}
+dt {
+  clear: left;
+  float: left;
+  width: 15%;
+  font-weight: bold;
+  text-align: right;
+  padding: 3px 15px 3px 0;
+}
+dd {
+  margin: 0 0 0 20%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+```
+
+
+これまでR Markdownを色々使ってきたけれど，正直雰囲気で使ってきたと言わざるを得ず，最近手詰まりになることが増えてきました。自分にはRの基礎が全くないと痛感し，基本に立ち返ることにしました。手始めに，`rmarkdown::render()`のコードを精読してみたいと思います。
+
+## `rmarkdown::render()`のコード全体
+
+Github上の以下のリンク先にあります:
+
+https://github.com/rstudio/rmarkdown/blob/master/R/render.R#L14-L706
+
+なんと700行弱...思いつきでこの記事を書き始めましたが，早速心が折れそうです。全部ドカンとやっても未完となるのは目に見えているので，上の方から少しずつやっていきます。
+
+## 引数の定義
+
+[L14-L28](https://github.com/rstudio/rmarkdown/blob/master/R/render.R#L14-L28)の部分になります:
+
+```
+render <- function(input,
+                   output_format = NULL,
+                   output_file = NULL,
+                   output_dir = NULL,
+                   output_options = NULL,
+                   intermediates_dir = NULL,
+                   knit_root_dir = NULL,
+                   runtime =  c("auto", "static", "shiny", "shiny_prerendered"),
+                   clean = TRUE,
+                   params = NULL,
+                   knit_meta = NULL,
+                   envir = parent.frame(),
+                   run_pandoc = TRUE,
+                   quiet = FALSE,
+                   encoding = getOption("encoding")) {
+```
+
