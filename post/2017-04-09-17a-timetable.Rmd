@@ -1,0 +1,29 @@
+---
+title: 今年度前期。
+author: kazutan
+date: '2017-04-09'
+slug: 17a-timetable
+categories: []
+tags: []
+draft: false
+---
+
+明日から始まるのでいつも通りタイムテーブルを作ってみた。いちいちDTでやるの面倒だから`knitr::kable`で。
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+df_17a <- data.frame(
+  mon = c("PC演習", "PC演習", "", "ゼミ演習", "卒研指導"),
+  tue = c("会議", "", "初年次科目", "PC演習", "オフィスアワー"),
+  wed = c("", "", "", "PC演習", "PC相談ブース"),
+  thu = c("非常勤へ", "心理系講義", "本務校へ", "情報系講義", "会議"),
+  fri = c("PC演習", "PC演習", "", "PC演習", "")
+)
+knitr::kable(df_17a,
+             format = "html",
+             row.names = TRUE,
+             col.names = c("月曜日", "火曜日", "水曜日", "木曜日", "金曜日"),
+             align = "c",
+             caption = "2017年前期 週間スケジュール")
+```
+
