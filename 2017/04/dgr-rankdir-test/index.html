@@ -237,8 +237,8 @@ grViz(&quot;
       a -&gt; {b,c}
       }
       &quot;)</code></pre>
-<div id="htmlwidget-ab151d68381daafda18b" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab151d68381daafda18b">{"x":{"diagram":"\n      digraph dot {\n      graph [rankdir = TB]\n      a -> {b,c}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8836361e3614f714c3dc" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8836361e3614f714c3dc">{"x":{"diagram":"\n      digraph dot {\n      graph [rankdir = TB]\n      a -> {b,c}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>ndf &lt;- create_node_df(
   n = 3,
   type = c(&quot;cat&quot;, &quot;takayanagi3&quot;, &quot;takayanagi3&quot;),
@@ -257,8 +257,8 @@ graph1 &lt;- create_graph(
 <pre><code>## Warning in sample.int(length(x), size, replace, prob): &#39;.Random.seed&#39; が整
 ## 数ベクトルではなくタイプ &#39;NULL&#39; になっているため、無視されました</code></pre>
 <pre class="r"><code>render_graph(graph1)</code></pre>
-<div id="htmlwidget-a14d18780c439fad7612" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a14d18780c439fad7612">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5d7bccce6d52aef9e7cc" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d7bccce6d52aef9e7cc">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>graph2 &lt;- graph1 %&gt;% 
   add_global_graph_attrs(
     &quot;rankdir&quot;, &quot;TB&quot;, &quot;graph&quot;
@@ -268,8 +268,8 @@ graph1 &lt;- create_graph(
   )
 
 render_graph(graph2)</code></pre>
-<div id="htmlwidget-08cd10ef64a8901d859d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-08cd10ef64a8901d859d">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fe538974c531fe965d35" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fe538974c531fe965d35">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。</p>
 </div>
 
@@ -505,6 +505,23 @@ render_graph(graph2)</code></pre>
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/">
+                <h3 class="media-heading">dplyr::selectの活用例メモ</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">タイトルのとおりです。気分転換を兼ねてメモ。 library(dplyr) #&gt; #&gt; 次のパッケージを付け加えます: &#39;dplyr&#39; #&gt; 以下のオブジェクトは &#39;package:stats&#39; からマスクされています: #&gt; #&gt; filter, lag #&gt;</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/mathjax-cdn-rmd/">
                 <h3 class="media-heading">MathJax CDNがシャットダウンされることによるR Markdownへの影響</h3>
               </a>
@@ -661,23 +678,6 @@ render_graph(graph2)</code></pre>
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/firstpost/">
-                <h3 class="media-heading">ブログ移転(仮)</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">いろいろ思うことがあり,ブログをこちらに移転することにしました。 以前まで続けていたこっちのブログについてはしばらく残しておく予定です。移転す</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -685,7 +685,7 @@ render_graph(graph2)</code></pre>
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         11 posts found
+         12 posts found
       </p>
     </div>
   </div>

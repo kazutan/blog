@@ -1,0 +1,163 @@
+---
+title: dplyr::selectの活用例メモ
+author: kazutan
+date: '2017-04-12'
+slug: dplyr-select-memo
+categories:
+  - R
+tags:
+  - R
+  - dplyr
+#draft: yes
+---
+
+タイトルのとおりです。気分転換を兼ねてメモ。
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      collapse = TRUE,
+                      comment = "#> ")
+```
+
+
+```{r}
+library(dplyr)
+```
+
+列位置を示す数値ベクトルを与えると，それ引っ張ってくる:
+
+```{r}
+select(iris, c(1, 4)) %>% head(3)
+```
+
+`starts_with()`などの**select_helpers**関数群は，要するに列位置を表す数値ベクトルを返してくる:
+
+```{r}
+starts_with("s", vars = names(iris))
+ends_with("s", vars = names(iris))
+contains("se", vars = names(iris))
+matches("^.e", vars = names(iris))
+one_of(c("Sepal.Length", "Species"), vars = names(iris))
+everything(vars = names(iris))
+```
+
+ちなみに引数の`vars`はデフォルトでは`vars = current_vars()`となっており，`select()`などの中で使うと自動的に`.data`引数に指定してあるデータセットから変数名リストを取得してくるというもの。なので`select()`内で指定しなくてもいい感じにしてくれる。
+
+変数をselectする際，名前付きで指定すると変数名を変更してくれてピックアップしてくる:
+
+```{r}
+select(iris, kosaki = 5, Sepal.Length) %>% head(3)
+```
+
+これが地味に強力で，以下のようなことも可能:
+
+```{r}
+select(iris, kosaki = 1:3) %>% head(3)
+select(iris, kosaki = starts_with("s")) %>% head(3)
+```
+
+数値ベクトルで指定できるんだから，こういうことだって可能:
+
+```{r}
+select(iris, length(current_vars()):3) %>% head(3)
+```
+
+`current_vars()`を使う理由は，pipeプロセス中で，この時点での変数リストを持ってきたいから。この方が応用できるんで。
+
+変数の並びを入れ替えたい場合，お約束としては`everything()`を活用する:
+
+```{r}
+select(iris, 1, 5, everything()) %>% head(3)
+```
+
+あとはorderとかも使える:
+
+```{r}
+select(iris, order(current_vars())) %>% head(3)
+```
+
+`select()`だと，多分こんな感じ。
+
+`rename()`は関数名につられて「変数名を変更する関数」と思われがちだけど，`select()`との比較で考えたほうが適切。
+
+`select()`はヒットした変数を取り出す(もしくは名前を変更)して，それ以外を除外する。一方`rename()`は基本`select()`と同じ動きをして，ヒットしなかった変数を残す(後ろに回す)。内部的には`select()`で変数ピックアップするときに，特に指定していない場合は変数名と同じ文字列を名前として付与して，それを適用してるみたい。`rename()`はこの後に変数をドロップしないように残ったものを拾っているみたいで，そこが違いみたい。
+
+`select_all()`を使ってみる。HelpのExampleより:
+
+```{r}
+select_all(mtcars, toupper) %>% head(3)
+select_all(mtcars, "toupper") %>% head(3)
+select_all(mtcars, funs(toupper(.))) %>% head(3)
+```
+
+全ての変数名に対して関数が適用される，という感じ。それはいいんだけど，`rename_all()`も存在する。この2つ，微妙にコードは違うんだけど，使い分けることってあるのかな...。浮かばない。
+
+次に`select_at()`を使ってみる。これは，第二引数である`.vars`に残す変数を指定して，`.fun`引数で変数名を処理する関数を指定するという動き。
+
+```{r}
+select_at(iris, c("Sepal.Length", "Petal.Length"), .funs = toupper) %>% head(3)
+select_at(iris, vars(starts_with("s")), .funs = toupper) %>% head(3)
+```
+
+`.var`には，変数名の文字列ベクトルならそのまま，列番号なら`vars()`で挟み込む必要があるみたい。なお`.funs`引数を省略すると現在の変数名をそのまま渡すので変数名は変わらず:
+
+```{r}
+select_at(iris, vars(starts_with("s"))) %>% head(3)
+```
+
+使い方としてはこっちがメイン，かな? なお`rename_at()`関数もある:
+
+```{r}
+rename_at(iris, vars(starts_with("s")), .funs = toupper) %>% head(3)
+```
+
+`.var`引数で選択した変数に対して`.funs`引数で指定した変数名変更用関数を適用し，残りはそのまま持ってくる，という仕事をする。こっちは変数名を変更することが前提なので，`.funs`を指定しないとエラーで怒られる。これまでの挙動を考えると納得いかない...。
+
+最後に`select_if()`を使ってみる。これは，第二引数である`.predicate`に関数を準備し，各変数をこの関数に当てていく。そして`TRUE`を返した関数を残す(選択する)，という仕事をする。ベタな例を以下に:
+
+```{r}
+select_if(iris, is.numeric) %>% head(3)
+```
+
+各変数に`is.numeric`を適用し，`TRUE`(つまり数値の変数)だけを取り出してる。なお，関数を自作して適用するのも可能:
+
+```{r}
+f <- function(x) {
+ if(is.numeric(x)){
+   mean(x) > 3
+ } else {
+   return(TRUE)
+ }
+}
+select_if(iris, f) %>% head(3)
+```
+
+この場合，「変数が数値型の場合，平均が3より大きかったら残す。それ以外の型なら残す」という仕事をさせてる。また，列数と同じ数の論理値ベクトルを与えてもOK:
+
+```{r}
+select_if(iris, c(TRUE, TRUE, FALSE, TRUE, FALSE)) %>% head(3)
+```
+
+また，`.Predicate`で指定するのは関数だけでなくformulaでもいいみたい。省略。あと第三引数`.funs`はこれまでのパターン同様**変数名を変更するための関数**です。`select_if()`においてはオプショナルなものです:
+
+```{r}
+select_if(iris, is.numeric, toupper) %>% head(3)
+```
+
+一方，`rename_if()`は`select_if()`とほぼ同じような動きをしますが，**名前変更なので`.funs`が必須**なのと，**選択されなかった変数も残る**という違いがあります:
+
+```{r}
+rename_if(iris, is.numeric, toupper) %>% head(3)
+```
+
+だいたいこんな感じです。
+
+**Enjoy!**
+
+```{r}
+sessionInfo()
+```
+
+
+
+

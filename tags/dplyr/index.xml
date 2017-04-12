@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dplyr on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/tags/dplyr/index.xml</link>
+    <description>Recent content in Dplyr on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/dplyr/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>dplyr::selectの活用例メモ</title>
+      <link>https://kazutan.github.io/blog/2017/04/dplyr-select-memo/</link>
+      <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/04/dplyr-select-memo/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;タイトルのとおりです。気分転換を兼ねてメモ。&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)
+#&amp;gt;  
+#&amp;gt;   次のパッケージを付け加えます: &amp;#39;dplyr&amp;#39;
+#&amp;gt;   以下のオブジェクトは &amp;#39;package:stats&amp;#39; からマスクされています: 
+#&amp;gt;  
+#&amp;gt;       filter, lag
+#&amp;gt;   以下のオブジェクトは &amp;#39;package:base&amp;#39; からマスクされています: 
+#&amp;gt;  
+#&amp;gt;       intersect, setdiff, setequal, union&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列位置を示す数値ベクトルを与えると，それ引っ張ってくる:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, c(1, 4)) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Petal.Width
+#&amp;gt;  1          5.1         0.2
+#&amp;gt;  2          4.9         0.2
+#&amp;gt;  3          4.7         0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;starts_with()&lt;/code&gt;などの&lt;strong&gt;select_helpers&lt;/strong&gt;関数群は，要するに列位置を表す数値ベクトルを返してくる:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;starts_with(&amp;quot;s&amp;quot;, vars = names(iris))
+#&amp;gt;  [1] 1 2 5
+ends_with(&amp;quot;s&amp;quot;, vars = names(iris))
+#&amp;gt;  [1] 5
+contains(&amp;quot;se&amp;quot;, vars = names(iris))
+#&amp;gt;  [1] 1 2
+matches(&amp;quot;^.e&amp;quot;, vars = names(iris))
+#&amp;gt;  [1] 1 2 3 4
+one_of(c(&amp;quot;Sepal.Length&amp;quot;, &amp;quot;Species&amp;quot;), vars = names(iris))
+#&amp;gt;  [1] 1 5
+everything(vars = names(iris))
+#&amp;gt;  [1] 1 2 3 4 5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ちなみに引数の&lt;code&gt;vars&lt;/code&gt;はデフォルトでは&lt;code&gt;vars = current_vars()&lt;/code&gt;となっており，&lt;code&gt;select()&lt;/code&gt;などの中で使うと自動的に&lt;code&gt;.data&lt;/code&gt;引数に指定してあるデータセットから変数名リストを取得してくるというもの。なので&lt;code&gt;select()&lt;/code&gt;内で指定しなくてもいい感じにしてくれる。&lt;/p&gt;
+&lt;p&gt;変数をselectする際，名前付きで指定すると変数名を変更してくれてピックアップしてくる:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, kosaki = 5, Sepal.Length) %&amp;gt;% head(3)
+#&amp;gt;    kosaki Sepal.Length
+#&amp;gt;  1 setosa          5.1
+#&amp;gt;  2 setosa          4.9
+#&amp;gt;  3 setosa          4.7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これが地味に強力で，以下のようなことも可能:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, kosaki = 1:3) %&amp;gt;% head(3)
+#&amp;gt;    kosaki1 kosaki2 kosaki3
+#&amp;gt;  1     5.1     3.5     1.4
+#&amp;gt;  2     4.9     3.0     1.4
+#&amp;gt;  3     4.7     3.2     1.3
+select(iris, kosaki = starts_with(&amp;quot;s&amp;quot;)) %&amp;gt;% head(3)
+#&amp;gt;    kosaki1 kosaki2 kosaki3
+#&amp;gt;  1     5.1     3.5  setosa
+#&amp;gt;  2     4.9     3.0  setosa
+#&amp;gt;  3     4.7     3.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;数値ベクトルで指定できるんだから，こういうことだって可能:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, length(current_vars()):3) %&amp;gt;% head(3)
+#&amp;gt;    Species Petal.Width Petal.Length
+#&amp;gt;  1  setosa         0.2          1.4
+#&amp;gt;  2  setosa         0.2          1.4
+#&amp;gt;  3  setosa         0.2          1.3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;current_vars()&lt;/code&gt;を使う理由は，pipeプロセス中で，この時点での変数リストを持ってきたいから。この方が応用できるんで。&lt;/p&gt;
+&lt;p&gt;変数の並びを入れ替えたい場合，お約束としては&lt;code&gt;everything()&lt;/code&gt;を活用する:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, 1, 5, everything()) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Species Sepal.Width Petal.Length Petal.Width
+#&amp;gt;  1          5.1  setosa         3.5          1.4         0.2
+#&amp;gt;  2          4.9  setosa         3.0          1.4         0.2
+#&amp;gt;  3          4.7  setosa         3.2          1.3         0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;あとはorderとかも使える:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(iris, order(current_vars())) %&amp;gt;% head(3)
+#&amp;gt;    Petal.Length Petal.Width Sepal.Length Sepal.Width Species
+#&amp;gt;  1          1.4         0.2          5.1         3.5  setosa
+#&amp;gt;  2          1.4         0.2          4.9         3.0  setosa
+#&amp;gt;  3          1.3         0.2          4.7         3.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;select()&lt;/code&gt;だと，多分こんな感じ。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rename()&lt;/code&gt;は関数名につられて「変数名を変更する関数」と思われがちだけど，&lt;code&gt;select()&lt;/code&gt;との比較で考えたほうが適切。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;select()&lt;/code&gt;はヒットした変数を取り出す(もしくは名前を変更)して，それ以外を除外する。一方&lt;code&gt;rename()&lt;/code&gt;は基本&lt;code&gt;select()&lt;/code&gt;と同じ動きをして，ヒットしなかった変数を残す(後ろに回す)。内部的には&lt;code&gt;select()&lt;/code&gt;で変数ピックアップするときに，特に指定していない場合は変数名と同じ文字列を名前として付与して，それを適用してるみたい。&lt;code&gt;rename()&lt;/code&gt;はこの後に変数をドロップしないように残ったものを拾っているみたいで，そこが違いみたい。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;select_all()&lt;/code&gt;を使ってみる。HelpのExampleより:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_all(mtcars, toupper) %&amp;gt;% head(3)
+#&amp;gt;                 MPG CYL DISP  HP DRAT    WT  QSEC VS AM GEAR CARB
+#&amp;gt;  Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&amp;gt;  Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&amp;gt;  Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+select_all(mtcars, &amp;quot;toupper&amp;quot;) %&amp;gt;% head(3)
+#&amp;gt;                 MPG CYL DISP  HP DRAT    WT  QSEC VS AM GEAR CARB
+#&amp;gt;  Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&amp;gt;  Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&amp;gt;  Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+select_all(mtcars, funs(toupper(.))) %&amp;gt;% head(3)
+#&amp;gt;                 MPG CYL DISP  HP DRAT    WT  QSEC VS AM GEAR CARB
+#&amp;gt;  Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&amp;gt;  Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&amp;gt;  Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;全ての変数名に対して関数が適用される，という感じ。それはいいんだけど，&lt;code&gt;rename_all()&lt;/code&gt;も存在する。この2つ，微妙にコードは違うんだけど，使い分けることってあるのかな…。浮かばない。&lt;/p&gt;
+&lt;p&gt;次に&lt;code&gt;select_at()&lt;/code&gt;を使ってみる。これは，第二引数である&lt;code&gt;.vars&lt;/code&gt;に残す変数を指定して，&lt;code&gt;.fun&lt;/code&gt;引数で変数名を処理する関数を指定するという動き。&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_at(iris, c(&amp;quot;Sepal.Length&amp;quot;, &amp;quot;Petal.Length&amp;quot;), .funs = toupper) %&amp;gt;% head(3)
+#&amp;gt;    SEPAL.LENGTH PETAL.LENGTH
+#&amp;gt;  1          5.1          1.4
+#&amp;gt;  2          4.9          1.4
+#&amp;gt;  3          4.7          1.3
+select_at(iris, vars(starts_with(&amp;quot;s&amp;quot;)), .funs = toupper) %&amp;gt;% head(3)
+#&amp;gt;    SEPAL.LENGTH SEPAL.WIDTH SPECIES
+#&amp;gt;  1          5.1         3.5  setosa
+#&amp;gt;  2          4.9         3.0  setosa
+#&amp;gt;  3          4.7         3.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;.var&lt;/code&gt;には，変数名の文字列ベクトルならそのまま，列番号なら&lt;code&gt;vars()&lt;/code&gt;で挟み込む必要があるみたい。なお&lt;code&gt;.funs&lt;/code&gt;引数を省略すると現在の変数名をそのまま渡すので変数名は変わらず:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_at(iris, vars(starts_with(&amp;quot;s&amp;quot;))) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Sepal.Width Species
+#&amp;gt;  1          5.1         3.5  setosa
+#&amp;gt;  2          4.9         3.0  setosa
+#&amp;gt;  3          4.7         3.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使い方としてはこっちがメイン，かな? なお&lt;code&gt;rename_at()&lt;/code&gt;関数もある:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rename_at(iris, vars(starts_with(&amp;quot;s&amp;quot;)), .funs = toupper) %&amp;gt;% head(3)
+#&amp;gt;    SEPAL.LENGTH SEPAL.WIDTH Petal.Length Petal.Width SPECIES
+#&amp;gt;  1          5.1         3.5          1.4         0.2  setosa
+#&amp;gt;  2          4.9         3.0          1.4         0.2  setosa
+#&amp;gt;  3          4.7         3.2          1.3         0.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;.var&lt;/code&gt;引数で選択した変数に対して&lt;code&gt;.funs&lt;/code&gt;引数で指定した変数名変更用関数を適用し，残りはそのまま持ってくる，という仕事をする。こっちは変数名を変更することが前提なので，&lt;code&gt;.funs&lt;/code&gt;を指定しないとエラーで怒られる。これまでの挙動を考えると納得いかない…。&lt;/p&gt;
+&lt;p&gt;最後に&lt;code&gt;select_if()&lt;/code&gt;を使ってみる。これは，第二引数である&lt;code&gt;.predicate&lt;/code&gt;に関数を準備し，各変数をこの関数に当てていく。そして&lt;code&gt;TRUE&lt;/code&gt;を返した関数を残す(選択する)，という仕事をする。ベタな例を以下に:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_if(iris, is.numeric) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width
+#&amp;gt;  1          5.1         3.5          1.4         0.2
+#&amp;gt;  2          4.9         3.0          1.4         0.2
+#&amp;gt;  3          4.7         3.2          1.3         0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;各変数に&lt;code&gt;is.numeric&lt;/code&gt;を適用し，&lt;code&gt;TRUE&lt;/code&gt;(つまり数値の変数)だけを取り出してる。なお，関数を自作して適用するのも可能:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;f &amp;lt;- function(x) {
+ if(is.numeric(x)){
+   mean(x) &amp;gt; 3
+ } else {
+   return(TRUE)
+ }
+}
+select_if(iris, f) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Sepal.Width Petal.Length Species
+#&amp;gt;  1          5.1         3.5          1.4  setosa
+#&amp;gt;  2          4.9         3.0          1.4  setosa
+#&amp;gt;  3          4.7         3.2          1.3  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この場合，「変数が数値型の場合，平均が3より大きかったら残す。それ以外の型なら残す」という仕事をさせてる。また，列数と同じ数の論理値ベクトルを与えてもOK:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_if(iris, c(TRUE, TRUE, FALSE, TRUE, FALSE)) %&amp;gt;% head(3)
+#&amp;gt;    Sepal.Length Sepal.Width Petal.Width
+#&amp;gt;  1          5.1         3.5         0.2
+#&amp;gt;  2          4.9         3.0         0.2
+#&amp;gt;  3          4.7         3.2         0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;また，&lt;code&gt;.Predicate&lt;/code&gt;で指定するのは関数だけでなくformulaでもいいみたい。省略。あと第三引数&lt;code&gt;.funs&lt;/code&gt;はこれまでのパターン同様&lt;strong&gt;変数名を変更するための関数&lt;/strong&gt;です。&lt;code&gt;select_if()&lt;/code&gt;においてはオプショナルなものです:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select_if(iris, is.numeric, toupper) %&amp;gt;% head(3)
+#&amp;gt;    SEPAL.LENGTH SEPAL.WIDTH PETAL.LENGTH PETAL.WIDTH
+#&amp;gt;  1          5.1         3.5          1.4         0.2
+#&amp;gt;  2          4.9         3.0          1.4         0.2
+#&amp;gt;  3          4.7         3.2          1.3         0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一方，&lt;code&gt;rename_if()&lt;/code&gt;は&lt;code&gt;select_if()&lt;/code&gt;とほぼ同じような動きをしますが，&lt;strong&gt;名前変更なので&lt;code&gt;.funs&lt;/code&gt;が必須&lt;/strong&gt;なのと，&lt;strong&gt;選択されなかった変数も残る&lt;/strong&gt;という違いがあります:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rename_if(iris, is.numeric, toupper) %&amp;gt;% head(3)
+#&amp;gt;    SEPAL.LENGTH SEPAL.WIDTH PETAL.LENGTH PETAL.WIDTH Species
+#&amp;gt;  1          5.1         3.5          1.4         0.2  setosa
+#&amp;gt;  2          4.9         3.0          1.4         0.2  setosa
+#&amp;gt;  3          4.7         3.2          1.3         0.2  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;だいたいこんな感じです。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()
+#&amp;gt;  R version 3.3.3 (2017-03-06)
+#&amp;gt;  Platform: x86_64-pc-linux-gnu (64-bit)
+#&amp;gt;  Running under: Ubuntu 16.04.2 LTS
+#&amp;gt;  
+#&amp;gt;  locale:
+#&amp;gt;   [1] LC_CTYPE=ja_JP.UTF-8       LC_NUMERIC=C              
+#&amp;gt;   [3] LC_TIME=ja_JP.UTF-8        LC_COLLATE=ja_JP.UTF-8    
+#&amp;gt;   [5] LC_MONETARY=ja_JP.UTF-8    LC_MESSAGES=ja_JP.UTF-8   
+#&amp;gt;   [7] LC_PAPER=ja_JP.UTF-8       LC_NAME=C                 
+#&amp;gt;   [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+#&amp;gt;  [11] LC_MEASUREMENT=ja_JP.UTF-8 LC_IDENTIFICATION=C       
+#&amp;gt;  
+#&amp;gt;  attached base packages:
+#&amp;gt;  [1] stats     graphics  grDevices utils     datasets  base     
+#&amp;gt;  
+#&amp;gt;  other attached packages:
+#&amp;gt;  [1] dplyr_0.5.0.9001
+#&amp;gt;  
+#&amp;gt;  loaded via a namespace (and not attached):
+#&amp;gt;   [1] Rcpp_0.12.10     bookdown_0.3.14  assertthat_0.1   digest_0.6.12   
+#&amp;gt;   [5] rprojroot_1.2    R6_2.2.0         backports_1.0.5  magrittr_1.5    
+#&amp;gt;   [9] evaluate_0.10    blogdown_0.0.25  rlang_0.0.0.9006 stringi_1.1.5   
+#&amp;gt;  [13] rmarkdown_1.4    tools_3.3.3      stringr_1.2.0    glue_0.0.0.9000 
+#&amp;gt;  [17] yaml_2.1.14      htmltools_0.3.6  knitr_1.15.19    tibble_1.3.0    
+#&amp;gt;  [21] methods_3.3.3&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
