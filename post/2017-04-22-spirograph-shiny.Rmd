@@ -1,0 +1,106 @@
+---
+title: SpirographをShinyで書いてみた
+author: kazutan
+date: '2017-04-22'
+slug: spirograph-shiny
+categories:
+  - R
+  - Shiny
+tags:
+  - R
+  - Shiny
+  - 数学
+draft: false
+---
+
+今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。
+
+## 前置き
+
+小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議な模様が出てくるので遊んだことありませんか?
+
+私が子どもの頃にそれを手にし,すごく興奮してひたすら遊び倒してました。でもお気に入りのおもちゃほどよく壊れるもので,あえなく遊べなくなり,名前もわからずに30年ほど経過しました…
+
+そして先日ふと思い出し,「あれってサイクロイドみたいなやつだよな。てことは座標を数式で表現できるよね?ならRで描写できるんじゃね?」ということで調べました。
+
+## アレの数式について
+
+サイクロイド媒介変数表示は以下の通り:
+
+$$
+\begin{cases}
+x = a( \theta - \sin \theta) \\
+y = a( 1 - \cos \theta) 
+\end{cases}
+$$
+
+$a$は転がす円の半径,$\theta$は転がる円が回転した角度を表す。$y$成分は上下の振動で,$x$成分は回転した分の円周に振動がゆらぎとして乗っかっている。「横へ転がっている」というのがx成分に追加されているイメージ,かな。
+
+こんな感じで探していると,[トコロイド](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AD%E3%82%B3%E3%82%A4%E3%83%89)というのを見つけた[^1]。この内トコロイドこそ,探していたものだった…!
+
+[^1]: 当初名前がわからなかったので,内サイクロイドから頭の中で考えて式を導いてた。まああってたからよかった。
+
+てことで,数式はこんな感じ:
+
+$$
+\begin{cases}
+x = (a - b)\cos \theta + p\cos\left(\frac{a-b}{b}\theta\right) \\
+y = (a - b)\sin \theta - p\sin\left(\frac{a-b}{b}\theta\right)
+\end{cases}
+$$
+
+なお,$a$は定円(外枠の円)の半径,$b$は動円(中で動いている円)の半径,$p$は描画点の半径,$\theta$は回転角とします。
+
+この式さえあれば,あとはRで描くなんて簡単です。
+
+## アレをRで描く
+
+てことで,以下のコードを書いてみました:
+
+```{r}
+# 数式のa, b, pを指定
+a = 1
+b = 0.3
+p = 0.11
+
+# 回転数とサンプリングする角度の間隔を指定
+turn = 100
+by = 0.01
+
+# x, yを算出するためにthetaを準備
+theta <- seq(from = 0, to = 2*pi*turn, by = by)
+
+# 座標をdata.frameで生成
+df <- data.frame(
+  x = (a - b)*cos(theta) + (b-p)*cos((a-b)/b*theta),
+  y = (a - b)*sin(theta) - (b-p)*sin((a-b)/b*theta)
+)
+
+# 取得した座標を線で結んでプロット
+plot(df, type = "l")
+```
+
+いけました。これで`b`と`p`に指定する値を変更すると,いろんなもの描けます。**30年振りの会合でした**。
+
+## そうだShinyだ
+
+ただ,このままだと毎回実行するのも面倒ですし,こういうのこそ簡単にパラメータいじってインタラクティブにしたいものです。
+
+そうです,Shinyです。もうserver側のコードはほぼできているので,あとはUIまわりを準備してやれば出来上がりとなります。てことで作りました:
+
+[kazutan/Spirograph](https://github.com/kazutan/Spirograph)
+
+昨日に30分でさくっと作ったのでかなり手抜きです。ちなみにこんな感じです:
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">てことでさくっとShinyで作ってみた。超楽しい! <a href="https://t.co/AW0TtdnFWG">pic.twitter.com/AW0TtdnFWG</a></p>&mdash; kazutan v3.3.3 (@kazutan) <a href="https://twitter.com/kazutan/status/855399890611970048">2017年4月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">他を固定してbを0.59, 0.60, 0.61へと変化させたらこうなった。 <a href="https://t.co/Uwr1tgDVfE">pic.twitter.com/Uwr1tgDVfE</a></p>&mdash; kazutan v3.3.3 (@kazutan) <a href="https://twitter.com/kazutan/status/855409680511676416">2017年4月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+なお,このキャプチャ画面の状態から,さらに`alpha`というパラメータを追加していますが,これは全体の回転パラメータです。動かしたらすぐに理解できると思います。
+
+昨晩これをいろいろ弄ってたらあっという間に時間が過ぎてしまいました…よかったら遊んでください。
+
+**Enjoy!**
+

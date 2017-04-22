@@ -11,7 +11,6 @@ draft: false
 明日から始まるのでいつも通りタイムテーブルを作ってみた。いちいちDTでやるの面倒だから`knitr::kable`で。
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
 df_17a <- data.frame(
   mon = c("PC演習", "PC演習", "", "ゼミ演習", "卒研指導"),
   tue = c("会議", "", "初年次科目", "PC演習", "オフィスアワー"),

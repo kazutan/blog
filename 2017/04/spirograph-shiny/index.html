@@ -1,0 +1,795 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.19">
+    <title>SpirographをShinyで書いてみた</title>
+    <meta name="author" content="kazutan">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://kazutan.github.io/blog/favicon.png">
+    
+
+    
+    <meta name="description" content="今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。 前置き 小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議">
+    <meta property="og:description" content="今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。 前置き 小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="SpirographをShinyで書いてみた">
+    <meta property="og:url" content="/2017/04/spirograph-shiny/">
+    <meta property="og:site_name" content="日々是独想">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="日々是独想">
+    <meta name="twitter:description" content="今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。 前置き 小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議">
+    
+      <meta name="twitter:creator" content="@kazutan">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://kazutan.github.io/blog/css/style-gwlo24d2hxipxk8bi1sxik0zhlpn9t7ebcmgp9kubmmcjfzlavuyhvbqumhn.min.css" />
+    
+    
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kazutan.github.io/blog/">日々是独想</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kazutan.github.io/blog/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg" alt="著者の絵" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kazutan.github.io/blog/#about">
+          <img class="sidebar-profile-picture" src="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg" alt="著者の絵" />
+        </a>
+        <h4 class="sidebar-profile-name">kazutan</h4>
+        
+          <h5 class="sidebar-profile-bio">広島の短大で働いています。好きな拡張子はRmdです。</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kazutan.github.io/blog/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">カテゴリー</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kazutan.github.io/blog/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">タグ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kazutan.github.io/blog/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">アーカイブ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kazutan" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kazutan.github.io/blog/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">ホーム</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kazutan.github.io/blog/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      SpirographをShinyで書いてみた
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-22T00:00:00Z">
+      
+  
+  
+  
+  
+    22 四月 2017
+  
+
+    </time>
+  
+  
+  
+  
+    <span>カテゴリー</span>
+    
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/shiny">Shiny</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。</p>
+<div class="section level2">
+<h2>前置き</h2>
+<p>小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議な模様が出てくるので遊んだことありませんか?</p>
+<p>私が子どもの頃にそれを手にし,すごく興奮してひたすら遊び倒してました。でもお気に入りのおもちゃほどよく壊れるもので,あえなく遊べなくなり,名前もわからずに30年ほど経過しました…</p>
+<p>そして先日ふと思い出し,「あれってサイクロイドみたいなやつだよな。てことは座標を数式で表現できるよね?ならRで描写できるんじゃね?」ということで調べました。</p>
+</div>
+<div class="section level2">
+<h2>アレの数式について</h2>
+<p>サイクロイド媒介変数表示は以下の通り:</p>
+<p><span class="math display">\[
+\begin{cases}
+x = a( \theta - \sin \theta) \\
+y = a( 1 - \cos \theta) 
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(a\)</span>は転がす円の半径,<span class="math inline">\(\theta\)</span>は転がる円が回転した角度を表す。<span class="math inline">\(y\)</span>成分は上下の振動で,<span class="math inline">\(x\)</span>成分は回転した分の円周に振動がゆらぎとして乗っかっている。「横へ転がっている」というのがx成分に追加されているイメージ,かな。</p>
+<p>こんな感じで探していると,<a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AD%E3%82%B3%E3%82%A4%E3%83%89">トコロイド</a>というのを見つけた<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>。この内トコロイドこそ,探していたものだった…!</p>
+<p>てことで,数式はこんな感じ:</p>
+<p><span class="math display">\[
+\begin{cases}
+x = (a - b)\cos \theta + p\cos\left(\frac{a-b}{b}\theta\right) \\
+y = (a - b)\sin \theta - p\sin\left(\frac{a-b}{b}\theta\right)
+\end{cases}
+\]</span></p>
+<p>なお,<span class="math inline">\(a\)</span>は定円(外枠の円)の半径,<span class="math inline">\(b\)</span>は動円(中で動いている円)の半径,<span class="math inline">\(p\)</span>は描画点の半径,<span class="math inline">\(\theta\)</span>は回転角とします。</p>
+<p>この式さえあれば,あとはRで描くなんて簡単です。</p>
+</div>
+<div id="r" class="section level2">
+<h2>アレをRで描く</h2>
+<p>てことで,以下のコードを書いてみました:</p>
+<pre class="r"><code># 数式のa, b, pを指定
+a = 1
+b = 0.3
+p = 0.11
+
+# 回転数とサンプリングする角度の間隔を指定
+turn = 100
+by = 0.01
+
+# x, yを算出するためにthetaを準備
+theta &lt;- seq(from = 0, to = 2*pi*turn, by = by)
+
+# 座標をdata.frameで生成
+df &lt;- data.frame(
+  x = (a - b)*cos(theta) + (b-p)*cos((a-b)/b*theta),
+  y = (a - b)*sin(theta) - (b-p)*sin((a-b)/b*theta)
+)
+
+# 取得した座標を線で結んでプロット
+plot(df, type = &quot;l&quot;)</code></pre>
+<p><img src="https://kazutan.github.io/blog/post/2017-04-22-spirograph-shiny_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>いけました。これで<code>b</code>と<code>p</code>に指定する値を変更すると,いろんなもの描けます。<strong>30年振りの会合でした</strong>。</p>
+</div>
+<div id="shiny" class="section level2">
+<h2>そうだShinyだ</h2>
+<p>ただ,このままだと毎回実行するのも面倒ですし,こういうのこそ簡単にパラメータいじってインタラクティブにしたいものです。</p>
+<p>そうです,Shinyです。もうserver側のコードはほぼできているので,あとはUIまわりを準備してやれば出来上がりとなります。てことで作りました:</p>
+<p><a href="https://github.com/kazutan/Spirograph">kazutan/Spirograph</a></p>
+<p>昨日に30分でさくっと作ったのでかなり手抜きです。ちなみにこんな感じです:</p>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja">
+<p lang="ja" dir="ltr">
+てことでさくっとShinyで作ってみた。超楽しい! <a href="https://t.co/AW0TtdnFWG">pic.twitter.com/AW0TtdnFWG</a>
+</p>
+— kazutan v3.3.3 (<span class="citation">@kazutan</span>) <a href="https://twitter.com/kazutan/status/855399890611970048">2017年4月21日</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+他を固定してbを0.59, 0.60, 0.61へと変化させたらこうなった。 <a href="https://t.co/Uwr1tgDVfE">pic.twitter.com/Uwr1tgDVfE</a>
+</p>
+— kazutan v3.3.3 (<span class="citation">@kazutan</span>) <a href="https://twitter.com/kazutan/status/855409680511676416">2017年4月21日</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>なお,このキャプチャ画面の状態から,さらに<code>alpha</code>というパラメータを追加していますが,これは全体の回転パラメータです。動かしたらすぐに理解できると思います。</p>
+<p>昨晩これをいろいろ弄ってたらあっという間に時間が過ぎてしまいました…よかったら遊んでください。</p>
+<p><strong>Enjoy!</strong></p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>当初名前がわからなかったので,内サイクロイドから頭の中で考えて式を導いてた。まああってたからよかった。<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">タグ</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
+
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/shiny/">Shiny</a>
+
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/" data-tooltip="dplyr::selectの活用例メモ">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 <a href="https://github.com/kazutan">kazutan</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/" data-tooltip="dplyr::selectの活用例メモ">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+        <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+        <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fspirograph-shiny%2f">
+        <i class="fa fa-twitter"></i><span>Twitterで共有</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/749225889536151554/9RV6O26X_400x400.jpg" alt="著者の絵" />
+    
+    <h4 id="about-card-name">kazutan</h4>
+    
+      <div id="about-card-bio">広島の短大で働いています。好きな拡張子はRmdです。</div>
+    
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Japan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="検索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/spirograph-shiny/">
+                <h3 class="media-heading">SpirographをShinyで書いてみた</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。 前置き 小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/">
+                <h3 class="media-heading">dplyr::selectの活用例メモ</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">タイトルのとおりです。気分転換を兼ねてメモ。 library(dplyr) #&gt; #&gt; 次のパッケージを付け加えます: &#39;dplyr&#39; #&gt; 以下のオブジェクトは &#39;package:stats&#39; からマスクされています: #&gt; #&gt; filter, lag #&gt;</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/mathjax-cdn-rmd/">
+                <h3 class="media-heading">MathJax CDNがシャットダウンされることによるR Markdownへの影響</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">経緯 先日,こういう情報が流れてきました: MathJax CDN shutting down on April 30, 2017. 内容としては,「MathJaxの自前CDNサーバーを4/30に閉じますよ」って話で,</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/17a-timetable/">
+                <h3 class="media-heading">今年度前期。</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">明日から始まるのでいつも通りタイムテーブルを作ってみた。いちいちDTでやるの面倒だからknitr::kableで。 Table 1: 2017年前期 週間スケ</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/dgr-rankdir-test/">
+                <h3 class="media-heading">DiagrammeRのrankdirのテスト</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) grViz(&quot; digraph dot { graph [rankdir = TB] a -&gt;</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/blogdown-tips/">
+                <h3 class="media-heading">blogdownのTips</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近まわりで何かと<strong>blogdown</strong>パッケージが話題です。このブログも<strong>blogdown</strong>で作成していますし,紹介する記事も増えてきました。</p>
+
+<p>そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/ten-years/">
+                <h3 class="media-heading">この10年。</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>本日の業務をもって,現所属10年を終えました。なんとか生き延びました。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/embed-slide-into-rmd/">
+                <h3 class="media-heading">R Markdownのhtml出力にスライドを埋め込む方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">やりたかったこと 成果 解説 slideshareについて SpeakerDeckについて その他のHTMLスライドについて 実際の関数のコードについて</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/rmd-de-website/">
+                <h3 class="media-heading">R MarkdownでWebサイト作成</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/rmd-test/">
+                <h3 class="media-heading">R Markdownでの諸々のテスト</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">コードと出力について plotについて htmlwidgets系のテスト leaflet DiagrammeR Plotly ちょっとRの出力を色々試してみたいと思います。 コードと出力について</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         13 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://kazutan.github.io/blog/images/cover_pic.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://kazutan.github.io/blog/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/04\/spirograph-shiny\/';
+          
+            this.page.identifier = '\/2017\/04\/spirograph-shiny\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'dokuso';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+    
+  </body>
+</html>
+

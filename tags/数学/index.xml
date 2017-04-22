@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/tags/%E6%95%B0%E5%AD%A6/index.xml</link>
+    <description>Recent content in 数学 on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SpirographをShinyで書いてみた</title>
+      <link>https://kazutan.github.io/blog/2017/04/spirograph-shiny/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/04/spirograph-shiny/</guid>
+      <description>&lt;p&gt;今日 #tokyor に参加できなくて寂しかったから記事を書くことにしました。&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;前置き&lt;/h2&gt;
+&lt;p&gt;小さい頃,歯車がついた定規でその歯車に鉛筆を使ってぐるぐる回すと,不思議な模様が出てくるので遊んだことありませんか?&lt;/p&gt;
+&lt;p&gt;私が子どもの頃にそれを手にし,すごく興奮してひたすら遊び倒してました。でもお気に入りのおもちゃほどよく壊れるもので,あえなく遊べなくなり,名前もわからずに30年ほど経過しました…&lt;/p&gt;
+&lt;p&gt;そして先日ふと思い出し,「あれってサイクロイドみたいなやつだよな。てことは座標を数式で表現できるよね?ならRで描写できるんじゃね?」ということで調べました。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;アレの数式について&lt;/h2&gt;
+&lt;p&gt;サイクロイド媒介変数表示は以下の通り:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\begin{cases}
+x = a( \theta - \sin \theta) \\
+y = a( 1 - \cos \theta) 
+\end{cases}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;は転がす円の半径,&lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;は転がる円が回転した角度を表す。&lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;成分は上下の振動で,&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;成分は回転した分の円周に振動がゆらぎとして乗っかっている。「横へ転がっている」というのがx成分に追加されているイメージ,かな。&lt;/p&gt;
+&lt;p&gt;こんな感じで探していると,&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AD%E3%82%B3%E3%82%A4%E3%83%89&#34;&gt;トコロイド&lt;/a&gt;というのを見つけた&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;。この内トコロイドこそ,探していたものだった…!&lt;/p&gt;
+&lt;p&gt;てことで,数式はこんな感じ:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\begin{cases}
+x = (a - b)\cos \theta + p\cos\left(\frac{a-b}{b}\theta\right) \\
+y = (a - b)\sin \theta - p\sin\left(\frac{a-b}{b}\theta\right)
+\end{cases}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;なお,&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;は定円(外枠の円)の半径,&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;は動円(中で動いている円)の半径,&lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;は描画点の半径,&lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;は回転角とします。&lt;/p&gt;
+&lt;p&gt;この式さえあれば,あとはRで描くなんて簡単です。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;アレをRで描く&lt;/h2&gt;
+&lt;p&gt;てことで,以下のコードを書いてみました:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 数式のa, b, pを指定
+a = 1
+b = 0.3
+p = 0.11
+
+# 回転数とサンプリングする角度の間隔を指定
+turn = 100
+by = 0.01
+
+# x, yを算出するためにthetaを準備
+theta &amp;lt;- seq(from = 0, to = 2*pi*turn, by = by)
+
+# 座標をdata.frameで生成
+df &amp;lt;- data.frame(
+  x = (a - b)*cos(theta) + (b-p)*cos((a-b)/b*theta),
+  y = (a - b)*sin(theta) - (b-p)*sin((a-b)/b*theta)
+)
+
+# 取得した座標を線で結んでプロット
+plot(df, type = &amp;quot;l&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/post/2017-04-22-spirograph-shiny_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;いけました。これで&lt;code&gt;b&lt;/code&gt;と&lt;code&gt;p&lt;/code&gt;に指定する値を変更すると,いろんなもの描けます。&lt;strong&gt;30年振りの会合でした&lt;/strong&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shiny&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;そうだShinyだ&lt;/h2&gt;
+&lt;p&gt;ただ,このままだと毎回実行するのも面倒ですし,こういうのこそ簡単にパラメータいじってインタラクティブにしたいものです。&lt;/p&gt;
+&lt;p&gt;そうです,Shinyです。もうserver側のコードはほぼできているので,あとはUIまわりを準備してやれば出来上がりとなります。てことで作りました:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kazutan/Spirograph&#34;&gt;kazutan/Spirograph&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;昨日に30分でさくっと作ったのでかなり手抜きです。ちなみにこんな感じです:&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;
+&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;
+てことでさくっとShinyで作ってみた。超楽しい! &lt;a href=&#34;https://t.co/AW0TtdnFWG&#34;&gt;pic.twitter.com/AW0TtdnFWG&lt;/a&gt;
+&lt;/p&gt;
+— kazutan v3.3.3 (&lt;span class=&#34;citation&#34;&gt;@kazutan&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/kazutan/status/855399890611970048&#34;&gt;2017年4月21日&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;
+&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;
+他を固定してbを0.59, 0.60, 0.61へと変化させたらこうなった。 &lt;a href=&#34;https://t.co/Uwr1tgDVfE&#34;&gt;pic.twitter.com/Uwr1tgDVfE&lt;/a&gt;
+&lt;/p&gt;
+— kazutan v3.3.3 (&lt;span class=&#34;citation&#34;&gt;@kazutan&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/kazutan/status/855409680511676416&#34;&gt;2017年4月21日&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;なお,このキャプチャ画面の状態から,さらに&lt;code&gt;alpha&lt;/code&gt;というパラメータを追加していますが,これは全体の回転パラメータです。動かしたらすぐに理解できると思います。&lt;/p&gt;
+&lt;p&gt;昨晩これをいろいろ弄ってたらあっという間に時間が過ぎてしまいました…よかったら遊んでください。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;当初名前がわからなかったので,内サイクロイドから頭の中で考えて式を導いてた。まああってたからよかった。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
