@@ -237,8 +237,8 @@ grViz(&quot;
       a -&gt; {b,c}
       }
       &quot;)</code></pre>
-<div id="htmlwidget-84e609e4c4be672557a6" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-84e609e4c4be672557a6">{"x":{"diagram":"\n      digraph dot {\n      graph [rankdir = TB]\n      a -> {b,c}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4b2c70bec2bde3257cc2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4b2c70bec2bde3257cc2">{"x":{"diagram":"\n      digraph dot {\n      graph [rankdir = TB]\n      a -> {b,c}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>ndf &lt;- create_node_df(
   n = 3,
   type = c(&quot;cat&quot;, &quot;takayanagi3&quot;, &quot;takayanagi3&quot;),
@@ -257,8 +257,8 @@ graph1 &lt;- create_graph(
 <pre><code>## Warning in sample.int(length(x), size, replace, prob): &#39;.Random.seed&#39; が整
 ## 数ベクトルではなくタイプ &#39;NULL&#39; になっているため、無視されました</code></pre>
 <pre class="r"><code>render_graph(graph1)</code></pre>
-<div id="htmlwidget-6e01e884b6c424a31311" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6e01e884b6c424a31311">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fed7a5d39688c20429d7" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fed7a5d39688c20429d7">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>graph2 &lt;- graph1 %&gt;% 
   add_global_graph_attrs(
     &quot;rankdir&quot;, &quot;TB&quot;, &quot;graph&quot;
@@ -268,8 +268,8 @@ graph1 &lt;- create_graph(
   )
 
 render_graph(graph2)</code></pre>
-<div id="htmlwidget-aca93d4f3256cd93f39d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-aca93d4f3256cd93f39d">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cc2b65cbd2c32789e18a" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cc2b65cbd2c32789e18a">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。</p>
 </div>
 

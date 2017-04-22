@@ -91,6 +91,28 @@ plot(df, type = &amp;quot;l&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;なお,このキャプチャ画面の状態から,さらに&lt;code&gt;alpha&lt;/code&gt;というパラメータを追加していますが,これは全体の回転パラメータです。動かしたらすぐに理解できると思います。&lt;/p&gt;
 &lt;p&gt;昨晩これをいろいろ弄ってたらあっという間に時間が過ぎてしまいました…よかったら遊んでください。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- Loading mathjax macro --&gt;
+&lt;!-- Load mathjax --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;!-- MathJax configuration --&amp;gt;
+&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ [&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;quot;\\(&amp;quot;,&amp;quot;\\)&amp;quot;] ],
+        displayMath: [ [&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;], [&amp;quot;\\[&amp;quot;,&amp;quot;\\]&amp;quot;] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: &amp;#39;center&amp;#39;,
+    &amp;quot;HTML-CSS&amp;quot;: {
+        styles: {&amp;#39;.MathJax_Display&amp;#39;: {&amp;quot;margin&amp;quot;: 0}},
+        linebreaks: { automatic: true }
+    }
+});
+&amp;lt;/script&amp;gt;
+&amp;lt;!-- End of mathjax configuration --&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
