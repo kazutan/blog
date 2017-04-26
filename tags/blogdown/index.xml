@@ -9,6 +9,133 @@
     <atom:link href="https://kazutan.github.io/blog/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Rbindというプロジェクトが立ち上がったみたいです</title>
+      <link>https://kazutan.github.io/blog/2017/04/whatis-rbindio/</link>
+      <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/04/whatis-rbindio/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;2017/04/26の朝に，以下のようなツイートが届きました:&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;
+&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;
+blogdown界の&lt;a href=&#34;https://t.co/cIRkAK63nC&#34;&gt;https://t.co/cIRkAK63nC&lt;/a&gt;的なものを目指してるらしい。おもしろそう。&lt;a href=&#34;https://twitter.com/kazutan&#34;&gt;&lt;span class=&#34;citation&#34;&gt;@kazutan&lt;/span&gt;&lt;/a&gt; さんの解説を待とう。 &lt;a href=&#34;https://t.co/aiEtH20kRE&#34;&gt;https://t.co/aiEtH20kRE&lt;/a&gt;
+&lt;/p&gt;
+— Hiroaki Yutani (&lt;span class=&#34;citation&#34;&gt;@yutannihilation&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/yutannihilation/status/856995260479676416&#34;&gt;2017年4月25日&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;というわけで調べてみました。3行でまとめると以下のとおりです:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yuhuiが「blogdown使ってRユーザーでBindしようぜ」と&lt;a href=&#34;https://github.com/rbind&#34;&gt;Rbindio&lt;/a&gt;というOrganizationをGitHub上に準備&lt;/li&gt;
+&lt;li&gt;「リポジトリをここに設置すれば簡単にブログやWebサイトを公開できるようにするよ」&lt;/li&gt;
+&lt;li&gt;「ドメイン名がない? &lt;code&gt;*.rbind.io&lt;/code&gt;で準備できるよ!」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;rbind&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Rbindとは&lt;/h2&gt;
+&lt;p&gt;世の中にはWordPress.comのように，気軽にWebサイトやblogを設置できるサービスが存在します。これらを利用すれば楽に自分のサイトやブログを設置することが可能となります。しかしこれらは特定の会社によって提供されているものです。&lt;/p&gt;
+&lt;p&gt;そこでYuhuiを含んだ有志&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;によって「コミュニティによるこういったサービスを提供しようじゃないか」と準備されたのがこのRbindというプロジェクトのようです。&lt;/p&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;理念的なもの&lt;/h3&gt;
+&lt;p&gt;詳しくは&lt;a href=&#34;https://support.rbind.io/about/&#34;&gt;こちらのページ&lt;/a&gt;を参照してください。冒頭を引用します:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The goal of the Rbind project is to provide a service like WordPress.com or Medium, but driven by the community1 instead of a certain company. We hope users can help each other to build the websites they want. Currently most websites in this project are built using the blogdown package, but you are welcome to use other tools if you want.&lt;/p&gt;
+&lt;p&gt;To make it easier to discover websites and get inspirations from other people’s websites, we created the Github organization “rbind” as a central place to host all websites. For example, if you are curious about how a particular website was built, you may study its source files, or even ask the author via Github issues.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;要点は以下の通り:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;コミュニティベースでWordPress.comみたいなサービスを提供したい&lt;/li&gt;
+&lt;li&gt;Webサイトづくりにおいて，お互いに助け合いながらやっていきたい&lt;/li&gt;
+&lt;li&gt;現状は&lt;code&gt;blogdown&lt;/code&gt;で作ってるのが多いけど，別に他のでも構わないよ!&lt;/li&gt;
+&lt;li&gt;お互いのサイトを見つけたりインスピレーションが得られるよう，GitHubで&lt;strong&gt;rbind&lt;/strong&gt;という組織準備して，ここに集約してホスティングすることにしたよ
+&lt;ul&gt;
+&lt;li&gt;それぞれのサイトで興味がでたらソースコードみればいいし，分からなければGitHub issuesで聞けるよ&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;また，こちらのページも参考にしてください:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.rbind.io/2017/04/24/launching-rbind-support/&#34; class=&#34;uri&#34;&gt;https://support.rbind.io/2017/04/24/launching-rbind-support/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;参加資格&lt;/h3&gt;
+&lt;p&gt;まあわりとゆるい感じです。上述のページでの該当箇所を引用します:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We do not really have hard restrictions on what kind of websites we expect to see in Rbind, but we will certainly be happy to host websites related to R and/or statistics.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Rや統計に関連してるようなものなら大歓迎だよ!ということです。言語的な縛りについては…どうなんだろう?割とアリな気もするけど，だれかissuesに投げないかな。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;参加方法&lt;/h3&gt;
+&lt;p&gt;シンプルです。該当箇所を引用します&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you do not have a website yet, please file a Github issue and we can help you create one in the Rbind organization using blogdown, otherwise you can transfer your existing Github repo to Rbind. In either case, if you do not own a domain name, we can offer a subdomain *.rbind.io to you for free, and just let us know in your Github issue.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;要点は以下の通り:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;もしまだWebサイトを持ってないなら，issuesにその旨を送ってくれれば私たちが手伝うよ&lt;/li&gt;
+&lt;li&gt;もうWebサイトを持ってるなら，そのGitHubリポジトリを移行(transfer)すればいいだけだよ&lt;/li&gt;
+&lt;li&gt;ドメイン名がないのなら，&lt;code&gt;*.rbind.io&lt;/code&gt;のサブドメインをフリーで提供するよ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;メリットとデメリット&lt;/h2&gt;
+&lt;p&gt;ここからは私の主観的な判断ですので，ご了承ください。&lt;/p&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;メリット&lt;/h3&gt;
+&lt;dl&gt;
+&lt;dt&gt;blogdownによるWebサイト/ブログの構築・設置において，コミュニティサポートが得やすくなる&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;このブログもblogdownで作っていますが，まだそれほど情報があるとは言えません。でもここに参加すれば，&lt;strong&gt;あのYuhuiを含むコミュニティの方々からサポート&lt;/strong&gt;してもらいやすくなります。これ以上心強いものはないかもしれません。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;ホスティングを気にせずWebサイト/ブログを準備できる&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;地味に面倒なのがこのあたりで，下手に自分でホスティングサービス探すよりも有効です。また自分がすでに有している独自ドメインも割当可能なので，サイトURLを変更せずに引っ越せます。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;多くの人に見てもらえる，かも&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;これは完全に無根拠な予想なのですが，ある程度集まってきたら&lt;a href=&#34;https://rbind.io&#34;&gt;本家トップ(現在は404)&lt;/a&gt;が整備されて「新着記事一覧」とかジャンル別とかにまとめられたりするんじゃないかなと，WordPress.comのトップをみながら思ってます。そうなると公開した記事がより多くの人に読まれることになるでしょう。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;デメリット&lt;/h3&gt;
+&lt;dl&gt;
+&lt;dt&gt;すでにあるリポジトリを引っ越すのが(ちょっとだけ)面倒&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;「もう運用してるしなぁ…引っ越す手続きもめんどくさい」と多少感じるかも。すでにblogdownで運用しているならそう感じるでしょう。余談ですがblogdownはHugoで生成してますが，WordPressからHugoに移行するためのWordPressプラグインは存在します&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;多分こんなところです。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;おそらくblogdownでこれから作っていくという方には，いい感じのサービスになるのではないでしょうか。なによりコミュニティ運用でこのようなサービスが立ち上がるというのは素敵だと思います。気になる方は気軽にissueで聞いてみてはいかがでしょうか。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;補足と参考資料&lt;/h2&gt;
+&lt;p&gt;この&lt;a href=&#34;https://support.rbind.io/&#34;&gt;RBind Support&lt;/a&gt;では，blogdownのテクニカルサポート情報が挙げられていくそうです。なので&lt;strong&gt;blogdownユーザーは確実にチェックすることをおすすめします&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;参考資料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.rbind.io/2017/04/24/launching-rbind-support/&#34;&gt;Launching the Rbind support website · Rbind Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.rbind.io/2017/04/25/yihui-website/&#34;&gt;A Technical Introduction to Yihui&#39;s personal website · Rbind Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.rbind.io/about/&#34;&gt;About Rbind Support · Rbind Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rbind&#34;&gt;RBindio - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Yuhuiが発起人の一人だとは思いますが，本人からのメッセージを受け取ってるわけではないので確証は…でもRbindIO内リポジトリのContributorをチェックする限りほぼ間違いないでしょう。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;この文には脚注およびリンクが含まれていましたがここでは省略します。詳しくは元ページを参照してください。&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;未検証なので深くは言及しませんが，私はそのうちこれを使って過去の記事を移行しようかと思ってます。ただ多分面倒なことになりそうなんだよなぁ…記事数多いし。&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>blogdownのTips</title>
       <link>https://kazutan.github.io/blog/2017/04/blogdown-tips/</link>
       <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
