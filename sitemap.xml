@@ -113,19 +113,13 @@
   </url>
   
   <url>
-    <loc>https://kazutan.github.io/blog/categories/r/</loc>
-    <lastmod>2017-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kazutan.github.io/blog/tags/r/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kazutan.github.io/blog/categories/r-markdown/</loc>
+    <loc>https://kazutan.github.io/blog/categories/r/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -137,13 +131,19 @@
   </url>
   
   <url>
-    <loc>https://kazutan.github.io/blog/categories/shiny/</loc>
-    <lastmod>2017-04-22T00:00:00+00:00</lastmod>
+    <loc>https://kazutan.github.io/blog/categories/r-markdown/</loc>
+    <lastmod>2017-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kazutan.github.io/blog/tags/shiny/</loc>
+    <lastmod>2017-04-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kazutan.github.io/blog/categories/shiny/</loc>
     <lastmod>2017-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -178,13 +178,13 @@
   </url>
   
   <url>
-    <loc>https://kazutan.github.io/blog/categories/%E7%8B%AC%E6%83%B3/</loc>
+    <loc>https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/</loc>
     <lastmod>2017-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/</loc>
+    <loc>https://kazutan.github.io/blog/categories/%E7%8B%AC%E6%83%B3/</loc>
     <lastmod>2017-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
