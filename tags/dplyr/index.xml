@@ -14,12 +14,7 @@
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://kazutan.github.io/blog/2017/04/dplyr-select-memo/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;タイトルのとおりです。気分転換を兼ねてメモ。&lt;/p&gt;
+      <description>&lt;p&gt;タイトルのとおりです。気分転換を兼ねてメモ。&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)
 #&amp;gt;  
 #&amp;gt;   次のパッケージを付け加えます: &amp;#39;dplyr&amp;#39;
@@ -171,7 +166,7 @@ select_if(iris, f) %&amp;gt;% head(3)
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()
 #&amp;gt;  R version 3.4.0 (2017-04-21)
 #&amp;gt;  Platform: x86_64-pc-linux-gnu (64-bit)
-#&amp;gt;  Running under: Ubuntu 16.04.2 LTS
+#&amp;gt;  Running under: Ubuntu 16.04.1 LTS
 #&amp;gt;  
 #&amp;gt;  Matrix products: default
 #&amp;gt;  BLAS: /usr/lib/libblas/libblas.so.3.6.0
@@ -192,13 +187,13 @@ select_if(iris, f) %&amp;gt;% head(3)
 #&amp;gt;  [1] dplyr_0.5.0.9004
 #&amp;gt;  
 #&amp;gt;  loaded via a namespace (and not attached):
-#&amp;gt;   [1] Rcpp_0.12.10         bookdown_0.3.18      assertthat_0.2.0    
-#&amp;gt;   [4] digest_0.6.12        rprojroot_1.2        R6_2.2.0            
-#&amp;gt;   [7] backports_1.0.5      magrittr_1.5         evaluate_0.10       
-#&amp;gt;  [10] blogdown_0.0.27      rlang_0.0.0.9018     stringi_1.1.5       
-#&amp;gt;  [13] rmarkdown_1.4.0.9001 tools_3.4.0          stringr_1.2.0       
-#&amp;gt;  [16] glue_1.0.0           yaml_2.1.14          compiler_3.4.0      
-#&amp;gt;  [19] htmltools_0.3.6      knitr_1.15.20        tibble_1.3.0        
+#&amp;gt;   [1] Rcpp_0.12.10.2     bookdown_0.3.18    assertthat_0.2.0  
+#&amp;gt;   [4] digest_0.6.12      rprojroot_1.2      R6_2.2.0          
+#&amp;gt;   [7] backports_1.0.5    magrittr_1.5       evaluate_0.10     
+#&amp;gt;  [10] blogdown_0.0.30    rlang_0.0.0.9019   stringi_1.1.5     
+#&amp;gt;  [13] rmarkdown_1.5.9000 tools_3.4.0        stringr_1.2.0.9000
+#&amp;gt;  [16] glue_1.0.0         yaml_2.1.14        compiler_3.4.0    
+#&amp;gt;  [19] htmltools_0.3.6    knitr_1.15.20      tibble_1.3.0.9001 
 #&amp;gt;  [22] methods_3.4.0&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

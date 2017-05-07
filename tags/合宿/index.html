@@ -1,9 +1,5 @@
 
 
-  
-    
-  
-
 
   
 
@@ -20,23 +16,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>R MarkdownでWebサイト作成</title>
+    <title>合宿</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://kazutan.github.io/blog/favicon.png">
     
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kazutan.github.io/blog/tags/%E5%90%88%E5%AE%BF/index.xml">
+    
 
     
-    <meta name="description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
-    <meta property="og:description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
+    <meta name="description" content="kazutanのブログです。">
+    <meta property="og:description" content="kazutanのブログです。">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="R MarkdownでWebサイト作成">
-    <meta property="og:url" content="/2017/03/rmd-de-website/">
+    <meta property="og:title" content="合宿">
+    <meta property="og:url" content="/tags/%E5%90%88%E5%AE%BF/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="2017/03/25にfukuoka.R #7にて発表してきました。 資料置き場 GitHubに当日使った資料などを置いています: https://github.com/kazutan/RmdSite_tuto コメント R Ma">
+    <meta name="twitter:description" content="kazutanのブログです。">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -72,7 +70,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="5">
+      <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://kazutan.github.io/blog/">日々是独想</a>
@@ -92,7 +90,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="5">
+      <nav id="sidebar" data-behavior="2">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -178,29 +176,47 @@
 </nav>
 
       
+        
 
-      <div id="main" data-behavior="5"
+      
+      <div id="main" data-behavior="2"
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+        
+          <section class="postShorten-group main-content-wrap">
+            
+            
+              
   
-    <h1 class="post-title" itemprop="headline">
-      R MarkdownでWebサイト作成
-    </h1>
+    
+      
+        
+      
+    
   
-  <div class="postShorten-meta post-meta">
+
+
   
-    <time itemprop="datePublished" datetime="2017-03-27T00:00:00Z">
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/05/gasshuku/">
+          山中湖へ合宿に行ってパッケージ作ってきた
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-05-07T00:00:00Z">
       
   
   
   
   
-    27 三月 2017
+    7 五月 2017
   
 
     </time>
@@ -210,163 +226,31 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>
     
   
 
 
 </div>
 
-</div>
-          
-          <div class="post-content markdown" itemprop="articleBody">
-            <div class="main-content-wrap">
-              <p>2017/03/25に<a href="https://fukuoka-r.connpass.com/event/50986/">fukuoka.R #7</a>にて発表してきました。</p>
-<div class="section level2">
-<h2>資料置き場</h2>
-<p>GitHubに当日使った資料などを置いています:</p>
-<p><a href="https://github.com/kazutan/RmdSite_tuto" class="uri">https://github.com/kazutan/RmdSite_tuto</a></p>
-</div>
-<div class="section level2">
-<h2>コメント</h2>
-<div id="r-markdownweb" class="section level3">
-<h3>R MarkdownでWebサイトを構築する理由</h3>
-<p>まあ色々ありますが，当日口頭でしか伝えてなかったので補足しますと…</p>
-<ol style="list-style-type: decimal">
-<li>Rを含むコードと実行結果をそのまま組み込んで公開できる</li>
-<li>静的なサイトなので公開がスムーズ</li>
-<li>CMSばりのことができる</li>
-<li>htmlをRで生成できる(プログラマブル)</li>
-</ol>
-<p>などです。すべてオープンソースでかなりのことができる，というのは大きいでしょう。</p>
-</div>
-<div class="section level3">
-<h3>必要な技術・知識について</h3>
-<p>実のところ，R Markdownの知識や技術が一通り必要です。私が考えるR Markdownのスキルマップでは最後の方に位置づけています。こう言うと「やべぇめっちゃむずかしいんじゃねぇの手を出すのやめようか…」と思われそうですが，「Bootstrap組み込んでjQuery使えるようにしてページを部品化してプロジェクトとして管理して運用する」というのを実現しようとするなら，HTML, CSS, JavaScriptなどの相当な知識と技能が求められます。これらを習得しようとするよりも，はるかに簡単に到達することができるでしょう。</p>
-<p>必須になる技術・知識は以下のような感じです:</p>
-<ul>
-<li>R Markdownの記述方法
-<ul>
-<li>yamlフロントマターの基礎</li>
-<li>chunkオプションの基礎</li>
-</ul></li>
-<li>navbarの記述方法</li>
-<li>公開するWebサーバーへの設置方法</li>
-</ul>
-<p>さらに以下の技術・知識があると便利になるでしょう:</p>
-<ul>
-<li>cssの記述方法</li>
-<li>pandocの仕様</li>
-<li>JavaScript(jQuery)の知識</li>
-<li>htmltoolsパッケージ</li>
-</ul>
-<p>だいたいこんな感じです。</p>
-</div>
-</div>
-<div class="section level2">
-<h2>参考資料など</h2>
-<p>基本的には，公式ドキュメントを参照してください:</p>
-<ul>
-<li><a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html" class="uri">http://rmarkdown.rstudio.com/rmarkdown_websites.html</a></li>
-</ul>
-<p>あとは私の上記GitHubのREADMEなどで紹介している記事を適宜参照してください。もしわからないところがありましたら，<span class="citation">[@kazutan]</span>(<a href="https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください" class="uri">https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください</a>。</p>
-<p><strong>Enjoy!</strong></p>
-</div>
-
-              
-            </div>
-          </div>
-          <div id="post-footer" class="post-footer main-content-wrap">
-            
-              
-                
-                
-                  <div class="post-footer-tags">
-                    <span class="text-color-light text-small">タグ</span><br/>
-                    
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
-
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r-markdown/">R Markdown</a>
-
-                  </div>
-                
-              
-            
-            <div class="post-actions-wrap">
-  <nav>
-    <ul class="post-actions post-action-nav">
-      
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/embed-slide-into-rmd/" data-tooltip="R Markdownのhtml出力にスライドを埋め込む方法">
-          
-            <i class="fa fa-angle-left"></i>
-            <span class="hide-xs hide-sm text-small icon-ml">前</span>
-          </a>
-        </li>
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
-          
-            <span class="hide-xs hide-sm text-small icon-mr">次</span>
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-  <ul class="post-actions post-action-share">
-    
-      <li class="post-action hide-lg hide-md hide-sm">
-        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-google-plus"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-facebook-official"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-    
-    
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    
-    <li class="post-action">
-      
-        <a class="post-action-btn btn btn--default" href="#">
-      
-        <i class="fa fa-list"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        進捗報告です． 5&frasl;5-7で「開発合宿@山中湖」( #合宿だゾウ )というタイトルで合宿をしてきました．イベントの内容についてはこちら
+        <br>
+        <a href="https://kazutan.github.io/blog/2017/05/gasshuku/" class="postShorten-excerpt_link link">続きを読む</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
 
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
             
-          </div>
-        </article>
+
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2017 <a href="https://github.com/kazutan">kazutan</a>. All Rights Reserved
@@ -378,92 +262,6 @@
 </script>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
-        <div class="post-actions-wrap">
-  <nav>
-    <ul class="post-actions post-action-nav">
-      
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/embed-slide-into-rmd/" data-tooltip="R Markdownのhtml出力にスライドを埋め込む方法">
-          
-            <i class="fa fa-angle-left"></i>
-            <span class="hide-xs hide-sm text-small icon-ml">前</span>
-          </a>
-        </li>
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/rmd-test/" data-tooltip="R Markdownでの諸々のテスト">
-          
-            <span class="hide-xs hide-sm text-small icon-mr">次</span>
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-  <ul class="post-actions post-action-share">
-    
-      <li class="post-action hide-lg hide-md hide-sm">
-        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-google-plus"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-facebook-official"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-    
-    
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    
-    <li class="post-action">
-      
-        <a class="post-action-btn btn btn--default" href="#">
-      
-        <i class="fa fa-list"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-      </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
-  <ul class="share-options">
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-        <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
-      </a>
-    </li>
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-        <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
-      </a>
-    </li>
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2frmd-de-website%2f">
-        <i class="fa fa-twitter"></i><span>Twitterで共有</span>
-      </a>
-    </li>
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -730,32 +528,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/03\/rmd-de-website\/';
-          
-            this.page.identifier = '\/2017\/03\/rmd-de-website\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'dokuso';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
     

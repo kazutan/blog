@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>合宿 on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/tags/%E5%90%88%E5%AE%BF/index.xml</link>
+    <description>Recent content in 合宿 on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/%E5%90%88%E5%AE%BF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>山中湖へ合宿に行ってパッケージ作ってきた</title>
+      <link>https://kazutan.github.io/blog/2017/05/gasshuku/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/05/gasshuku/</guid>
+      <description>
+
+&lt;p&gt;進捗報告です．&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt;-7で「開発合宿@山中湖」( #合宿だゾウ )というタイトルで合宿をしてきました．イベントの内容については&lt;a href=&#34;https://atnd.org/events/87097&#34;&gt;こちらのATND&lt;/a&gt;を，またその様子については&lt;a href=&#34;https://twitter.com/hashtag/%E5%90%88%E5%AE%BF%E3%81%A0%E3%82%BE%E3%82%A6&#34;&gt;Twitterの#合宿だゾウ&lt;/a&gt;を覗いてみてください．&lt;/p&gt;
+
+&lt;h2 id=&#34;企画に至る経緯について&#34;&gt;企画に至る経緯について&lt;/h2&gt;
+
+&lt;p&gt;4月に入ってなれない業務が増えてしまい疲弊してしまい，Twitterで「引きこもってひたすら開発したい」とつぶやいたことが聞かっけでした．その時各方面から反応があり，また合宿に向いている施設も紹介されたので「やるしかないな」と判断し，ATNDを立てました．&lt;/p&gt;
+
+&lt;p&gt;ゴールデンウィーク中で，すでに予定が入っている方も多いだろうから集まるか心配でしたが，結果的に12名も来てくださいました．ありがとうございましsた．&lt;/p&gt;
+
+&lt;h2 id=&#34;合宿場所について&#34;&gt;合宿場所について&lt;/h2&gt;
+
+&lt;p&gt;今回は参加者のある方のご紹介により，山梨県山中湖村の&lt;a href=&#34;http://y-tennisfriend.com/charter.html&#34;&gt;テニスフレンド別館9(貸切)&lt;/a&gt;を利用しました．懐かしさを感じる建物で居心地よく，またリーズナブルでWi-Fiもあるなど，まさにぴったりでした．ぜひみなさまもゼミ合宿などをお考えでしたらぜひご利用ください．ちょっと歩けば山中湖で，富士山の雄大な姿が拝めます:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/u_ribo&#34;&gt;@u_ribo&lt;/a&gt; この雄大な自然を前にすれば、俺たちの進捗なんてちっぽけなもんさ… &lt;a href=&#34;https://twitter.com/hashtag/%E5%90%88%E5%AE%BF%E3%81%A0%E3%82%BE%E3%82%A6?src=hash&#34;&gt;#合宿だゾウ&lt;/a&gt;🐘 &lt;a href=&#34;https://twitter.com/hashtag/%E9%80%B2%E6%8D%97%E3%81%AF%E7%89%B9%E3%81%AB%E3%81%AA%E3%81%84%E3%81%A7?src=hash&#34;&gt;#進捗は特にないで&lt;/a&gt; &lt;a href=&#34;https://t.co/bUaLmwwZAB&#34;&gt;pic.twitter.com/bUaLmwwZAB&lt;/a&gt;&lt;/p&gt;&amp;mdash; Hiroaki Yutani (@yutannihilation) &lt;a href=&#34;https://twitter.com/yutannihilation/status/860607216138690560&#34;&gt;2017年5月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;あと冬でなければバーベキューをおすすめします．おいしくてボリューム満点ですよ!&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;もうすぐ。 &lt;a href=&#34;https://twitter.com/hashtag/%E5%90%88%E5%AE%BF%E3%81%A0%E3%82%BE%E3%82%A6?src=hash&#34;&gt;#合宿だゾウ&lt;/a&gt; &lt;a href=&#34;https://t.co/iWZ1khNzib&#34;&gt;pic.twitter.com/iWZ1khNzib&lt;/a&gt;&lt;/p&gt;&amp;mdash; kazutan v3.4.0 (@kazutan) &lt;a href=&#34;https://twitter.com/kazutan/status/860785913374294016&#34;&gt;2017年5月6日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;肉を焼いたりひっくり返したりする宗教的儀式に参加しています。 &lt;a href=&#34;https://twitter.com/hashtag/%E5%90%88%E5%AE%BF%E3%81%A0%E3%82%BE%E3%82%A6?src=hash&#34;&gt;#合宿だゾウ&lt;/a&gt; &lt;a href=&#34;https://t.co/hoDgIryXnp&#34;&gt;pic.twitter.com/hoDgIryXnp&lt;/a&gt;&lt;/p&gt;&amp;mdash; N(σ x σ, μ) (@hoxo_m) &lt;a href=&#34;https://twitter.com/hoxo_m/status/860794924853100544&#34;&gt;2017年5月6日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;企画側からの感想&#34;&gt;企画側からの感想&lt;/h2&gt;
+
+&lt;p&gt;オープンな募集であったため，すでにつながりがあるメンバーだけではなく，(私も含め)初対面の方も多くありました．でもみなさんいい方で，大きなトラブルもなくスケジュールをこなせました．今回幹事として気をつけたのは，&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;お金の管理&lt;/li&gt;
+&lt;li&gt;できるだけ個々人がフリーに作業できること&lt;/li&gt;
+&lt;li&gt;幹事を含め負担をできるだけ抑える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この3点ぐらいです．拙い幹事で申し訳ありませんでした．あと遅刻して申し訳ありませんでした．&lt;/p&gt;
+
+&lt;h2 id=&#34;参加者からの感想&#34;&gt;参加者からの感想&lt;/h2&gt;
+
+&lt;h3 id=&#34;到達目標&#34;&gt;到達目標&lt;/h3&gt;
+
+&lt;p&gt;今回自分の達成目標としては「R Markdownのテンプレートパッケージを自作すること」でした．いままで小道具的なパッケージは作ったことありましたが，こういうのは初めてでした．またR Markdownのテンプレート用パッケージ作りにはR Markdownの内部的な処理を把握しておく必要があり，これまでコツコツと勉強してきたことをまとめて発揮できるいい機会だと思ったためです．&lt;/p&gt;
+
+&lt;h3 id=&#34;進捗&#34;&gt;進捗&lt;/h3&gt;
+
+&lt;p&gt;以下のとおりです:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Rmdでスライドを作成する新しいパッケージfullpagejsを作りました &lt;a href=&#34;https://t.co/4RRdKFdlq5&#34;&gt;https://t.co/4RRdKFdlq5&lt;/a&gt; 紹介スライド→ &lt;a href=&#34;https://t.co/W2ovkPviX1&#34;&gt;https://t.co/W2ovkPviX1&lt;/a&gt; これのRmd → &lt;a href=&#34;https://t.co/erqmpkMDv4&#34;&gt;https://t.co/erqmpkMDv4&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/%E5%90%88%E5%AE%BF%E3%81%A0%E3%82%BE%E3%82%A6?src=hash&#34;&gt;#合宿だゾウ&lt;/a&gt; Enjoy!&lt;/p&gt;&amp;mdash; kazutan v3.4.0 (@kazutan) &lt;a href=&#34;https://twitter.com/kazutan/status/861035786774257664&#34;&gt;2017年5月7日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;自分でもびっくりですが，実質1日で実装までいけました．確かに割と使いやすく，また参考になる他のパッケージの情報を得ていたというのはありますが信じられません．&lt;/p&gt;
+
+&lt;p&gt;パッケージの内容については，上記ツイートのスライドを参照してください．なおこのパッケージの内容とrmarkdownのテンプレート開発関連のお話については，5/20に開催される&lt;a href=&#34;https://atnd.org/events/87878&#34;&gt;第61回R勉強会＠東京（#TokyoR）&lt;/a&gt;で話そうと思ってます．あとそれまでにドキュメント整備してもうちょっとこなれたものにしてアルファ版からベータ版くらいにはしとこうと思ってます．&lt;/p&gt;
+
+&lt;h2 id=&#34;さいごに&#34;&gt;さいごに&lt;/h2&gt;
+
+&lt;p&gt;今回の合宿は，私の思いつきにもかかわらず参加してくださった皆様をはじめ，現地でお世話になった方々や差し入れを送ってくださった方々，そしてまわりでハッシュタグを利用して盛り上げてくれた方々のおかげだと思ってますs．特に現地でお世話になった方々には本当にサポート・サービスしていただきました．&lt;/p&gt;
+
+&lt;p&gt;この田を使いまして御礼申し上げます．ありがとうございました．&lt;/p&gt;
+
+&lt;p&gt;今回蓄積したノウハウを活かし，また心が荒んできた頃に企画したいと思います．その際はぜひともよろしくお願いいたしますs．&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
