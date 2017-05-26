@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rstudio on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/tags/rstudio/index.xml</link>
+    <description>Recent content in Rstudio on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RStudioでDarkなテーマを当ててみる</title>
+      <link>https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/</guid>
+      <description>
+
+&lt;p&gt;タイトルのとおりで，超Coolです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/rstudio-theme-modern-dark.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;要約&#34;&gt;要約&lt;/h2&gt;
+
+&lt;p&gt;記事執筆時(2017/05/26)時点での導入方法を紹介しますす．以下の手順です:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;RStudio(or Server)のdaily build版を導入&lt;/li&gt;
+&lt;li&gt;Tools -&amp;gt; Global Options&amp;hellip;を開く&lt;/li&gt;
+&lt;li&gt;Appearanceで，**RStudio Theme: &lt;strong&gt;を&lt;/strong&gt;Modern**に切り替える&lt;/li&gt;
+&lt;li&gt;そのすぐ下にある**Editor Theme: &lt;strong&gt;で&lt;/strong&gt;Dark系のテーマ**に切り替える&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上です．ネックになるのは1番で，あと4番がポイントになります．なお本記事執筆時点ではdaily build版を使用しています．安定版ではないので注意してください．&lt;/p&gt;
+
+&lt;h2 id=&#34;rstudioのdaily-build版を導入&#34;&gt;RStudioのdaily build版を導入&lt;/h2&gt;
+
+&lt;h3 id=&#34;rstudioの開発版について&#34;&gt;RStudioの開発版について&lt;/h3&gt;
+
+&lt;p&gt;RStudioはGithubで開発が進められており，その開発状況を観察することができます．最新情報をチェックしたい方は，&lt;a href=&#34;https://github.com/rstudio/rstudio&#34;&gt;RStudioのGithubリポジトリ&lt;/a&gt;をWatchすると楽しいことでしょう．&lt;/p&gt;
+
+&lt;p&gt;ちょっと前までRStudioは&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Preview版&lt;/a&gt;ということで提供していたのですが，v1.0.143(安定版と同一)以降は更新されていません．&lt;/p&gt;
+
+&lt;p&gt;一方で，以前よりRStudioは毎日修正されたものを&lt;a href=&#34;https://github.com/rstudio/rstudio/releases&#34;&gt;日々tagをつけてbuild&lt;/a&gt;しています．buildしたイメージは，&lt;a href=&#34;https://dailies.rstudio.com/&#34;&gt;RStudio daily build&lt;/a&gt;としてサイトでまとめられています．ちょうどPreview版が更新されなくなったタイミングでこっちが綺麗に配備されたことから，おそらくはPreview版をリリースしていくのではなくdaily build版にその役目を移行したんだと思います．&lt;/p&gt;
+
+&lt;h3 id=&#34;rstudioのdaily-build版の導入について&#34;&gt;RStudioのdaily build版の導入について&lt;/h3&gt;
+
+&lt;p&gt;以上前置きですが，要するに&lt;strong&gt;このdaily buildのサイトから自分の環境にあったものを持ってくる&lt;/strong&gt;ことになります．通常のダウンロードページよりわかりやすくてきれいだから迷うことはないかと思います．イメージをダウンロードして，自分の環境でインストールすれば完了となります．&lt;/p&gt;
+
+&lt;p&gt;ただ本当に気をつけてもらいたいのは，&lt;strong&gt;これはdaily buildなので安定性は担保されない&lt;/strong&gt;ということです．日々の開発状況を観察していると，毎日のようにbug fixが流れてきますので，本番の環境として利用するには結構なリスクを伴うと思ってください．&lt;/p&gt;
+
+&lt;p&gt;個人的にはサンドバッキングな環境での試用をおすすめします．私はvagrantでubuntuを構築してそこで試しています&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;．このあたりについては&lt;a href=&#34;http://qiita.com/kazutan/items/6048fa8d46683dcad788&#34;&gt;以前Qiitaにまとめた&lt;/a&gt;ので，そちらを参照してください．RStudio Server版ですが，RStudio Desktop版と基本変わりません&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;．&lt;/p&gt;
+
+&lt;p&gt;なぜdaily build版を利用するかというと，RStudioの全体テーマを変更できるのはごく最近のversionにしか対応していないからです．今回実行している環境は&lt;strong&gt;RStudio v1.1.243&lt;/strong&gt; です．またこれ以降のversionでは設定方法などの仕様が変更される可能性も(わりと大いに)あります．その点をご了承ください．&lt;/p&gt;
+
+&lt;h2 id=&#34;rstudio-themeについて&#34;&gt;RStudio Themeについて&lt;/h2&gt;
+
+&lt;p&gt;さて，いよいよ設定です．最先端のRStudioを起動すると，以下のようなインターフェースが出てきます:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/rstudio-theme-modern-light.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今までと雰囲気が違いますね．新しいデフォルトのテーマは&lt;strong&gt;modern&lt;/strong&gt;というもので，フラットデザインでアイコンとかも変更されてます&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;．ではTheme切り替えに入ります．&lt;/p&gt;
+
+&lt;h3 id=&#34;themeの切り替えと各種テーマ&#34;&gt;Themeの切り替えと各種テーマ&lt;/h3&gt;
+
+&lt;p&gt;Themeを切り替えるのは，メニューの&lt;strong&gt;Tools -&amp;gt; Global Options&amp;hellip;&lt;/strong&gt;で行います．ここで&lt;strong&gt;Appearance&lt;/strong&gt;を開きます:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/rstudio-theme-appearance.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;気付きましたでしょうか．これまでなかった&lt;strong&gt;RStudio Theme&lt;/strong&gt;というのが出てきています．ここには(このversionでは)3つのテーマがあります:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classic
+
+&lt;ul&gt;
+&lt;li&gt;いわゆる従来までのテーマ&lt;/li&gt;
+&lt;li&gt;以下の2つとは完全にタイプが違うため，RStudioの再起動が求められる場合があります&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Modern
+
+&lt;ul&gt;
+&lt;li&gt;新しいデフォルトのテーマ&lt;/li&gt;
+&lt;li&gt;フラットデザインで，ちょっとしたトリックが仕込まれている(後述)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Sky
+
+&lt;ul&gt;
+&lt;li&gt;新しいテーマ&lt;/li&gt;
+&lt;li&gt;空色をテーマにしたいい感じ&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Classicはこれまでと同様なので省略します．Skyを設定すると，以下のような感じになります:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/rstudio-theme-sky.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;さて，どう見てもDarkっぽいのはありません．ちょっとした細工が必要です．&lt;/p&gt;
+
+&lt;h3 id=&#34;theme-darkを設定&#34;&gt;Theme Darkを設定&lt;/h3&gt;
+
+&lt;p&gt;modernテーマには面白いトリックがありまして，&lt;strong&gt;Editor themeが明るいテーマなら明るいテーマを，逆にEditor themeが暗いテーマなら暗いテーマへ変化する&lt;/strong&gt;という特徴があります．なので，通称「RStudio Dark」は，以下の条件を満たすと発動します:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RStudio themeでModernを選択&lt;/li&gt;
+&lt;li&gt;Editor themeで暗いテーマを選択&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;というわけで，Modern - Tomorrow Night Blue を選択した結果がこちらです:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/img/rstudio-theme-modern-dark.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こういう感じの仕様にしたのはわりと面白いなと思います．ただ，この件については執筆時でも超大物Rユーザー間でやり取りが行われています．ただこのDarkテーマ自体にはみんな喜んでいるので，設定方法は変わるとしても残るでしょう．&lt;/p&gt;
+
+&lt;h2 id=&#34;雑感&#34;&gt;雑感&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;RStudio v1.1.xはよ&lt;/strong&gt;．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Dockerでもいいんですが，さくっと自分用にサンドバッキングな環境を作るならvagrantのほうがいいなぁと最近思うようになりました．まあ半分以上は慣れですけど．Ansibleにはよ手を出したいです．
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Server版とDesktop版の違いについては,個人利用としてはマルチセッションができないことぐらいです．個人的にはプラットフォームに左右されにくいということもあって状況によって使い分けてます．Ubuntuいいですよ．
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;もちろん他にもいろんな機能が追加されています．(個人的な)最大の目玉はTerminal Paneが組み込まれたことで，これが本当に便利です．その他の機能については，新しいversionが安定版としてリリースされた時に誰かが解説してくれると思います．誰かが()．
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
