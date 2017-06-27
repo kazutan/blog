@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>MathJax CDNがシャットダウンされることによるR Markdownへの影響</title>
+    <title>6/24 #HijiyamaR 感想戦</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="経緯 先日,こういう情報が流れてきました: MathJax CDN shutting down on April 30, 2017. 内容としては,「MathJaxの自前CDNサーバーを4/30に閉じますよ」って話で,">
-    <meta property="og:description" content="経緯 先日,こういう情報が流れてきました: MathJax CDN shutting down on April 30, 2017. 内容としては,「MathJaxの自前CDNサーバーを4/30に閉じますよ」って話で,">
+    <meta name="description" content="6/24にHijiyama.R #6を主催し、無事終えることができました。会場までお越しいただいた方々、およびUstで見ていただいたりTwit">
+    <meta property="og:description" content="6/24にHijiyama.R #6を主催し、無事終えることができました。会場までお越しいただいた方々、およびUstで見ていただいたりTwit">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="MathJax CDNがシャットダウンされることによるR Markdownへの影響">
-    <meta property="og:url" content="/2017/04/mathjax-cdn-rmd/">
+    <meta property="og:title" content="6/24 #HijiyamaR 感想戦">
+    <meta property="og:url" content="/2017/06/6-24-hijiyamar-preview/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="経緯 先日,こういう情報が流れてきました: MathJax CDN shutting down on April 30, 2017. 内容としては,「MathJaxの自前CDNサーバーを4/30に閉じますよ」って話で,">
+    <meta name="twitter:description" content="6/24にHijiyama.R #6を主催し、無事終えることができました。会場までお越しいただいた方々、およびUstで見ていただいたりTwit">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -189,18 +189,18 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      MathJax CDNがシャットダウンされることによるR Markdownへの影響
+      6/24 #HijiyamaR 感想戦
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-04-11T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-06-25T00:00:00Z">
       
   
   
   
   
-    11 四月 2017
+    25 六月 2017
   
 
     </time>
@@ -210,9 +210,7 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/r-markdown">R Markdown</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>
     
   
 
@@ -225,72 +223,126 @@
             <div class="main-content-wrap">
               
 
-<h2 id="経緯">経緯</h2>
+<p>6/24に<a href="https://atnd.org/events/87953">Hijiyama.R #6</a>を主催し、無事終えることができました。会場までお越しいただいた方々、およびUstで見ていただいたりTwitterなどで拡散していただいた方々、ありがとうございました。</p>
 
-<p>先日,こういう情報が流れてきました:</p>
+<p>今回は調整失敗などあり，その結果9件の発表のうち7件が私がやるという事態になりました。なお、私がプレゼンに使用した資料は<a href="https://kazutan.github.io/HijiyamaR6/">こちら</a>においています。</p>
 
-<p><a href="https://www.mathjax.org/cdn-shutting-down/">MathJax CDN shutting down on April 30, 2017.</a></p>
+<p>こんな残念な状況だったのですが、参加してくれたみなさんや興味を持ってくださったみなさんには本当に感謝しております。ありがとうございました。自分が担当した発表について解説したほうがいいかなと思い，今回ここにメモを書こうと思いました。</p>
 
-<p>内容としては,「MathJaxの自前CDNサーバーを4/30に閉じますよ」って話で,「ローカルに落としとくか代替となるクラウドサーバーを使ってね」ということです。</p>
+<h2 id="初心者セッション">初心者セッション</h2>
 
-<p>さてこのMathJaxというのは,HTMLドキュメントなどで数式を綺麗に出してくれるライブラリです。Markdownなど利用していると,<code>$</code>や<code>$$</code>などでTeX記法の数式を挟み込むと数式をレンダリングしてくれる機能を提供してくれたりします。</p>
+<h3 id="データ操作">データ操作</h3>
 
-<p>このMathJaxですが,R Markdownの数式でも利用されていますし,RStudioのリアルタイムプレビュー機能もおそらくは利用されています。ということは,<strong>R Markdownなどに影響が出るかもしれない</strong>のです。というわけで調べてみました。</p>
+<p>内容は<a href="https://kazutan.github.io/kazutanR/data_handling.html">Kazutan.Rのここの内容</a>を説明しました。ただこの内容はdplyr0.7に対応させてなくて、<code>*_each</code>を外してなかったんです…申し訳ありません。出来る限り早く修正します。</p>
 
-<h2 id="調査結果">調査結果</h2>
+<p>発表の時には触れていたのですが、初心者セッションで一番大事なのはここだと思ってます。R初心者がほぼ間違いなく躓くのはここですし、逆にここを乗り切ればあとは分析用諸関数に流しこめばいいだけです。結果時間オーバーしましたが、むしろもっと説明したかったです。今後は工夫します。</p>
 
-<h3 id="rstudioの場合">RStudioの場合</h3>
+<p>なお、私の中ではselectにまずなれて、filterとmutateに馴染んだあとにjoin系を習得し、gather&amp;spreadを使えるようになれば十分だと思います。</p>
 
-<p>RStudioはbuildの際にMathJaxを組み込んでいるようです。Ubuntu版だと<code>/usr/lib/rstudio/resources/mathjax-26/</code>にいました。きっちりと確認してませんが,Rmdファイル編集中に表示されるリアルタイム数式プレビューはlocalのを利用しているはずなので,<strong>おそらくは大丈夫</strong>だと思います。</p>
+<h3 id="ggplotのオブジェクトから眺めてみる">ggplotのオブジェクトから眺めてみる</h3>
 
-<h3 id="r-markdownの場合">R Markdownの場合</h3>
+<p>今日のメインその1。Webでggplot2入門的なトピックは無数にありますが、どれも曖昧にしてたり触れてないような、そんなOne Pieceを埋めるために作成しました。資料は<a href="https://kazutan.github.io/HijiyamaR6/intro_ggplot2.html">こちら</a>です。最近世間では私を「Rmdおじさん」としか認識してもらえてないですが、純粋なggplot2ユーザーですし、ggplot2逆引き記事の本数では負けません、はい。</p>
 
-<p>結論から言うと,<strong>影響を受けます</strong>。</p>
+<p>よく世間では「ggplot2は綺麗なグラフが描ける」とか述べていますが、それはずれていると思います。そもそもggplot2はRグラフィックスに整然としたgrammerを提供するもので、綺麗かどうかは描く個人次第です。本質はその構造だと考えるべきです。</p>
 
-<p>まず,html_documentをデフォルトで出力した場合,Pandocに送られる内容は以下の記事にまとめてます:</p>
+<p>でもそうであるならば、その文法を理解することが必要であり、事実その文法的な構造を理解するとggplot2による描画が格段に楽になります。そういう思いを込めて今回の資料を作成しました。わりと自信作なので見てみてください。</p>
 
-<p><a href="http://qiita.com/kazutan/items/eb15a42607f87f57b525#15-16%E8%A1%8C%E7%9B%AE-%E6%95%B0%E5%BC%8F%E3%81%BE%E3%82%8F%E3%82%8A%E3%81%AE%E8%A8%AD%E5%AE%9A">RStudioの&rdquo;knit HTML&rdquo;でPandocに送っている内容 - Qiita</a></p>
+<p>ただこれを「初心者セッション向け発表でいいのか」というツッコミはあると思いますし、自分も相当悩みました。でもこの内容は<strong>基礎</strong>ですし、理解するタイミングはできるだけ早いほうがいいと思い、今回は初心者セッションで組み込むことにしました。</p>
 
-<p>このurlは,まさに最初に紹介したMathJaxの記事で記載されている,停止するCDNサーバーです。なおこれは現在のversionでも変更がないのを確認しています。</p>
+<h2 id="通常発表">通常発表</h2>
 
-<p>したがって,<strong>このままですと4/30以降にknitしたRmdでは,MathJaxを標準設定のままではうまく表示されない可能性があります</strong>。したがって対応を考える必要があるでしょう。</p>
+<h3 id="r-markdown-githubでモダンなwebサイト構築">R Markdown + GitHubでモダンなWebサイト構築</h3>
 
-<p>なお,すでに作ってきたhtml_documentの場合はどうなるかというと,<strong>こちらも影響を受けます</strong>。ただ,<code>self_contained: TRUE</code>(デフォ値)にしてれば組み込まれるんで大丈夫じゃないか? と思われるかもしれません。ですが,MathJaxはself_contained: TRUEであっても直接WebのCDNから読みこむように設定してあります。理由は省略しますが,気になる方はコメントで書き込んでください。</p>
+<p>以前，Fukuoka.Rで発表した，<a href="https://kazutan.github.io/blog/2017/03/rmd-de-website/">R MarkdownでWebサイト作成</a>をベースに，そのサイトをGitHub Pagesでやってみようという内容です。スライドは<a href="https://kazutan.github.io/HijiyamaR6/rmd_de_github_site.html#/">こちら</a>。</p>
 
-<h2 id="対策">対策</h2>
+<p>Rmdによるサイト作成の具体的なところは省略し，GitHubで設置する際の注意事項と当日のデモンストレーションに重きを置きました。全段落で紹介した内容を参照してもらえれば大体つかめるのではないかと。</p>
 
-<h3 id="影響する範囲">影響する範囲</h3>
+<p>一点だけ補足すると，<code>(アカウント名).github.io</code>というリポジトリに設置した場合，<strong>docs/</strong>を公開ディレクトリとして設定することはできませんでした。この場合，リポジトリのルートディレクトリに<code>index.html</code>など必要なファイルを置く必要があります。したがって，<code>_site.yml</code>で<code>output_dir: &quot;.&quot;</code>と設定してください。それ以外のリポジトリ名なら<code>output_dir: &quot;docs/&quot;</code>とするのが楽でしょう。</p>
 
-<p>rmarkdownパッケージは完全に影響を受けます。あとR Markdownのテンプレートなどを提供するパッケージにも影響します。たとえば<a href="https://github.com/yihui/xaringan">xaringanパッケージ</a>は確実に影響を受けるでしょう。</p>
+<h3 id="r-markdownがやっていること">R Markdownがやっていること</h3>
 
-<h3 id="基本的な考え方">基本的な考え方</h3>
+<p>以前Tokyo.R #61の通常セッションで話した内容です。スライドは<a href="https://kazutan.github.io/HijiyamaR6/intoTheRmarkdown.html">こちら</a>です。Tokyoでプレゼンした時は配信されておらず，今回は配信していたということもあって組み込んだのですが，<strong>時間が押してしまって3分で片付けることとなりました</strong>。参加者でRmdを利用している方が一人しかいませんでしたしね…。</p>
 
-<p>MathJaxは先の記事で代替となる場所を示していますので,そちらを利用するように調整すればOKです。</p>
+<p>自分としては思い入れのある内容で，これについてある程度踏み込んで解説しているのは私の知る限りほぼありません。ただ通常のR Markdownユーザーには過剰であるというのは否めません，はい。多分近々出ると言われているWonderful RのRmd本には組み込まれるのではと予想しています。</p>
 
-<p>YAMLフロントマターに,以下のような感じで追加してKnitすればOKです:</p>
+<h2 id="lt">LT</h2>
 
-<pre><code>---
-output:
-  html_document:
-    mathjax: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
----
-</code></pre>
+<h3 id="youtube-on-rstudio">YouTube on RStudio</h3>
 
-<p>これで差し替わります。またURLの途中にある数値(version)を書き換えてやればそれに対応したものが当たるようになります。</p>
+<p>今回のメインその2。自分が開発した*tubeplayR*パッケージの紹介です。スライドは<a href="https://kazutan.github.io/HijiyamaR6/intro_tubeplayR.html#/">こちら</a>です。またこのパッケージのGitHubリポジトリは<a href="https://github.com/kazutan/tubeplayR">こちら</a>です。</p>
 
-<h3 id="すでに生成したドキュメントについて">すでに生成したドキュメントについて</h3>
+<h4 id="tubeplayr-の仕組み">*tubeplayR*の仕組み</h4>
 
-<p>Rmdがあるのであれば,再度レンダリングするのがはやいかと。Rmdがないのであれば,サイトなどのHTMLを編集する必要があります。</p>
+<p>簡単に言うと，<strong>youtubeのurlからembet用タグを生成し，それをコンパクトなtemporalなhtmlファイルへと出力してViewerへ表示</strong>しています。</p>
 
-<h3 id="パッケージ側を編集する">パッケージ側を編集する</h3>
+<p>RStudioのViewerにhtmlファイルを出力させるにはtmpファイルでないといけませんし，きっちりやろうとするとかなり面倒です。そこで今回はShinyやRStudio Addinまわりで使われている*miniUI*パッケージと*htmltools*パッケージを組み合わせて実現しました。</p>
 
-<p>rmarkdownをフォークするなりして,該当箇所を修正したもので使っていくという方法もあります。あるいはプルリクを出してそのものを変更していく,という方法もあります。</p>
+<p>また，embed用タグを生成するにも*htmltools*の関数を活用し，urlの書換は普通に正規表現を使いました。youtubeのその辺りの仕組みを調べたらかなりシンプルだったので，そこまで難しくなかったです。あとはPaneいっぱいに広がるようにstyleを設定したり，プレイリストにも対応するように条件分岐を設定したくらいです。アイデアさえ出れば実装はわりとさくっといきました。</p>
 
-<p>ひとまず該当箇所を修正してプルリクを出してみたけど,どうなるかな…</p>
+<h4 id="限界と今後">限界と今後</h4>
 
-<h2 id="雑感">雑感</h2>
+<p>残念ながら，<strong>RStudioの実行環境によっては再生できず，そのままRStudioを固まらせます</strong>。</p>
 
-<p>てことで調べてみて行動してみたけれど,RStudioやR Markdownまわりで全然話題になってないのよ…影響ない,とは思えないんだけど間違ってるのかな。不安でしょうがないです。</p>
+<p>RStudio Server版なら(おそらく)youtubeを再生できるブラウザで問題なく使えます。RStudio デスクトップ版のうち，WindowsとUbuntuでは動作しないのを確認しています。これはRStudio内に組み込まれているQt Webkit周りが原因だろうと推測してます。こうなるとパッケージレベルでは対応できません。Macはちょっと検証してないのでわからないですが，Mac版はQtに依存してないっぽいので，うまくいけば使えるかもしれません。</p>
+
+<p>今後としては，あまり時間的に余裕もないので機能追加はしなくてもいいかなと思ってます。ただ，APIを叩いて色々と情報を取得して，それを持ってこれるようにするというアイデアはあります。でも現在このような対応状況なので，このまま私+αな方々で楽しんでいければと。</p>
+
+<h3 id="fullpagejsという新しいrmdテンプレを作った">fullpagejsという新しいRmdテンプレを作った</h3>
+
+<p>これはGW中に山中湖開発合宿で取り組んだ成果で，自分が開発した*fullpagejs*パッケージの紹介です。スライドは<a href="https://kazutan.github.io/HijiyamaR6/fullpagejs_intro.html">こちら</a>です。またこのパッケージのGitHubリポジトリは<a href="https://github.com/kazutan/fullpagejs">こちら</a>です。</p>
+
+<h4 id="fullpagejs-パッケージの特徴">*fullpagejs*パッケージの特徴</h4>
+
+<p>R Markdownで<a href="https://alvarotrigo.com/fullPage/">fullpage.js</a>をベースとしたhtmlを生成するための，R Markdown用テンプレートです。主な特徴は以下のとおりです:</p>
+
+<ul>
+<li>fullpage.jsでフルスクリーンでスライド式のhtmlドキュメント生成</li>
+<li>fullpage.jsの機能をほぼ利用可能</li>
+<li>標準で<strong>書式設定なし</strong></li>
+<li>jQuery + jQueryUIを利用可能</li>
+<li>使い方は通常のR Markdownとほぼ同一</li>
+</ul>
+
+<p>使い方などは上述のスライドに記載しているのでそちらをご覧ください。</p>
+
+<p>標準で書式設定がないのは残念に感じるかもしれませんが，私としてはこれは重要なポイントだと思っています。通常のhtml_documentだとテンプレートに書式設定が組み込まれていたり，Bootstrapが組み込まれていたりしています。また*revealjs*パッケージなどスライド機能を提供するものでも，その多くがそれぞれ専用の書式設定がきっちり組み込まれている以上，かなりデザインでの制約を受けます。</p>
+
+<p>これらは<strong>デザインを意識せずドキュメント構造に注力できる</strong>というR Markdownの最大メリットであると同時に大きな制約ともなるのです。これをどうにかして外したかったのですが，なんとか実現できました。</p>
+
+<h4 id="限界と今後-1">限界と今後</h4>
+
+<p>まず，ヘルプやドキュメントまわりが全く準備できていません。がんばります。。。</p>
+
+<p>あと，今後については以下のようなことを考えています:</p>
+
+<ul>
+<li>簡単なテーマ機能を準備</li>
+<li>less.jsを組み込む</li>
+<li>katexを組み込む</li>
+<li>fullpagejs_optionsを簡単に記述できるようにする</li>
+</ul>
+
+<p>さきほどメリットとして書式設定がないことを強調したのですが，さすがにある程度簡便に提供すべきだなとは考えています。テーマはフォント設定あたりを準備する予定です。あとless.jsが思ったより簡単に実装できそうだったので近いうちにやります。なおless.jsが組み込めるようになると，R Markdownのデザインの幅および労力が格段に改善されます。</p>
+
+<p>数式については，これまでR Markdownではmathjaxを採用していましたが，このパッケージではmathjaxかkatexのどちらかを選択できるようにしたいです。またfullpage.jsの豊富な機能を簡単に設定できるよう，yamlまわりの処理を改善させたいです。</p>
+
+<p>これらが整備されたら，「ぼくのかんがえたさいきょうのRmd」みたいな感じになるんだけどなぁと考えてます。オサレなサイトも作れるようになりますし。でも一人ではしんどいので仲間(特にWebデザインに強い人)を募集しています。よろしくお願いします。</p>
+
+<h3 id="webshotパッケージでwebをキャプチャ">webshotパッケージでwebをキャプチャ</h3>
+
+<p>以前なにを思ったか調べて<a href="https://kazutan.github.io/kazutanR/webshot_demo.html">まとめていた</a>内容を，LT用にスライドへ起こした内容です。スライドは<a href="https://kazutan.github.io/HijiyamaR6/intro_webshot.html#/">こちら</a>です。</p>
+
+<p>スライド内容を見てもらえれば解ると思いますが，<strong>要するに告知()</strong>です。でもこのパッケージはちゃんとしたもので，開発者はRStudioのメンバーの一人です。またhtmlwidgets系を使うなら一度は確認しておくのをおすすめします。</p>
+
+<p>最後の応用例については，ちょっとマニアックな気がしないでもないですが，こういう使い方もあるんだなと思ってもらえれば満足です。</p>
+
+<h2 id="全体的な感想と次回のhijiyama-r">全体的な感想と次回のHijiyama.R</h2>
+
+<p>この半年で取り組んできた内容を，これでもかと盛り込んだものでした。ただ<strong>正直疲れたししんどかった</strong>。調整失敗もさることながら，地方のRコミュニティの一つとして色々考えました。悩みました。そして決断しました。</p>
+
+<p><strong>次回のHijiyama.Rはおよそ半年後に開催します。そして次回がファイナルです</strong>。</p>
+
+<p>私の思いや考えについてはその時にしゃべるつもりなので，まだ言わないようにします。ぜひ多くの方に参加してもらえればと願っています。</p>
 
 <p><strong>Enjoy!</strong></p>
 
@@ -307,8 +359,6 @@ output:
                     
   <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
 
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r-markdown/">R Markdown</a>
-
                   </div>
                 
               
@@ -319,7 +369,7 @@ output:
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/" data-tooltip="dplyr::selectの活用例メモ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -327,7 +377,7 @@ output:
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/17a-timetable/" data-tooltip="今年度前期。">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/" data-tooltip="RStudioでDarkなテーマを当ててみる">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -344,17 +394,17 @@ output:
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -404,7 +454,7 @@ output:
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/dplyr-select-memo/" data-tooltip="dplyr::selectの活用例メモ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -412,7 +462,7 @@ output:
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/04/17a-timetable/" data-tooltip="今年度前期。">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/" data-tooltip="RStudioでDarkなテーマを当ててみる">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -429,17 +479,17 @@ output:
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -466,17 +516,17 @@ output:
       <div id="share-options-bar" class="share-options-bar" data-behavior="5">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f04%2fmathjax-cdn-rmd%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f06%2f6-24-hijiyamar-preview%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -752,9 +802,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/04\/mathjax-cdn-rmd\/';
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/06\/6-24-hijiyamar-preview\/';
           
-            this.page.identifier = '\/2017\/04\/mathjax-cdn-rmd\/'
+            this.page.identifier = '\/2017\/06\/6-24-hijiyamar-preview\/'
           
         };
         (function() {

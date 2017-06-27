@@ -65,7 +65,7 @@ df &amp;lt;- data.frame(
 
 # 取得した座標を線で結んでプロット
 plot(df, type = &amp;quot;l&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/post/2017-04-22-spirograph-shiny_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/blogpost/2017-04-22-spirograph-shiny_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;いけました。これで&lt;code&gt;b&lt;/code&gt;と&lt;code&gt;p&lt;/code&gt;に指定する値を変更すると,いろんなもの描けます。&lt;strong&gt;30年振りの会合でした&lt;/strong&gt;。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;shiny&#34; class=&#34;section level2&#34;&gt;

@@ -221,10 +221,10 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <script src="https://kazutan.github.io/blog/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="https://kazutan.github.io/blog/rmarkdown-libs/viz/viz.js"></script>
-<link href="https://kazutan.github.io/blog/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
-<script src="https://kazutan.github.io/blog/rmarkdown-libs/grViz-binding/grViz.js"></script>
+              <script src="https://kazutan.github.io/blog/blogrmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://kazutan.github.io/blog/blogrmarkdown-libs/viz/viz.js"></script>
+<link href="https://kazutan.github.io/blog/blogrmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="https://kazutan.github.io/blog/blogrmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
 <p>書捨て用のメモ記事。</p>
@@ -259,7 +259,7 @@ graph1 &lt;- create_graph(
 ## 数ベクトルではなくタイプ &#39;NULL&#39; になっているため、無視されました</code></pre>
 <pre class="r"><code>render_graph(graph1)</code></pre>
 <div id="htmlwidget-2" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"2\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"3\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>graph2 &lt;- graph1 %&gt;% 
   add_global_graph_attrs(
     &quot;rankdir&quot;, &quot;TB&quot;, &quot;graph&quot;
@@ -270,7 +270,7 @@ graph1 &lt;- create_graph(
 
 render_graph(graph2)</code></pre>
 <div id="htmlwidget-3" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"2\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"3\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"digraph {\n\ngraph [layout = \"dot\",\n       outputorder = \"edgesfirst\",\n       rankdir = \"TB\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。</p>
 </div>
 
@@ -510,6 +510,23 @@ render_graph(graph2)</code></pre>
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/06/6-24-hijiyamar-preview/">
+                <h3 class="media-heading">6/24 #HijiyamaR 感想戦</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">6/24にHijiyama.R #6を主催し、無事終えることができました。会場までお越しいただいた方々、およびUstで見ていただいたりTwit</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/">
                 <h3 class="media-heading">RStudioでDarkなテーマを当ててみる</h3>
               </a>
@@ -664,25 +681,6 @@ render_graph(graph2)</code></pre>
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/03/ten-years/">
-                <h3 class="media-heading">この10年。</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>本日の業務をもって,現所属10年を終えました。なんとか生き延びました。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -690,7 +688,7 @@ render_graph(graph2)</code></pre>
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         17 posts found
+         18 posts found
       </p>
     </div>
   </div>
