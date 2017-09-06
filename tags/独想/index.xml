@@ -9,6 +9,66 @@
     <atom:link href="https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>2017年度後期。</title>
+      <link>https://kazutan.github.io/blog/2017/09/17b-timetable/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/09/17b-timetable/</guid>
+      <description>&lt;p&gt;もうすぐ始まるので，自分が把握するために恒例のを。面倒だから&lt;code&gt;knitr::kable()&lt;/code&gt;で。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;月曜日&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;火曜日&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;水曜日&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;木曜日&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;金曜日&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;学外非常勤&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PC演習&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PC演習&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;学外非常勤&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PC演習&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;心理系講義&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;オフィスアワー&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;会議&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;検定指導&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;ゼミ・卒研指導&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1年ゼミ&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PC相談担当&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;初年次科目&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;心理系講義&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;調査系授業&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PC演習&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;会議&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;検定指導&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;あと集中枠が2つに，日々学内業務など。&lt;a href=&#34;https://kazutan.github.io/blog/2017/04/17a-timetable/&#34;&gt;前期&lt;/a&gt;と変わらん…&lt;/p&gt;
+&lt;p&gt;いつになったらまともになることやら。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>この10年。</title>
       <link>https://kazutan.github.io/blog/2017/03/ten-years/</link>
       <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>

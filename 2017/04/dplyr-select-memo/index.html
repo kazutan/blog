@@ -371,9 +371,9 @@ select_if(iris, f) %&gt;% head(3)
 <p>だいたいこんな感じです。</p>
 <p><strong>Enjoy!</strong></p>
 <pre class="r"><code>sessionInfo()
-#&gt;  R version 3.4.0 (2017-04-21)
+#&gt;  R version 3.4.1 (2017-06-30)
 #&gt;  Platform: x86_64-pc-linux-gnu (64-bit)
-#&gt;  Running under: Ubuntu 16.04.2 LTS
+#&gt;  Running under: Ubuntu 16.04.3 LTS
 #&gt;  
 #&gt;  Matrix products: default
 #&gt;  BLAS: /usr/lib/libblas/libblas.so.3.6.0
@@ -388,21 +388,20 @@ select_if(iris, f) %&gt;% head(3)
 #&gt;  [11] LC_MEASUREMENT=ja_JP.UTF-8 LC_IDENTIFICATION=C       
 #&gt;  
 #&gt;  attached base packages:
-#&gt;  [1] stats     graphics  grDevices utils     datasets  base     
+#&gt;  [1] methods   stats     graphics  grDevices utils     datasets  base     
 #&gt;  
 #&gt;  other attached packages:
-#&gt;  [1] dplyr_0.7.0.9000
+#&gt;  [1] dplyr_0.7.2
 #&gt;  
 #&gt;  loaded via a namespace (and not attached):
-#&gt;   [1] Rcpp_0.12.11         bookdown_0.3.21      assertthat_0.2.0    
-#&gt;   [4] digest_0.6.12        rprojroot_1.2        R6_2.2.1            
-#&gt;   [7] backports_1.0.5      magrittr_1.5         evaluate_0.10       
-#&gt;  [10] blogdown_0.0.40      rlang_0.1.1.9000     stringi_1.1.5       
-#&gt;  [13] bindrcpp_0.1         rmarkdown_1.6.0.9000 tools_3.4.0         
-#&gt;  [16] stringr_1.2.0        glue_1.1.0           yaml_2.1.14         
-#&gt;  [19] compiler_3.4.0       pkgconfig_2.0.1      htmltools_0.3.6     
-#&gt;  [22] bindr_0.1            knitr_1.16.5         tibble_1.3.3        
-#&gt;  [25] methods_3.4.0</code></pre>
+#&gt;   [1] Rcpp_0.12.12         bookdown_0.5         assertthat_0.2.0    
+#&gt;   [4] digest_0.6.12        rprojroot_1.2        R6_2.2.2            
+#&gt;   [7] backports_1.1.0      magrittr_1.5         evaluate_0.10.1     
+#&gt;  [10] blogdown_0.1         rlang_0.1.2          stringi_1.1.5       
+#&gt;  [13] bindrcpp_0.2         rmarkdown_1.6.0.9001 tools_3.4.1         
+#&gt;  [16] stringr_1.2.0        glue_1.1.1           yaml_2.1.14         
+#&gt;  [19] compiler_3.4.1       pkgconfig_2.0.1      htmltools_0.3.6     
+#&gt;  [22] bindr_0.1            knitr_1.17           tibble_1.3.4</code></pre>
 
               
             </div>
@@ -640,6 +639,23 @@ select_if(iris, f) %&gt;% head(3)
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/09/17b-timetable/">
+                <h3 class="media-heading">2017年度後期。</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">もうすぐ始まるので，自分が把握するために恒例のを。面倒だからknitr::kable()で。 月曜日 火曜日 水曜日 木曜日 金曜日 学外非常勤 PC演習</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/06/6-24-hijiyamar-preview/">
                 <h3 class="media-heading">6/24 #HijiyamaR 感想戦</h3>
               </a>
@@ -784,28 +800,7 @@ select_if(iris, f) %&gt;% head(3)
                   Apr 4, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) grViz(&quot; digraph dot { graph [rankdir = TB] a -&gt;</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://kazutan.github.io/blog/2017/04/blogdown-tips/">
-                <h3 class="media-heading">blogdownのTips</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>最近まわりで何かと<strong>blogdown</strong>パッケージが話題です。このブログも<strong>blogdown</strong>で作成していますし,紹介する記事も増えてきました。</p>
-
-<p>そこで自分の中で検証して,現時点でわかったことをTipsとしてまとめてみようと思います。また新たにわかったことは別記事にでも書こうかと思います。</p>
-
-<p></p></div>
+              <div class="media-content hide-xs font-merryweather">書捨て用のメモ記事。 rankdirのテスト データフレームからgraph attrを当てていくの，便利なようで面倒だった。 library(DiagrammeR) ## Warning: replacing previous import &#39;scales::viridis_pal&#39; by ## &#39;viridis::viridis_pal&#39; when</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -818,7 +813,7 @@ select_if(iris, f) %&gt;% head(3)
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         18 posts found
+         19 posts found
       </p>
     </div>
   </div>

@@ -24,8 +24,10 @@
 &lt;div id=&#34;rankdir&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;rankdirのテスト&lt;/h2&gt;
 &lt;p&gt;データフレームからgraph attrを当てていくの，便利なようで面倒だった。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(DiagrammeR)
-grViz(&amp;quot;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(DiagrammeR)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: replacing previous import &amp;#39;scales::viridis_pal&amp;#39; by
+## &amp;#39;viridis::viridis_pal&amp;#39; when loading &amp;#39;DiagrammeR&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grViz(&amp;quot;
       digraph dot {
       graph [rankdir = TB]
       a -&amp;gt; {b,c}
