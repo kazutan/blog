@@ -6,8 +6,79 @@
     <description>Recent content in Posts on 日々是独想</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kazutan.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RStudio v1.1の新機能</title>
+      <link>https://kazutan.github.io/blog/2017/10/rstudio-v1-1/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/10/rstudio-v1-1/</guid>
+      <description>
+
+&lt;p&gt;RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;https://www.rstudio.com/products/rstudio/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;故あって最近v1.1の新機能についてまとめていたので，ここでも紹介します。&lt;/p&gt;
+
+&lt;h3 id=&#34;terminal実装&#34;&gt;Terminal実装&lt;/h3&gt;
+
+&lt;p&gt;Terminal(端末)がRStudio上で使えるようになりました。UbuntuとかでRのパッケージ自体が別アプリに依存している場合、よくこのTerminalでapt installすることがあるのですが、それがRStudio上でできるようになりました。主な用途としては「RStudioServerを仮想環境とかで立ち上げたけどライブラリ不足して動かん…」を解消できます。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/&#34;&gt;https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;data-connection機能が追加&#34;&gt;Data Connection機能が追加&lt;/h3&gt;
+
+&lt;p&gt;MySQLやPostgreSQLにつなぐ際のコネクションなどが管理・利用できるようになりました。ちょっと癖はありますが、RDBをRで叩いている人には福音となるかもしれない機能です。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/&#34;&gt;https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;object-explorer-が強化&#34;&gt;Object Explorer が強化&lt;/h3&gt;
+
+&lt;p&gt;「Environment」タブで、リストオブジェクトに🔍アイコンがでるようになりました。これをクリックするとdata.frameなどと同じようにソースが表示されるのですが、それがlistのより深い層まで潜ってみれるようになってます。多分tidydataやpurrr関連でいい感じにしようとした結果だと思います。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/&#34;&gt;https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;darkテーマが使えるように&#34;&gt;Darkテーマが使えるように&lt;/h3&gt;
+
+&lt;p&gt;v1.1(の一時期)から(Pane内ではなく)RStudio自体にテーマ設定ができるようになりました。これによりDarkなテーマを設定するようなこともできます。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/&#34;&gt;https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もしくは、私が書いたブログ記事を。&lt;br /&gt;
+&lt;a href=&#34;https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/&#34;&gt;https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;rstudio-server-pro-の新機能&#34;&gt;RStudio Server Pro の新機能&lt;/h3&gt;
+
+&lt;p&gt;一応RStudio Blogに乗っていたのでリストアップしときます。Pro版使ったことないので挙げるだけで。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/&#34;&gt;https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;その他の更新&#34;&gt;その他の更新&lt;/h3&gt;
+
+&lt;p&gt;色んな要素が変更になってます。RStudio Blogの記事になっているのは以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/&#34;&gt;https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Gitまわりがかなり改良されていますし、&lt;a href=&#34;https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html&#34;&gt;Project Template&lt;/a&gt;は重要だと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;留意事項&#34;&gt;留意事項&lt;/h3&gt;
+
+&lt;p&gt;linux版でQtが5.4.2となっています。Ubuntuでそのままインストールした場合，Desktop版ではfcitxでは日本語が入力できません。あわしろいくやさんの以下の記事にあるとおりに対応すると，日本語入力ができるようになります:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.goo.ne.jp/ikunya/e/48b3e547dd2b8c7cfbe2a8dadc0b962a&#34;&gt;Ubuntu 16.04 + Fcitx + RStudio 1.0.153以降で日本語を入力する方法 - いくやの斬鉄日記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;細かいところでも色々更新されていますので，是非チェックしてみてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>2017年度後期。</title>
@@ -769,7 +840,7 @@ select_if(iris, f) %&amp;gt;% head(3)
 &lt;p&gt;だいたいこんな感じです。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()
-#&amp;gt;  R version 3.4.1 (2017-06-30)
+#&amp;gt;  R version 3.4.2 (2017-09-28)
 #&amp;gt;  Platform: x86_64-pc-linux-gnu (64-bit)
 #&amp;gt;  Running under: Ubuntu 16.04.3 LTS
 #&amp;gt;  
@@ -789,16 +860,16 @@ select_if(iris, f) %&amp;gt;% head(3)
 #&amp;gt;  [1] methods   stats     graphics  grDevices utils     datasets  base     
 #&amp;gt;  
 #&amp;gt;  other attached packages:
-#&amp;gt;  [1] dplyr_0.7.2
+#&amp;gt;  [1] dplyr_0.7.4
 #&amp;gt;  
 #&amp;gt;  loaded via a namespace (and not attached):
-#&amp;gt;   [1] Rcpp_0.12.12         bookdown_0.5         assertthat_0.2.0    
+#&amp;gt;   [1] Rcpp_0.12.13         bookdown_0.5         assertthat_0.2.0    
 #&amp;gt;   [4] digest_0.6.12        rprojroot_1.2        R6_2.2.2            
-#&amp;gt;   [7] backports_1.1.0      magrittr_1.5         evaluate_0.10.1     
+#&amp;gt;   [7] backports_1.1.1      magrittr_1.5         evaluate_0.10.1     
 #&amp;gt;  [10] blogdown_0.1         rlang_0.1.2          stringi_1.1.5       
-#&amp;gt;  [13] bindrcpp_0.2         rmarkdown_1.6.0.9001 tools_3.4.1         
+#&amp;gt;  [13] bindrcpp_0.2         rmarkdown_1.6.0.9004 tools_3.4.2         
 #&amp;gt;  [16] stringr_1.2.0        glue_1.1.1           yaml_2.1.14         
-#&amp;gt;  [19] compiler_3.4.1       pkgconfig_2.0.1      htmltools_0.3.6     
+#&amp;gt;  [19] compiler_3.4.2       pkgconfig_2.0.1      htmltools_0.3.6     
 #&amp;gt;  [22] bindr_0.1            knitr_1.17           tibble_1.3.4&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -1029,10 +1100,8 @@ PC相談ブース
 &lt;div id=&#34;rankdir&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;rankdirのテスト&lt;/h2&gt;
 &lt;p&gt;データフレームからgraph attrを当てていくの，便利なようで面倒だった。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(DiagrammeR)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: replacing previous import &amp;#39;scales::viridis_pal&amp;#39; by
-## &amp;#39;viridis::viridis_pal&amp;#39; when loading &amp;#39;DiagrammeR&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grViz(&amp;quot;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(DiagrammeR)
+grViz(&amp;quot;
       digraph dot {
       graph [rankdir = TB]
       a -&amp;gt; {b,c}
@@ -1059,7 +1128,7 @@ graph1 &amp;lt;- create_graph(
 ## 数ベクトルではなくタイプ &amp;#39;NULL&amp;#39; になっているため、無視されました&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render_graph(graph1)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;digraph {\n\ngraph [layout = \&#34;neato\&#34;,\n       outputorder = \&#34;edgesfirst\&#34;]\n\nnode [fontname = \&#34;Helvetica\&#34;,\n     fontsize = \&#34;10\&#34;,\n     shape = \&#34;circle\&#34;,\n     fixedsize = \&#34;true\&#34;,\n     width = \&#34;0.5\&#34;,\n     style = \&#34;filled\&#34;,\n     fillcolor = \&#34;aliceblue\&#34;,\n     color = \&#34;gray70\&#34;,\n     fontcolor = \&#34;gray50\&#34;]\n\nedge [len = \&#34;1.5\&#34;,\n     color = \&#34;gray40\&#34;,\n     arrowsize = \&#34;0.5\&#34;]\n\n  \&#34;1\&#34; [label = \&#34;1\&#34;] \n  \&#34;2\&#34; [label = \&#34;2\&#34;] \n  \&#34;3\&#34; [label = \&#34;3\&#34;] \n\&#34;1\&#34;-&gt;\&#34;2\&#34; [id = \&#34;1\&#34;] \n\&#34;1\&#34;-&gt;\&#34;3\&#34; [id = \&#34;2\&#34;] \n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;digraph {\n\ngraph [layout = \&#34;neato\&#34;,\n       outputorder = \&#34;edgesfirst\&#34;,\n       bgcolor = \&#34;white\&#34;]\n\nnode [fontname = \&#34;Helvetica\&#34;,\n     fontsize = \&#34;10\&#34;,\n     shape = \&#34;circle\&#34;,\n     fixedsize = \&#34;true\&#34;,\n     width = \&#34;0.5\&#34;,\n     style = \&#34;filled\&#34;,\n     fillcolor = \&#34;aliceblue\&#34;,\n     color = \&#34;gray70\&#34;,\n     fontcolor = \&#34;gray50\&#34;]\n\nedge [len = \&#34;1.5\&#34;,\n     color = \&#34;gray40\&#34;,\n     arrowsize = \&#34;0.5\&#34;]\n\n  \&#34;1\&#34; [label = \&#34;1\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n  \&#34;2\&#34; [label = \&#34;2\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n  \&#34;3\&#34; [label = \&#34;3\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n\&#34;1\&#34;-&gt;\&#34;2\&#34; [id = \&#34;1\&#34;] \n\&#34;1\&#34;-&gt;\&#34;3\&#34; [id = \&#34;2\&#34;] \n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;graph2 &amp;lt;- graph1 %&amp;gt;% 
   add_global_graph_attrs(
     &amp;quot;rankdir&amp;quot;, &amp;quot;TB&amp;quot;, &amp;quot;graph&amp;quot;
@@ -1070,7 +1139,7 @@ graph1 &amp;lt;- create_graph(
 
 render_graph(graph2)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;htmlwidget-3&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-3&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;digraph {\n\ngraph [layout = \&#34;dot\&#34;,\n       outputorder = \&#34;edgesfirst\&#34;,\n       rankdir = \&#34;TB\&#34;]\n\nnode [fontname = \&#34;Helvetica\&#34;,\n     fontsize = \&#34;10\&#34;,\n     shape = \&#34;circle\&#34;,\n     fixedsize = \&#34;true\&#34;,\n     width = \&#34;0.5\&#34;,\n     style = \&#34;filled\&#34;,\n     fillcolor = \&#34;aliceblue\&#34;,\n     color = \&#34;gray70\&#34;,\n     fontcolor = \&#34;gray50\&#34;]\n\nedge [len = \&#34;1.5\&#34;,\n     color = \&#34;gray40\&#34;,\n     arrowsize = \&#34;0.5\&#34;]\n\n  \&#34;1\&#34; [label = \&#34;1\&#34;] \n  \&#34;2\&#34; [label = \&#34;2\&#34;] \n  \&#34;3\&#34; [label = \&#34;3\&#34;] \n\&#34;1\&#34;-&gt;\&#34;2\&#34; [id = \&#34;1\&#34;] \n\&#34;1\&#34;-&gt;\&#34;3\&#34; [id = \&#34;2\&#34;] \n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-3&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;digraph {\n\ngraph [layout = \&#34;dot\&#34;,\n       outputorder = \&#34;edgesfirst\&#34;,\n       bgcolor = \&#34;white\&#34;,\n       rankdir = \&#34;TB\&#34;]\n\nnode [fontname = \&#34;Helvetica\&#34;,\n     fontsize = \&#34;10\&#34;,\n     shape = \&#34;circle\&#34;,\n     fixedsize = \&#34;true\&#34;,\n     width = \&#34;0.5\&#34;,\n     style = \&#34;filled\&#34;,\n     fillcolor = \&#34;aliceblue\&#34;,\n     color = \&#34;gray70\&#34;,\n     fontcolor = \&#34;gray50\&#34;]\n\nedge [len = \&#34;1.5\&#34;,\n     color = \&#34;gray40\&#34;,\n     arrowsize = \&#34;0.5\&#34;]\n\n  \&#34;1\&#34; [label = \&#34;1\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n  \&#34;2\&#34; [label = \&#34;2\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n  \&#34;3\&#34; [label = \&#34;3\&#34;, fillcolor = \&#34;#F0F8FF\&#34;, fontcolor = \&#34;#000000\&#34;] \n\&#34;1\&#34;-&gt;\&#34;2\&#34; [id = \&#34;1\&#34;] \n\&#34;1\&#34;-&gt;\&#34;3\&#34; [id = \&#34;2\&#34;] \n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
 &lt;p&gt;公式ドキュメントが整備されていないので手探りでやりました。早く整備しないと…。&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -1535,184 +1604,6 @@ embed_slide(&amp;quot;http://www.slideshare.net/makotohirakawa3/osakastan2-chap5
 &lt;/ul&gt;
 &lt;p&gt;あとは私の上記GitHubのREADMEなどで紹介している記事を適宜参照してください。もしわからないところがありましたら，&lt;span class=&#34;citation&#34;&gt;[@kazutan]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください&#34; class=&#34;uri&#34;&gt;https://twitter.com/kazutan)へメンションやDM,あるいはr-wakalangに質問を投下してください&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R Markdownでの諸々のテスト</title>
-      <link>https://kazutan.github.io/blog/2017/03/rmd-test/</link>
-      <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kazutan.github.io/blog/2017/03/rmd-test/</guid>
-      <description>&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leaflet/leaflet.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leaflet/leaflet.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leafletfix/leafletfix.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leaflet-label/leaflet.label.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leaflet-label/leaflet.label.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/Proj4Leaflet/proj4-compressed.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/Proj4Leaflet/proj4leaflet.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/leaflet-binding/leaflet.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/viz/viz.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/DiagrammeR-styles/styles.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/grViz-binding/grViz.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/plotly-binding/plotly.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/typedarray/typedarray.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/crosstalk/css/crosstalk.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/crosstalk/js/crosstalk.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/plotlyjs/plotly-htmlwidgets.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://kazutan.github.io/blog/blogrmarkdown-libs/plotlyjs/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a&gt;コードと出力について&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#plot&#34;&gt;plotについて&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#htmlwidgets&#34;&gt;htmlwidgets系のテスト&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#leaflet&#34;&gt;leaflet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#diagrammer&#34;&gt;DiagrammeR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#plotly&#34;&gt;Plotly&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;ちょっとRの出力を色々試してみたいと思います。&lt;/p&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;コードと出力について&lt;/h2&gt;
-&lt;p&gt;collapseで表(data.frame)をそのまま出力。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- iris %&amp;gt;% 
-  select(starts_with(&amp;quot;S&amp;quot;)) %&amp;gt;% 
-  group_by(Species) %&amp;gt;% 
-  head()
-x
-#&amp;gt;  # A tibble: 6 x 3
-#&amp;gt;  # Groups:   Species [1]
-#&amp;gt;    Sepal.Length Sepal.Width Species
-#&amp;gt;           &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;  &amp;lt;fctr&amp;gt;
-#&amp;gt;  1          5.1         3.5  setosa
-#&amp;gt;  2          4.9         3.0  setosa
-#&amp;gt;  3          4.7         3.2  setosa
-#&amp;gt;  4          4.6         3.1  setosa
-#&amp;gt;  5          5.0         3.6  setosa
-#&amp;gt;  6          5.4         3.9  setosa&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;knitr::kable()を利用して表を出力。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::kable(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;right&#34;&gt;Sepal.Length&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Sepal.Width&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Species&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;5.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.5&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;4.9&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;4.7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.2&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;4.6&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;5.0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.6&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;5.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.9&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div id=&#34;plot&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;plotについて&lt;/h2&gt;
-&lt;p&gt;簡単なものでテスト。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
-  geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://kazutan.github.io/blog/blogpost/2017-03-22-rmd-test_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;htmlwidgets&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;htmlwidgets系のテスト&lt;/h2&gt;
-&lt;p&gt;やってみる。&lt;/p&gt;
-&lt;div id=&#34;leaflet&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;leaflet&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(leaflet)
-leaflet() %&amp;gt;% 
-  addTiles() %&amp;gt;% 
-  addMarkers(lng = 135.0000, lat = 35.0000)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;leaflet html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;options&#34;:{&#34;crs&#34;:{&#34;crsClass&#34;:&#34;L.CRS.EPSG3857&#34;,&#34;code&#34;:null,&#34;proj4def&#34;:null,&#34;projectedBounds&#34;:null,&#34;options&#34;:{}}},&#34;calls&#34;:[{&#34;method&#34;:&#34;addTiles&#34;,&#34;args&#34;:[&#34;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#34;,null,null,{&#34;minZoom&#34;:0,&#34;maxZoom&#34;:18,&#34;maxNativeZoom&#34;:null,&#34;tileSize&#34;:256,&#34;subdomains&#34;:&#34;abc&#34;,&#34;errorTileUrl&#34;:&#34;&#34;,&#34;tms&#34;:false,&#34;continuousWorld&#34;:false,&#34;noWrap&#34;:false,&#34;zoomOffset&#34;:0,&#34;zoomReverse&#34;:false,&#34;opacity&#34;:1,&#34;zIndex&#34;:null,&#34;unloadInvisibleTiles&#34;:null,&#34;updateWhenIdle&#34;:null,&#34;detectRetina&#34;:false,&#34;reuseTiles&#34;:false,&#34;attribution&#34;:&#34;&amp;copy; &lt;a href=\&#34;http://openstreetmap.org\&#34;&gt;OpenStreetMap&lt;\/a&gt; contributors, &lt;a href=\&#34;http://creativecommons.org/licenses/by-sa/2.0/\&#34;&gt;CC-BY-SA&lt;\/a&gt;&#34;}]},{&#34;method&#34;:&#34;addMarkers&#34;,&#34;args&#34;:[35,135,null,null,null,{&#34;clickable&#34;:true,&#34;draggable&#34;:false,&#34;keyboard&#34;:true,&#34;title&#34;:&#34;&#34;,&#34;alt&#34;:&#34;&#34;,&#34;zIndexOffset&#34;:0,&#34;opacity&#34;:1,&#34;riseOnHover&#34;:false,&#34;riseOffset&#34;:250},null,null,null,null,null,null,null]}],&#34;limits&#34;:{&#34;lat&#34;:[35,35],&#34;lng&#34;:[135,135]}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
-&lt;/div&gt;
-&lt;div id=&#34;diagrammer&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;DiagrammeR&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;http://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html#examples&#34;&gt;公式ドキュメント&lt;/a&gt;にあるサンプルから。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(DiagrammeR)
-#&amp;gt;  Warning: replacing previous import &amp;#39;scales::viridis_pal&amp;#39; by
-#&amp;gt;  &amp;#39;viridis::viridis_pal&amp;#39; when loading &amp;#39;DiagrammeR&amp;#39;
-grViz(&amp;quot;
-digraph a_nice_graph {
-
-# node definitions with substituted label text
-node [fontname = Helvetica]
-a [label = &amp;#39;@@1&amp;#39;]
-b [label = &amp;#39;@@2-1&amp;#39;]
-c [label = &amp;#39;@@2-2&amp;#39;]
-d [label = &amp;#39;@@2-3&amp;#39;]
-e [label = &amp;#39;@@2-4&amp;#39;]
-f [label = &amp;#39;@@2-5&amp;#39;]
-g [label = &amp;#39;@@2-6&amp;#39;]
-h [label = &amp;#39;@@2-7&amp;#39;]
-i [label = &amp;#39;@@2-8&amp;#39;]
-j [label = &amp;#39;@@2-9&amp;#39;]
-
-# edge definitions with the node IDs
-a -&amp;gt; {b c d e f g h i j}
-}
-
-[1]: &amp;#39;top&amp;#39;
-[2]: 10:20
-&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\ndigraph a_nice_graph {\n\n# node definitions with substituted label text\nnode [fontname = Helvetica]\na [label = \&#34;top\&#34;]\nb [label = \&#34;10\&#34;]\nc [label = \&#34;11\&#34;]\nd [label = \&#34;12\&#34;]\ne [label = \&#34;13\&#34;]\nf [label = \&#34;14\&#34;]\ng [label = \&#34;15\&#34;]\nh [label = \&#34;16\&#34;]\ni [label = \&#34;17\&#34;]\nj [label = \&#34;18\&#34;]\n\n# edge definitions with the node IDs\na -&gt; {b c d e f g h i j}\n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
-&lt;/div&gt;
-&lt;div id=&#34;plotly&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Plotly&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://plot.ly/r/box-plots/&#34;&gt;公式サイトにある例&lt;/a&gt;から一部修正して。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(plotly)
-#&amp;gt;  
-#&amp;gt;   次のパッケージを付け加えます: &amp;#39;plotly&amp;#39;
-#&amp;gt;   以下のオブジェクトは &amp;#39;package:ggplot2&amp;#39; からマスクされています: 
-#&amp;gt;  
-#&amp;gt;       last_plot
-#&amp;gt;   以下のオブジェクトは &amp;#39;package:stats&amp;#39; からマスクされています: 
-#&amp;gt;  
-#&amp;gt;       filter
-#&amp;gt;   以下のオブジェクトは &amp;#39;package:graphics&amp;#39; からマスクされています: 
-#&amp;gt;  
-#&amp;gt;       layout
-p &amp;lt;- ggplot2::diamonds[sample(nrow(diamonds), 5000),] %&amp;gt;% 
-  plot_ly(y = ~price, color = ~cut, type = &amp;quot;box&amp;quot;)
-p&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;7b91b93f15c&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;plotly html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;7b91b93f15c&#34;&gt;{&#34;x&#34;:{&#34;visdat&#34;:{&#34;7b914924d6ff&#34;:[&#34;function () &#34;,&#34;plotlyVisDat&#34;]},&#34;cur_data&#34;:&#34;7b914924d6ff&#34;,&#34;attrs&#34;:{&#34;7b914924d6ff&#34;:{&#34;y&#34;:{},&#34;color&#34;:{},&#34;alpha&#34;:1,&#34;sizes&#34;:[10,100],&#34;type&#34;:&#34;box&#34;}},&#34;layout&#34;:{&#34;margin&#34;:{&#34;b&#34;:40,&#34;l&#34;:60,&#34;t&#34;:25,&#34;r&#34;:10},&#34;yaxis&#34;:{&#34;domain&#34;:[0,1],&#34;title&#34;:&#34;price&#34;},&#34;xaxis&#34;:{&#34;domain&#34;:[0,1]},&#34;hovermode&#34;:&#34;closest&#34;,&#34;showlegend&#34;:true},&#34;source&#34;:&#34;A&#34;,&#34;config&#34;:{&#34;modeBarButtonsToAdd&#34;:[{&#34;name&#34;:&#34;Collaborate&#34;,&#34;icon&#34;:{&#34;width&#34;:1000,&#34;ascent&#34;:500,&#34;descent&#34;:-50,&#34;path&#34;:&#34;M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z&#34;},&#34;click&#34;:&#34;function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == &#39;?viewer_pane=1&#39;) {\n          alert(&#39;To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html&#39;);\n        } else {\n          window.open(&#39;https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html&#39;, &#39;_blank&#39;);\n        }\n      }&#34;}],&#34;cloud&#34;:false},&#34;data&#34;:[{&#34;y&#34;:[764,1001,2478,972,571,3601,4838,2557,8271,1637,2562,5234,562,1378,10959,967,802,3826,3705,1264,4868,744,1031,13477,7109,2485,1061,2041,2145,3774,8951,1063,789,749,828,1924,732,8414,13369,7903,5306,1442,756,709,17141,9343,3140,935,720,497,489,854,12206,3554,6513,1226,1033,16181,3784,5506,2834,1872,3074,2275,1066,6589,5027,592,1624,1622,9069,4007,11839,862,491,770,1764,698,1094,898,702,1754,2613,924,11722,1367,464,3343,8221,5804,2307,1443,2516,572,1306,1337,9683,3257,3915,10317,10538,4133,680,527,6097,1240,1559,596,1180,8955,3247,706,5486,1438,799,2053,3308,647,524,1073,988,2867,900,3133,9636,4017,491,3384,1368,9663,2639,3321,4497,3246,10804,767,539,2111,756,559,1684,6982,3101,733,3913,3007,752,433,5122,4676,2869,5378,1712,943,832,1089,3248,2216,830,827,12531,8953,530,1008,11950,6762,2332,1255,7667,10147,8088,12082,876,2317,630,7177,3036,3990,1322,1728,450,2898,960,9275,4874,786,4538,4931,6327,3251,613,2075,3168,1958,743,3968,3015,1200,1013,12190,917,450,1665,814,8736,1290,3794,432,6479,2100,1094,1045,570,790,766,665,5065,475,4373,5315,1424,1052,561,2530,1667,2168,573,2224,900,11196,1742,2066,10482,1076,13325,1059,6401,1689,683,758,5666,1238,921,11651,9568,2917,907,15512,391,974,752,730,4209,4212,1412,7648,397,719,681,1633,7756,1014,945,7207,1341,1685,1950,15843,740,709,587,2575,942,2529,2712,684,7893,7727,579,16530,994,2789,2487,3026,898,1314,700,916,580,4990,1974,2989,4271,872,3578,2944,1882,515,1334,2864,2193,931,1772,1846,9176,917,7458,4808,6430,2559,1580,2776,15756,1974,828,10313,772,651,3595,707,1864,1100,7648,1822,3175,2966,5013,8157,753,2238,4378,3996,779,4452,807,2089,895,2039,13324,4602,1054,6406,7691,705,3145,786,2352,814,1178,4774,1134,2819,1077,1163,1577,814,1722,1292,5002,7589,1732,719,5232,1781,5510,4684,2056,4370,5861,1389,1232,4984,2442,6299,1762,10333,707,862,2869,1689,706,2453,5217,756,1359,776,3176,2776,2575,2833,14558,18531,2611,540,11115,1576,4662,786,1745,1689,1835,979,1286,6476,1400,994,2947,5831,1408,1689,858,1875,12085,3325,1135,2260,4325,2351,11641,7564,4778,2632,5608,2255,3364,2610,15105,3246,1814,830,526,1142,804,12209,838,1228,5347,3489,1934,1558,800,382,1192,943,788,6682,14414,7016,1240,18029,4639,5805,2171,760,1655,863,12616,3336,934,1862,3713,706,2979,2218,908,17892,5384,1088,7042,918,3210,1192,1385,552,9870,2867,648,1698,4131,1624,1607,2770,525,1791,1105,867,918,5257,3037,6970,964,4801,5125,526,8835,776,1662,1033,919,544,12186,1884,2032,769,1079,979,2332,3007,827,814,1170,872,1449,1692,13298,4053,2090,773,7617,5453,703,863,1619,4407,1261,2824,1431,811,13769,909,918,673,1875,1759,5141,914,2664,4218,1745,693,2187,2348,1076,523,5073,1450,926,973,1736,2905,2952,4713,756,1854,9403,3160,776,8869,1956,1037,918,1875,900,1708,647,1316,3402,1948,2607,6139,642,529,3625,1639,7550,1408,2275,3431,2142,1827,805,2745,2704,1393,2789,492,1736,760,1754,971,1238,4789,9555,7370,5398,7078,625,1668,505,2570,6077,1389,2183,4383,17849,1926,1694,1124,863,3990,967,1295,798,1633,565,722,1014,802,7519,2368,726,877,1372,6352,3544,6794,2515,7792,3226,12375,1400,5291,8508,2105,7569,2352,1200,760,5040,790,1416,4216,1676,4229,477,1240,10333,9625,5067,1028,1084,10560,6046,5812,4537,11116,1052,11146,3172,15026,5539,2615,1153,1955,709,703,11015,491,678,5154,1168,493,421,8629,694,2192,5330,2079,1376,4986,3270,1442,565,732,559,8400,5722,4875,610,14542,1949,417,3330,552,1927,2250,6834,2590,474,928,710,17983,5820,2278,6926,2339,4146,1413,766,5822,1272,7255,432,680,1103,675,506,4374,454,3053,1584,4983,917,1966,4161,671,863,2005,720,4854,2654,1793,552,1753,716,8486,755,453,1031,929,2381,4868,1621,1697,1080,814,1920,7074,907,1718,6776,1772,691,1438,5751,1978,863,9002,2682,2822,794,1832,3167,1229,2355,734,764,1728,5013,853,990,1061,1079,1079,957,1061,746,7740,4452,6856,3199,665,1021,598,4241,684,4801,7920,745,1200,2066,1245,2310,7400,422,657,625,873,2401,928,963,5306,12342,720,756,698,3326,5748,11272,789,734,648,1208,6741,4564,2401,631,10196,666,1096,4771,5717,898,435,7297,1665,1822,2010,694,1150,901,5021,1238,817,2610,3198,2756,1822,10338,8501,4693,1066,1301,847,6614,7729,730,4048,698,3587,943,12389,612,842,840,1088,14292,1304,862,2801,1018,844,1235,683,1012,669,1445,10787,743,9954,926,1158,3422,7230,7602,4422,1821,814,708,4635,1053,8110,7472,11628,609,761,926,605,4740,2304,5235,850,626,2052,1952,1607,13671,764,608,675,1263,2258,778,18395,3595,2376,1432,2263,15688,11988,734,2199,1087,628,7038,901,3982,1401,5028,1389,477,1635,3274,565,9516,2886,876,730,8385,9218,1232,891,5068,872,498,1132,702,705,6012,1319,943,3710,2817,915,734,2771,2690,1007,3935,4422,1116,8092,545,4613,450,1609,957,2598,863,1607,2423,579,1786,3478,863,776,652,6317,3223,628,6788,4428,2644,5606,622,979,537,2184,2995,964,1800,3929,1941,762,1746,1287,886,7072,9276,9333,625,2921,3649,3949,5169,720,689,10410,723,14092,2442,1124,1675,6539,668,1431,2475,2709,3353,5882,1114,489,1026,11924,886,669,1399,10427,3674,3841,491,891,6530,7175,452,787,5572,5387,4659,3884,6343,741,621,900,638,4733,9645,7055,898,545,8736,776,1140,695,3845,3739,710,810,3251,3045,1246,737,2262,660,992,3648,2030,8227,5006,1616,7064,1213,7409,1226,838,432,4984,965,2090,751,1690,2661,1213,500,807,1356,9030,658,7727,3516,615,798,956,1280,6360,907,13880,5702,1811,4285,1227,1212,805,734,5302,694,6291,683,3443,686,9586,8093,1833,14957,7961,2022,1439,1646,1847,4645,1056,6339,863,3927,6419,4469,3502,1664,1443,1928,3570,2240,5020,6458,1007,832,2939,936,1250,1238,1815,2184,957,598,589,506,5450,7726,7965,911,555,1755,603,2792,13532,3619,890,2323,744,1845,573,1025,1577,734,471,2051,5051,2696,2946,4053,3750,1004,7479,853,12641,2030,855,1449,1654,872,948,1061,704,777,1879,4465,544,15210,1276,3590,901,872,637,758,599,5386,1656,1912,8294,707,952,1899,8774,7594,2368,2987,3431,692,4836,8555,4093,14534,3226,680,1036,4709,1569,457,603,736,599,5261,15730,12273,756,10861,1794,17676,815,761,2351,3990,2557,2347,828,3516,3154,2100,7190,2155,1628,1944,725,3011,4537,8296,6403,3351,1234,446,4485,1825,1438,1135,552,1258,4281,11262,2357,18804,6010,491,4821,7260,658,880,4509,1617,1915,810,13257,906,13965,1384,1857,14593,1809,813,9735,6917,805,2906,1924,1694,5692,811,4725,1761,3176,3056,4584,6662,992,1666,967,4797,2822,865,1580,5938,2167,2860,829,1665,2702,421,3016,1985,9890,861,2607,743,885,1976,850,2089,2559,4092,680,1007,1607,698,2407,5207,4619,852,6830,1949,498,1090,4932,621,2322,5410,596,5996,828,838,18440,2655,475,16319,2467,1079,3001,541,1854,974,417,969,3265,466,6342,1007,1410,2501,3148,4163,1724,658,726,6552,3844,756,1822,2340,868,1243,1764,4812,2030,13752,984,4909,11333,731,13060,732,9521,608,1675,1626,7391,13360,18193,905,7179,9507,15942,703,3528,4127,1056,2537,787,3423,5773,9425,4714,461,1067,540,628,1600,780,8860,3980,4956,815,4140,6661,1689,864,936,3319,5662,783,1875,2276,1013,15185,3798,658,6403,1814,5863,4304,9756,877,1621,11229,1624,1814,2998,658,450,895,6597,10935,9596,789,16560,1123,720,4127,4940,2622,835,764,6509,6661,7632,796,1790,1107,6911,1074,1789,513,4140,1229,1331,2025,827,936,5088,5763,1664,14667,1619,1007,789,1441,4683,2206,926,1389,3431,709,931,9819,1271,2610,1263,5390,828,464,1214,18198,706,4355,848,13034,939,4928,10609,965,8858,1919,5337,8079,687,2731,8291,992,5947,970,571,4779,1600,4088,1074,10061,2609,10155,826,961,2218,6255,13796,3135,914,642,1179,2287,3680,1422,8954,2108,730,2255,8131,2856,3217,4803,1608,689,1659,1889,16703,743,5106,1273,4537,1857,776,15992,607,673,1601,1701,12605,2092,1060,826,8794,1607,710,955,3495,379,8228,1183,1669,1358,9036,1112,8543,5670,1884,8189,2052,12764,879,2103,14103,11233,1625,14500,670,6190,8404,10757,1358,4919,1189,939,4829,956,5242,1754,1129,1083,2034,2635,4509,1912,2453,4760,3668,2321,7354,891,9572,1730,702,907,891,14498,814,850,2413,4922,11419,666,629,5531,2513,1103,16900,4676,5358,1289,765,595,8612,8753,8733,708,2459,758,1243,5181,9586,921,1919,505,2872,1778,10058,2866,4883,645,1836,8038,2030,13428,7934,605,1370,965,1619,3201,552,407,1621,878,5200,622,2135,6773,7388,13190,965,1324,800,2618,2208,961,7168,2138,7504,7821,984,3478,949,614,3718,814,625,1781,490,2133,6419,1400,8584,2460,3189,2095,2907,1453,6569,524,432,776,7014,758,449,12432,988,776,9077,2440,3994,1114,571,828,6439,1034,872,8678,608,1908,891,1016,878,3330,4325,2340,670,10919,1628,3299,2272,3446,4439,1319,732,523,1002,14857,2503,7968,2010,1031,3005,670,666,709,605,2658,7858,1865,936,5832,13465,8886,1963,438,6300,5364,8709,1021,1819,12119,2033,685,10098,730,605,4350,561,1680,8759,2536,11226,450,9489,1662,1013,490,3030,6648,9596,4386,2968,3328,11999,543,1058,710,8726,544,827,877,872,6160,501,649,1205,15646,1046,885,2117,1884,557,596,702,2839,1746,15575,3212,3504,4504,10685,987,731,874,5099,1752,13168,737,2891,1608,1250,1080,4238,6876,591,1153,636,805,1624,16688,4243,772,2306,2901,11114,809,13377,1128,1438,532,924,639,5099,3927,2671,2344,4044,9465,2376,1871,2164,1333,743,4987,8203,6720,666,5154,3136,1345,853,692,3585,1767,2444,4388,2782,1569,2965,522,1221,1901,828,824,642,516,8921,10859,1051,698,2898,665,10153,628,959,518,2042,555,928,461,7255,828,1968,593,590,2373,5985,906,1919,1092,12195,463,1103,1053,1200,1724,450,5909,627,12035,3402,1080,2993,6512,3390,1919,5664,2480,6838,4798,1367,2064,4696,802,882,8623,958,1002,6036,7466,814,945,972,742,1680,955,5922,1338,2354,872,926,16629,717,745,1016,862,4689,964,423,954,579,1746,596,10304,2756,828,596,2804,2298,1625,1588,2507,904,1238,2340,2016,2761,5006,1928,12030,1607,877,2056,4013,862,491,2660,4536,2762,11649,7111,5862,8192,722,802,3888,974,1353,3192,1636,710,628,1192,625,862,703,4900,603,7147,964,746,897],&#34;type&#34;:&#34;box&#34;,&#34;name&#34;:&#34;Ideal&#34;,&#34;line&#34;:{&#34;fillcolor&#34;:&#34;rgba(253,231,37,0.5)&#34;,&#34;color&#34;:&#34;rgba(253,231,37,1)&#34;},&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;frame&#34;:null},{&#34;y&#34;:[5759,15102,5184,1882,5228,5042,5119,3181,1007,7727,828,13986,1209,645,1993,2056,802,11149,10423,11198,516,3077,1760,5878,16518,11257,4721,11360,1241,2723,408,5618,4032,4222,5087,947,8067,10096,1338,14234,3535,5040,4620,1355,740,1154,893,4259,2777,5366,3142,7751,4749,12985,802,522,2607,3618,580,3528,12308,12369,1882,6026,1195,710,1400,932,4240,5055,4761,1107,803,1712,980,675,2631,13678,1593,573,13753,16628,4744,723,15897,4478,10338,7588,5269,4102,873,4468,648,788,2176,12896,7585,3920,5993,13574,5364,4044,734,5531,1016,1812,3740,2700,1698,2876,844,1637,7321,4640,6787,492,1641,1061,4616,6140,3378,5091,936,3968,11565,11775,1656,1577,4692,1205,10028,1155,1910,648,4672,5208,10221,1806,480,4486,11663,1637,844,1947,5999,796,730,1574,1035,6931,10885,4755,2840,803,4566,3656,844,3550,6713,1766,9600,2766,3190,5689,583,16778,3782,3371,3589,1076,2815,7340,4418,10814,1676,979,1991,7092,2093,13003,961,4022,13119,1690,2318,4742,4743,6822,775,766,4482,4976,942,1013,526,842,1264,1208,4768,1323,2797,3873,1882,689,2202,6759,4677,2535,15025,5156,4597,4573,10028,9041,10494,6290,4469,1881,2749,5765,17379,4468,1687,6076,13293,720,6260,1649,596,8736,2238,4051,12970,6250,12078,6435,14386,2846,2045,2657,1087,1323,1987,6150,13329,4463,2444,11926,4788,709,1814,5191,4158,3620,1001,854,4700,8812,10331,17513,5571,1730,1633,709,4304,11873,524,7466,1207,3724,2671,7496,1129,544,788,698,17073,941,810,2314,5832,961,15805,926,2856,10457,1069,1402,810,1087,9266,7090,5599,3625,4633,1600,7063,16400,18034,9831,961,6618,828,12792,3484,553,2795,5221,941,2192,1381,6352,2857,6041,5299,3830,605,12364,2333,4647,833,689,817,5600,5167,6237,8868,906,12100,1911,6045,668,4368,4082,15686,988,506,8133,1211,8702,3620,558,1608,7679,16304,1243,1073,645,2610,3992,13746,465,907,16309,2972,1099,6720,15671,11820,7392,4197,969,756,5611,7418,702,942,8223,631,10224,488,4670,606,4930,743,5236,1290,7336,6974,1414,5723,2313,1207,1412,491,2147,12105,16068,2496,500,791,1815,10149,1107,737,956,776,8487,851,3742,1769,7086,11901,4141,1052,3047,2429,13363,5599,540,1148,5925,5525,14268,2376,3918,8033,1235,6652,2339,18371,8281,4144,6320,9257,1752,720,1121,2376,921,2360,1970,1294,956,13221,833,6108,12592,2074,1935,8971,11421,4434,4321,8127,2415,8561,1668,463,1662,9498,421,4939,4211,1016,6968,1033,14888,2241,2607,540,7903,5390,14375,765,1348,505,554,18310,1050,13077,5950,3732,6470,7104,705,956,752,936,4204,1012,2364,1813,1026,3229,8654,6261,10331,14354,5121,1987,4513,876,10211,11088,1838,1363,827,11760,2930,8305,16861,1195,6323,9012,5908,3003,1984,390,3566,5666,4805,6827,666,1004,18481,18795,1819,1721,635,1814,1163,326,523,444,9505,454,3545,919,789,3084,9292,828,2362,1006,3226,12380,612,2837,765,6730,1125,1585,1125,5741,15055,544,5510,1024,18320,2803,16879,7623,8740,10080,709,952,421,2735,1723,16171,4194,698,2311,810,1723,698,504,17191,1590,5190,7982,802,737,18066,6565,1035,4256,5544,789,9716,1819,9738,3167,1847,6416,921,2268,7619,3735,816,6350,11078,4496,2093,7485,8936,554,9055,1035,4493,4078,1746,6048,3105,2743,1898,4968,1078,11958,2744,526,680,14581,1250,4096,8448,1641,1819,4650,1927,608,6206,473,1806,3714,1262,5161,904,9475,11020,1063,666,513,1428,5751,4642,961,4443,3417,1613,6342,4092,830,1746,3555,14330,907,8427,1982,537,2036,7371,2863,2512,1219,945,844,11272,6504,1778,506,526,2961,5624,3239,10010,854,1740,9354,2222,4689,2770,13811,776,4642,2893,904,1559,1580,3984,700,4805,11565,4732,5156,3568,15915,854,13420,5096,1746,2870,1666,6900,5031,2679,3198,1882,683,15797,2482,6727,7508,984,3513,6788,5292,6533,14817,5039,2202,7592,7250,4455,2406,4509,4242,1921,5101,4352,950,10065,521,2870,1016,645,1148,2218,574,6230,4718,5260,507,468,8818,7041,4843,1376,716,14352,675,1265,1097,3989,924,5376,6962,1838,1438,2199,2012,16778,2616,386,13092,8752,710,726,6387,720,447,5285,1304,6600,878,8820,540,9240,1155,680,4385,12499,10071,15966,17605,2821,4652,904,9541,477,3308,506,4637,4435,5166,749,4387,4014,2386,675,6912,1052,3998,805,923,5050,1013,898,2030,1574,612,1904,8825,2184,990,16437,630,2348,2043,645,650,1016,878,4639,1389,12531,3749,1114,434,5541,16954,6027,15897,6963,13951,855,7179,959,4365,4571,5466,2859,11790,9959,2234,5515,12655,6729,614,4592,9025,3145,990,2177,6271,2331,7204,404,709,4137,4153,9234,907,2137,1013,6048,7079,2536,804,680,2624,982,4525,1409,1308,5376,4890,10098,13844,1097,635,8997,6220,1656,544,8999,1584,9137,827,5758,12883,4660,706,827,10874,8572,13733,12707,645,1654,2683,2723,1263,807,13563,1707,945,15992,709,2913,3528,5851,710,6031,5998,13387,686,4416,626,2718,9900,5006,11644,3276,5722,7486,3024,5839,2401,2256,6403,6808,900,7068,5885,1808,4452,990,5419,4764,898,4010,3830,9516,4620,793,5312,2106,829,765,4284,957,855,574,969,928,3787,7310,1571,4476,5433,2042,2917,12021,4381,3326,12068,5082,8456,649,1402,2447,2022,1815,2592,2100,2753,1341,872,507,2670,11975,5741,11106,867,13370,5645,898,923,666,789,2897,666,4838,828,5643,3095,2776,15930,3752,723,755,2352,907,3774,544,695,489,4884,7485,4238,5556,2818,5387,3975,12229,5335,956,870,15671,802,12851,3696,8631,5291,2105,4498,1042,18149,14605,4600,9072,2874,1977,7673,5250,11637,4256,740,4580,394,14507,698,5280,449,730,5147,1777,2348,9833,776,5832,6874,5544,540,2386,2329,8120,5632,4046,1059,15478,3690,1845,2867,5963,1082,5161,1154,6320,775,11948,7864,1838,2043,2512,984,5199,4725,719,1720,2553,2249,8458,1944,1362,658,675,1072,844,8015,1114,608,12052,7352,720,776,956,628,963,6458,1607,4956,9330,4500,1806,4004,3494,3652,3121,2203,6129,8124,2387,2050,755,2519,608,2827,628,3838,992,1746,1046,14660,7991,5924,10977,7262,473,802,4871,13736,4259,2216,561,623,13483,2335,3993,601,965,9467,3428,1998,3856,9659,4103,4200,1242,1302,600,3107,1754,417,2869,3048,756,1179,3856,666,1974,1814,5783,828,11209,10976,6670,4032,756,919,4250,11733,1349,6055,4611,2484,1153,1186,1087,3174,791,957,9017,5556,803,692,6906,997,4854,1646,453,2278,1572,11051,1890,6947,15716,526,2596,1614,2111,6512,646,1113,5908,6354,6108,900,4637,9371,720,4735,7906,988,13720,4446,6583,552,2737,2331,14648,4770,3921,852,1723,9293,980,2482,7405,9607,18692,4987,584,1052,1868,5504,3780,13212,4725,4989,852,8381,3669,17136,5718,2761,2491,5864,10053,14947,17934,15375,7573,6147,2310,2491,3379,1056,803,10956,2669,734],&#34;type&#34;:&#34;box&#34;,&#34;name&#34;:&#34;Premium&#34;,&#34;line&#34;:{&#34;fillcolor&#34;:&#34;rgba(93,200,99,0.5)&#34;,&#34;color&#34;:&#34;rgba(93,200,99,1)&#34;},&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;frame&#34;:null},{&#34;y&#34;:[6863,530,6612,548,2482,3438,705,2260,4545,4119,4244,4141,485,5598,5067,7333,681,5932,1726,9123,14639,1814,2277,863,6997,15829,2423,982,707,1423,4896,489,3118,552,2200,12297,585,4895,4135,4685,9683,394,9355,13253,14028,1028,12386,3387,2584,1793,2459,447,5051,5351,3643,10447,748,907,2833,4503,10546,1226,13858,9552,459,1320,1124,5832,3827,871,709,5759,1170,10340,616,1438,10490,3994,3200,6355,1629,470,608,5592,753,473,493,4398,672,4303,703,1237,8938,2312,4898,835,7350,792,861,5386,5645,7150,2670,6628,4363,18759,627,5107,773,5372,642,6763,4292,3460,764,8223,1000,6522,1327,4826,4617,6218,5227,789,5264,954,7358,526,4429,644,462,1609,1569,2201,17062,9487,4800,550,2155,6831,15510,17425,2450,4653,17689,8998,5370,4588,2360,1833,801,453,3906,518,4398,552,841,977,8941,6834,485,2730,1010,17315,6628,1013,2041,18028,1403,10032,353,2185,1601,405,1814,7567,517,419,575,1624,3789,995,4488,3682,588,12317,5654,3265,1343,2525,461,760,1183,9611,1115,2400,1629,7644,9176,1295,3418,737,1678,10473,2843,6517,1738,2507,705,791,378,958,1336,5042,2223,1320,10891,7204,5190,18067,7392,863,5584,526,12672,15474,1949,15544,2459,6007,6593,2455,526,5433,12968,7888,3888,7862,1351,730,4842,2513,5556,14763,2041,648,2538,679,7448,5255,4512,526,7607,447,967,2767,1436,2502,889,2855,4588,1154,2630,1592,7823,5939,10380,6773,5759,1966,6096,1841,2896,548,571,2482,1181,2834,660,3612,854,4191,4455,3917,1915,1401,1251,432,14383,1078,3830,10094,1856,8020,3601,700,638,547,8538,3489,3911,3006,1081,1569,732,1369,2310,15919,2519,2104,2376,446,1261,6366,552,489,1599,645,2940,575,2586,2496,4681,1548,4899,4341,357,8962,6288,485,5645,723,882,18236,1314,624,11262,2266,793,4604,7655,9002,3705,5531,9168,9292,6987,449,2391,4054,698,698,6125,1106,5557,6540,737,14112,2239,4743,3640,497,704,710,7525,1331,14938,584,1974,2399,890,2938,2218,1295,5966,5195,596,2776,9077,544,2330,2713,939,4580,1178,5763,7786,3388,16842,1043,8654,789,1264,6787,6099,5815,579,1047,2297,1659,421,4932,4443,3564,990,4688,1337,3881,1566,5408,2070,4961,7730,1559,659,1008,3764,530,4715,1197,1087,7492,1258,2270,3992,471,12396,2699,3950,1636,4182,3603,407,565,7511,5662,4564,666,3875,3952,11650,1245,4566,544,1200,12359,798,1836,773,605,421,3350,1254,564,661,1227,5558,8852,3478,4416,2242,3894,3082,5783,3298,11873,14620,1438,4441,8172,894,11650,710,3242,2735,2788,1989,4084,8974,878,8079,3493,666,1657,3492,435,5911,1860,6776,9972,4821,1433,5902,1009,2393,1995,1898,530,473,664,5559,1337,13818,571,576,5524,12771,12012,504,2632,5884,1627,6564,1629,2851,17694,4002,2673,13320,773,991,504,9302,2686,6088,4889,2734,4207,12094,1089,16077,7687,8537,5331,675,9664,2415,2198,1318,898,5217,1133,5919,910,2041,3769,555,1293,1656,898,810,1108,4964,640,9053,3293,11560,1743,3258,1615,633,579,3792,5411,5499,5224,1627,548,1250,5689,18552,765,5455,614,436,9789,1361,1843,14811,7257,2608,583,2398,628,1049,2400,10023,9999,8690,630,1569,2782,7653,655,1271,2273,446,13811,8014,9178,5699,13537,4538,11194,548,12459,4636,2332,2681,18630,784,545,2918,3734,631,5019,442,2992,5029,839,2959,2593,1838,4989,6239,1131,7415,4679,1043,1940,6985,725,5582,4140,4062,5218,736,3755,626,608,2436,470,3238,818,658,3997,8870,587,5193,3508,1710,8257,7000,3965,1734,447,2401,2569,1647,1752,2915,795,1244,8785,821,3562,3974,16041,575,1628,2532,11088,8291,3903,4283,2300,2396,2275,4389,792,2239,575,3622,3264,6070,1641,2956,446,5088,4997,1423,9791,981,4580,5515,3111,552,680,526,12311,3145,1751,882,683,778,2252,8918,4873,3018,2444,681,2500,1350,549,5364,7437,13587,544,1086,1261,4321,10922,422,737,9667,1736,763,5621,4303,664,3053,1764,8513,472,591,1827,4120,2513,995,4268,5760,4823,4672,3160,789,1712,1591,843,470,505,1799,702,2553,579,3489,732,7706,752,1559,1415,12030,850,3535,1849,1115,1789,449,3162,10681,14819,658,4422,1750,1986,3246,16626,4470,5731,606,9236,13948,5000,1378,11325,5367,1866,1752,3489,8922,485,4989,8629,10693,4004,2642,16169,3208,2101,3596,7866,1662,5619,1357,731,2402,895,421,7432,2136,421,2188,15025,608,550,5640,4205,886,818,2197,1090,485,4496,5152,838,2641,702,7366,1986,14338,2443,646,767,4481,931,6733,505,628,1273,1940,1656,9965,3006,3365,982,6887,354,8794,672,1391,882,740,583,2931,1164,611,2759,1031,5988,2348,13790,8793,3395,4633,9127,1732,505,4438,2804,5163,1675,1105,596,15334,2003,8442,732,4102,1904,6701,554,3054,4466,2553,461,487,10701,11352,882,5499,3980,3489,3738,1160,544,12844,3385,1369,589,500,883,4392,12648,1555,436,6208,544,5241,667,3299,924,926,1322,4830,3742,1726,357,675,970,532,6088,544,1675,1819,1090,18215,917,2617,379,620,391,1266,1664,4406,473,5593,18236,5245,10362,7740,663,2477,3371,2383,14119,5600,2590,1574,5279,2922,779,3457,4619,435,1161,4661,4032,878,3751,2489,16801,814,4202,2263,4937,850,1250,6726,9837,1070,3017,11406,494,5533,1822,10959,5998,1401,5831,1588,725,6340,399,4265,1605,2141,3033,867,5948,2952,6373,725,1271,13499,507,1289,15485,13001,4759,485,418,384,784,4977,561,4508,2276,1813,596,8405,548,766,1197,1404,15840,4158,666,1378,631,7127,1436,651,622,2070,7715,2735,16716,4088,4890,6189,2296,4666,620,5866,3950,811,7072,921,5665,2278,6149,2368,2530,4712,11867,668,5239,505,18557,3398,878,552,993,7049,4630,10798,2409,6153,1409,8518,1852,4560,4165,4851,672,2816,4788,9574,1436,552,2905,789,1187,694,6813,1813,620,2093,2314,596,4472,445,447,1004,6352,6019,577,15690,4816,472,1869,6745,1261,5777,957,597,7147,7971,6062,7235,3519,3057,5853,633,1918,463,7557,1722,394,4785,2175,1629,1194,831,5367,10080,4349,1940,6649,10045,2537,3473,526,745,6618,717,694,7163,1760,1227,1220,2066,1387,596,1122],&#34;type&#34;:&#34;box&#34;,&#34;name&#34;:&#34;Very Good&#34;,&#34;line&#34;:{&#34;fillcolor&#34;:&#34;rgba(33,144,140,0.5)&#34;,&#34;color&#34;:&#34;rgba(33,144,140,1)&#34;},&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;frame&#34;:null},{&#34;y&#34;:[3889,3466,1548,1343,526,4463,5021,4586,1338,777,969,4717,4008,544,1738,2427,4241,1013,5309,5411,1444,3239,7665,1942,6477,2305,8019,1245,593,786,7349,6708,14720,3447,4758,1052,2041,505,990,5254,554,596,1037,8975,1220,2095,4257,567,5208,10181,6465,574,4608,457,526,571,4138,3625,5818,17313,4395,6720,1268,3574,698,6025,3188,2751,537,7096,6104,589,706,684,13499,3489,638,4646,684,2254,1109,684,2215,3509,4004,6455,18468,1168,1760,9122,11716,1447,7234,374,4339,648,7233,3929,8647,1042,3972,2029,14998,16410,5141,5605,4437,3838,7434,625,2705,6906,5914,1197,3649,4309,4594,2142,898,13956,1642,3246,11869,16294,2793,2421,368,589,3795,625,2068,5988,4167,2215,738,3465,3836,684,984,4389,931,5979,2940,8239,571,2853,3114,1166,3229,603,3734,11180,537,2310,5600,4389,1437,632,1436,3724,687,2926,4964,646,3801,505,544,557,718,5056,2331,6746,3701,3520,1793,742,452,4162,1574,738,3992,867,807,3125,4244,5061,4423,1197,18788,439,3070,5148,827,12215,1427,2176,2734,1929,2819,2409,798,3225,449,10664,6046,5902,544,1714,3512,631,4289,5068,10863,754,7384,14920,775,4233,2111,3994,700,722,836,737,357,7094,1710,1397,1155,524,977,8943,1563,4914,2346,2275,4619,1328,4072,5597,586,2905,17608,3798,10478,2282,3269,1744,3399,4010,5988,4845,4480,684,7915,3601,5544,3046,625,2335,6221,3057,2155,4543,717,540,5480,2436,773,3140,17902,5922,4520,2443,4093,2406,5921,5706,6349,625,4672,3923,4256,597,2066,2475,2195,4989,3581,4749,1279,1138,3897,1675,3823,2131,556,2010,491,989,11250,17898,3340,552,2085,3946,4967,1214,4722,2176,4006,4425,4719,2573,997,401,5935,3906,3349,8731,6399,6328,3394,7695,1287,2800,749,1007,4566,3743,7177,4165,4028,6159,2096,12709,658,3744,10901,10937,3787,2250,4089,1361,6666,432,2109,3273,6151,6165,570,1410,2352,959,16406,1809,556,1819,684,3895,3919,2474,1915,7508,6299,3946,1073,417,666,2749,1168,6499,2083,1364,1258,462,1966,776,954,1262,571,1447,3858,1268,1551,1625,2970,3267,491,4054,2477,682,13499,2546,16241,3950,1821,12032,8749,1400,1059,4499,2549,4391,16062,612,567,734,877,2202,2717,2611,2542,14452,3378,2327,12961,4488,3342,1690,4639,7026,2845,659,5082,1361,1286,3801,765,7603,8109,4093,14775,625,3033,3002,11640,2268,786,3580,1771,4221,4399,3689,1246,1287],&#34;type&#34;:&#34;box&#34;,&#34;name&#34;:&#34;Good&#34;,&#34;line&#34;:{&#34;fillcolor&#34;:&#34;rgba(59,82,139,0.5)&#34;,&#34;color&#34;:&#34;rgba(59,82,139,1)&#34;},&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;frame&#34;:null},{&#34;y&#34;:[2512,4824,5916,10887,11355,4424,7214,7468,2608,8807,1672,2974,2381,2384,2083,1293,972,3763,2875,4704,3119,1792,2697,11966,6503,2553,5488,2396,14194,3511,2575,2536,1808,2858,3869,5161,4688,13622,1625,2121,3597,4398,10184,2856,756,4229,2594,3767,4140,13587,1166,7746,2858,6796,2326,3891,1881,3975,4925,13587,3199,12811,2293,1773,945,629,2686,6530,3688,994,2031,5993,2103,8794,722,1902,2069,3780,3205,2571,827,5554,2579,1104,630,12454,10887,7388,1158,2815,3689,7476,2657,12581,4312,3477,1932,5147,4150,1134,1069,829,3190,2192,10772,2070,2117,794,14799,5085,4256,4849,4147,992,2805,6816,1687,2550,7188,3461,2334,4107,3730,1049,2683,1982,1138,2438,3597,15762,13701,2596,2376,4480,3105,1040,4903,1920,4072,7702,2930,5268,5533,1071,2579,3530,4586,2167,5882,4553,1175,6736,3546,3282,4309,2398,15330,3215,1981,2757,4276,2959,3816,7131,992,3418,2834,4123,3622,1305,640,5144,1324,6346,8264,1651,12450,5083,5624,893],&#34;type&#34;:&#34;box&#34;,&#34;name&#34;:&#34;Fair&#34;,&#34;line&#34;:{&#34;fillcolor&#34;:&#34;rgba(68,1,84,0.5)&#34;,&#34;color&#34;:&#34;rgba(68,1,84,1)&#34;},&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;frame&#34;:null}],&#34;highlight&#34;:{&#34;on&#34;:&#34;plotly_click&#34;,&#34;persistent&#34;:false,&#34;dynamic&#34;:false,&#34;selectize&#34;:false,&#34;opacityDim&#34;:0.2,&#34;selected&#34;:{&#34;opacity&#34;:1}},&#34;base_url&#34;:&#34;https://plot.ly&#34;},&#34;evals&#34;:[&#34;config.modeBarButtonsToAdd.0.click&#34;],&#34;jsHooks&#34;:{&#34;render&#34;:[{&#34;code&#34;:&#34;function(el, x) { var ctConfig = crosstalk.var(&#39;plotlyCrosstalkOpts&#39;).set({\&#34;on\&#34;:\&#34;plotly_click\&#34;,\&#34;persistent\&#34;:false,\&#34;dynamic\&#34;:false,\&#34;selectize\&#34;:false,\&#34;opacityDim\&#34;:0.2,\&#34;selected\&#34;:{\&#34;opacity\&#34;:1}}); }&#34;,&#34;data&#34;:null}]}}&lt;/script&gt;
-&lt;p&gt;ひとますはこの辺で。だいたいいけそうです。&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

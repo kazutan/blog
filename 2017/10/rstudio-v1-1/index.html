@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>ブログ移転(仮)</title>
+    <title>RStudio v1.1の新機能</title>
     <meta name="author" content="kazutan">
     <meta name="keywords" content="">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="いろいろ思うことがあり,ブログをこちらに移転することにしました。 以前まで続けていたこっちのブログについてはしばらく残しておく予定です。移転す">
-    <meta property="og:description" content="いろいろ思うことがあり,ブログをこちらに移転することにしました。 以前まで続けていたこっちのブログについてはしばらく残しておく予定です。移転す">
+    <meta name="description" content="RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます: https://www.rstudio.com/products/rstudio/download/ 故あって最近v1.1の新機能についてまとめていたので，ここでも">
+    <meta property="og:description" content="RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます: https://www.rstudio.com/products/rstudio/download/ 故あって最近v1.1の新機能についてまとめていたので，ここでも">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ブログ移転(仮)">
-    <meta property="og:url" content="/2017/03/firstpost/">
+    <meta property="og:title" content="RStudio v1.1の新機能">
+    <meta property="og:url" content="/2017/10/rstudio-v1-1/">
     <meta property="og:site_name" content="日々是独想">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="日々是独想">
-    <meta name="twitter:description" content="いろいろ思うことがあり,ブログをこちらに移転することにしました。 以前まで続けていたこっちのブログについてはしばらく残しておく予定です。移転す">
+    <meta name="twitter:description" content="RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます: https://www.rstudio.com/products/rstudio/download/ 故あって最近v1.1の新機能についてまとめていたので，ここでも">
     
       <meta name="twitter:creator" content="@kazutan">
     
@@ -189,18 +189,18 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      ブログ移転(仮)
+      RStudio v1.1の新機能
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-03-22T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-10-10T00:00:00Z">
       
   
   
   
   
-    22 三月 2017
+    10 十月 2017
   
 
     </time>
@@ -210,7 +210,9 @@
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://kazutan.github.io/blog/categories/%e7%8b%ac%e6%83%b3">独想</a>
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://kazutan.github.io/blog/categories/rstudio">RStudio</a>
     
   
 
@@ -221,12 +223,68 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>いろいろ思うことがあり,ブログをこちらに移転することにしました。</p>
+              
 
-<!--more-->
+<p>RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます:</p>
 
-<p>以前まで続けていた<a href="http://blog.kz-md.net/">こっちのブログ</a>についてはしばらく残しておく予定です。移転する理由などについてはそのうち書きます。</p>
-<p>あとまだ(仮)なので,急な変更などがあると思いますが,どうかご容赦ください。</p>
+<p><a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a></p>
+
+<p>故あって最近v1.1の新機能についてまとめていたので，ここでも紹介します。</p>
+
+<h3 id="terminal実装">Terminal実装</h3>
+
+<p>Terminal(端末)がRStudio上で使えるようになりました。UbuntuとかでRのパッケージ自体が別アプリに依存している場合、よくこのTerminalでapt installすることがあるのですが、それがRStudio上でできるようになりました。主な用途としては「RStudioServerを仮想環境とかで立ち上げたけどライブラリ不足して動かん…」を解消できます。</p>
+
+<p>詳細は以下を。<br />
+<a href="https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/">https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/</a></p>
+
+<h3 id="data-connection機能が追加">Data Connection機能が追加</h3>
+
+<p>MySQLやPostgreSQLにつなぐ際のコネクションなどが管理・利用できるようになりました。ちょっと癖はありますが、RDBをRで叩いている人には福音となるかもしれない機能です。</p>
+
+<p>詳細は以下を。<br />
+<a href="https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/">https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/</a></p>
+
+<h3 id="object-explorer-が強化">Object Explorer が強化</h3>
+
+<p>「Environment」タブで、リストオブジェクトに🔍アイコンがでるようになりました。これをクリックするとdata.frameなどと同じようにソースが表示されるのですが、それがlistのより深い層まで潜ってみれるようになってます。多分tidydataやpurrr関連でいい感じにしようとした結果だと思います。</p>
+
+<p>詳細は以下を。<br />
+<a href="https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/">https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/</a></p>
+
+<h3 id="darkテーマが使えるように">Darkテーマが使えるように</h3>
+
+<p>v1.1(の一時期)から(Pane内ではなく)RStudio自体にテーマ設定ができるようになりました。これによりDarkなテーマを設定するようなこともできます。</p>
+
+<p>詳細は以下を。<br />
+<a href="https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/">https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/</a></p>
+
+<p>もしくは、私が書いたブログ記事を。<br />
+<a href="https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/">https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/</a></p>
+
+<h3 id="rstudio-server-pro-の新機能">RStudio Server Pro の新機能</h3>
+
+<p>一応RStudio Blogに乗っていたのでリストアップしときます。Pro版使ったことないので挙げるだけで。</p>
+
+<p>詳細は以下を。<br />
+<a href="https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/">https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/</a></p>
+
+<h3 id="その他の更新">その他の更新</h3>
+
+<p>色んな要素が変更になってます。RStudio Blogの記事になっているのは以下を。<br />
+<a href="https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/">https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/</a></p>
+
+<p>Gitまわりがかなり改良されていますし、<a href="https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html">Project Template</a>は重要だと思います。</p>
+
+<h3 id="留意事項">留意事項</h3>
+
+<p>linux版でQtが5.4.2となっています。Ubuntuでそのままインストールした場合，Desktop版ではfcitxでは日本語が入力できません。あわしろいくやさんの以下の記事にあるとおりに対応すると，日本語入力ができるようになります:</p>
+
+<p><a href="http://blog.goo.ne.jp/ikunya/e/48b3e547dd2b8c7cfbe2a8dadc0b962a">Ubuntu 16.04 + Fcitx + RStudio 1.0.153以降で日本語を入力する方法 - いくやの斬鉄日記</a></p>
+
+<p>細かいところでも色々更新されていますので，是非チェックしてみてください。</p>
+
+<p><strong>Enjoy!</strong></p>
 
               
             </div>
@@ -239,7 +297,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/%E7%8B%AC%E6%83%B3/">独想</a>
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/r/">R</a>
+
+  <a class="tag tag--primary tag--small" href="https://kazutan.github.io/blog/tags/rstudio/">RStudio</a>
 
                   </div>
                 
@@ -251,7 +311,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/book-r-scraping/" data-tooltip="ブックレビュー「Rによるスクレイピング入門」">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -259,7 +319,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/1/01/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/09/17b-timetable/" data-tooltip="2017年度後期。">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -276,17 +336,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -336,7 +396,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/03/book-r-scraping/" data-tooltip="ブックレビュー「Rによるスクレイピング入門」">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -344,7 +404,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/1/01/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kazutan.github.io/blog/2017/09/17b-timetable/" data-tooltip="2017年度後期。">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -361,17 +421,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -398,17 +458,17 @@
       <div id="share-options-bar" class="share-options-bar" data-behavior="5">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f03%2ffirstpost%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkazutan.github.io%2fblog%2f2017%2f10%2frstudio-v1-1%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -680,9 +740,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/03\/firstpost\/';
+          this.page.url = 'https:\/\/kazutan.github.io\/blog\/2017\/10\/rstudio-v1-1\/';
           
-            this.page.identifier = '\/2017\/03\/firstpost\/'
+            this.page.identifier = '\/2017\/10\/rstudio-v1-1\/'
           
         };
         (function() {

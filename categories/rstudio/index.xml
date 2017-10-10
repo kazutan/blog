@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rstudio on 日々是独想</title>
+    <link>https://kazutan.github.io/blog/categories/rstudio/index.xml</link>
+    <description>Recent content in Rstudio on 日々是独想</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kazutan.github.io/blog/categories/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RStudio v1.1の新機能</title>
+      <link>https://kazutan.github.io/blog/2017/10/rstudio-v1-1/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazutan.github.io/blog/2017/10/rstudio-v1-1/</guid>
+      <description>
+
+&lt;p&gt;RStudio v1.1が正式にリリースされました。以下のサイトからダウンロードできます:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;https://www.rstudio.com/products/rstudio/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;故あって最近v1.1の新機能についてまとめていたので，ここでも紹介します。&lt;/p&gt;
+
+&lt;h3 id=&#34;terminal実装&#34;&gt;Terminal実装&lt;/h3&gt;
+
+&lt;p&gt;Terminal(端末)がRStudio上で使えるようになりました。UbuntuとかでRのパッケージ自体が別アプリに依存している場合、よくこのTerminalでapt installすることがあるのですが、それがRStudio上でできるようになりました。主な用途としては「RStudioServerを仮想環境とかで立ち上げたけどライブラリ不足して動かん…」を解消できます。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/&#34;&gt;https://blog.rstudio.com/2017/08/11/rstudio-v1-1-preview-terminal/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;data-connection機能が追加&#34;&gt;Data Connection機能が追加&lt;/h3&gt;
+
+&lt;p&gt;MySQLやPostgreSQLにつなぐ際のコネクションなどが管理・利用できるようになりました。ちょっと癖はありますが、RDBをRで叩いている人には福音となるかもしれない機能です。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/&#34;&gt;https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;object-explorer-が強化&#34;&gt;Object Explorer が強化&lt;/h3&gt;
+
+&lt;p&gt;「Environment」タブで、リストオブジェクトに🔍アイコンがでるようになりました。これをクリックするとdata.frameなどと同じようにソースが表示されるのですが、それがlistのより深い層まで潜ってみれるようになってます。多分tidydataやpurrr関連でいい感じにしようとした結果だと思います。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/&#34;&gt;https://blog.rstudio.com/2017/08/22/rstudio-v1-1-preview-object-explorer/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;darkテーマが使えるように&#34;&gt;Darkテーマが使えるように&lt;/h3&gt;
+
+&lt;p&gt;v1.1(の一時期)から(Pane内ではなく)RStudio自体にテーマ設定ができるようになりました。これによりDarkなテーマを設定するようなこともできます。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/&#34;&gt;https://blog.rstudio.com/2017/08/30/rstudio-dark-theme/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もしくは、私が書いたブログ記事を。&lt;br /&gt;
+&lt;a href=&#34;https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/&#34;&gt;https://kazutan.github.io/blog/2017/05/rstudio-dark-theme/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;rstudio-server-pro-の新機能&#34;&gt;RStudio Server Pro の新機能&lt;/h3&gt;
+
+&lt;p&gt;一応RStudio Blogに乗っていたのでリストアップしときます。Pro版使ったことないので挙げるだけで。&lt;/p&gt;
+
+&lt;p&gt;詳細は以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/&#34;&gt;https://blog.rstudio.com/2017/09/07/rstudio-rsp-1.1-features/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;その他の更新&#34;&gt;その他の更新&lt;/h3&gt;
+
+&lt;p&gt;色んな要素が変更になってます。RStudio Blogの記事になっているのは以下を。&lt;br /&gt;
+&lt;a href=&#34;https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/&#34;&gt;https://blog.rstudio.com/2017/09/13/rstudio-v1.1---the-little-things/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Gitまわりがかなり改良されていますし、&lt;a href=&#34;https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html&#34;&gt;Project Template&lt;/a&gt;は重要だと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;留意事項&#34;&gt;留意事項&lt;/h3&gt;
+
+&lt;p&gt;linux版でQtが5.4.2となっています。Ubuntuでそのままインストールした場合，Desktop版ではfcitxでは日本語が入力できません。あわしろいくやさんの以下の記事にあるとおりに対応すると，日本語入力ができるようになります:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.goo.ne.jp/ikunya/e/48b3e547dd2b8c7cfbe2a8dadc0b962a&#34;&gt;Ubuntu 16.04 + Fcitx + RStudio 1.0.153以降で日本語を入力する方法 - いくやの斬鉄日記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;細かいところでも色々更新されていますので，是非チェックしてみてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
